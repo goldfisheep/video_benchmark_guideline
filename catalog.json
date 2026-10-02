@@ -97,9 +97,9 @@
       "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/OpenGVLab/MVBench)；[官方项目代码](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat2)。",
       "priority": "第一版推荐",
       "planned_questions": 200,
-      "final_decision": "待填写",
-      "decision_reason": "已准备6题／6个视频，尚未人工核查。3条Perception Test视频已公开，3条CLEVRER视频暂仅本地保存。",
-      "selected_scope": "待填写：本批覆盖动作计数、遮挡追踪、移动方向、移动计数、反事实推理、状态变化；初筛Choice。",
+      "final_decision": "建议采纳子集（本轮初筛完成）",
+      "decision_reason": "六条均记录视频必要、答案清楚、无音频字幕依赖并建议采纳；三个模拟文件FFmpeg完整解码通过，部分播放器不兼容。实际JEV解码和公开展示条件待确认。",
+      "selected_scope": "优先本批六类纯视觉Choice；其他14类未核查，200题为预算。",
       "known_output": "初筛：Choice：有选项子任务。",
       "viewing_guidance": "本批六题均使用全片。三个真实场景视频可在网页播放；三个模拟视频已下载本地，因原项目再分发条件待确认暂不上传。逐条看后填写review；全片证据可写“全片”。",
       "report_path": "数据源样例/MVBench/人工筛选报告.md",
@@ -108,7 +108,7 @@
     {
       "name": "TempCompass",
       "category": "通用感知；时间理解，多种问答形式",
-      "version": "TempCompass；数据版本／修订号待填写",
+      "version": "官方标注提交 e1b463166400633e6061962d890a9ae85db29f70；HF视频提交 c8a67d88a3bc6fd4b2f9ae2f9e112668fbe05722",
       "sources": [
         {
           "label": "官方代码及视频下载说明",
@@ -119,10 +119,10 @@
       "priority": "第一版推荐",
       "planned_questions": 200,
       "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "decision_reason": "已准备6题／5视频，人工核查待填写；覆盖五类时序能力及原片／倒放对照。",
+      "selected_scope": "候选Choice选择题与Noul是非题；编码映射、正式采用范围待填写。",
       "known_output": "初筛：Choice：选择题；Noul：是非题；描述生成需另定输出。",
-      "viewing_guidance": "按官方 README 的处理后视频入口获取；先查看题目文件，再按视频 ID 找处理后的片段。网盘／HF 是否可在线播或按条取，待填写。",
+      "viewing_guidance": "五个完整视频已本地下载并通过FFmpeg解码；原Shutterstock素材再分发条件未确认，暂不公开上传。看全片，证据可写全片。",
       "report_path": "数据源样例/TempCompass/人工筛选报告.md",
       "samples_path": "数据源样例/TempCompass/样例清单.json"
     },
