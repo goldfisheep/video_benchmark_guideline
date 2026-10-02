@@ -47,23 +47,23 @@ window.BENCHMARK_DATA = {
           "reference_answer": "3 次（选项下标 2，从 0 编号）",
           "answer_index": 2,
           "annotation_source": "https://huggingface.co/datasets/yale-nlp/TOMATO/viewer/default/count?row=0",
-          "video_path": "",
+          "video_path": "数据源样例/TOMATO/videos/0209-03.mp4",
           "video_url": "",
-          "video_source": "拟从 lmms-eval/TOMATO 镜像 part_002.zip 提取 videos/human/0209-03.mp4；视频尚未取得。",
-          "video_status": "待填写",
+          "video_source": "拟从 lmms-eval/TOMATO 镜像 part_002.zip 提取 videos/human/0209-03.mp4",
+          "video_status": "已上传，在线播放待检查",
           "review": {
-            "是否看过正式片段": "待填写",
-            "是否需要音频": "待填写",
-            "是否需要字幕": "待填写",
-            "适合的JEV输出": "待填写",
-            "视频是否必要": "待填写",
-            "答案是否清楚": "待填写",
-            "证据时刻": "待填写",
-            "结论": "待填写",
-            "待解决问题": "待填写",
-            "查看方式": "待填写",
-            "核查人": "待填写",
-            "核查日期": "待填写"
+            "是否看过正式片段": "是",
+            "是否需要音频": "否",
+            "是否需要字幕": "否",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "是；需要观察完整动作序列，单帧难以确定重复次数",
+            "答案是否清楚": "是；人工数得 3 次，与官方答案一致",
+            "证据时刻": "00:01-00:04,00:04-00:08,00:08-00:11分别画出梯形",
+            "结论": "该条建议采纳",
+            "待解决问题": "本条主要验证动作计数；尚未核查形状识别、方向、旋转等其他子任务，不能据此判断整个 TOMATO",
+            "查看方式": "从镜像 ZIP 提取 0209-03.mp4，本地完整播放",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-02"
           }
         }
       ]
