@@ -29,7 +29,7 @@
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "展示视频与正式包MP4一致性、字幕以及人工结果待核查。",
+        "待解决问题": "展示视频与正式包MP4一致性及人工结果待核查；配套字幕已取得。",
         "查看方式": "网页原站播放器；本地视频为 videos/banner_video.mp4。先静音预核查。",
         "核查人": "待填写",
         "核查日期": "待填写",
@@ -50,7 +50,8 @@
         5241
       ],
       "position_note": "保留官方position原值；未确认单位，不作为秒数或人工证据。",
-      "source_video_candidate_url": "https://www.youtube.com/watch?v=Oht0i1DACcA"
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=Oht0i1DACcA",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 0 秒。"
     },
     {
       "sample_id": "Oht0i1DACcA_0",
@@ -80,7 +81,7 @@
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "展示视频与正式包MP4一致性、字幕以及人工结果待核查。",
+        "待解决问题": "展示视频与正式包MP4一致性及人工结果待核查；配套字幕已取得。",
         "查看方式": "网页原站播放器；本地视频为 videos/banner_video.mp4。先静音预核查。",
         "核查人": "待填写",
         "核查日期": "待填写",
@@ -101,7 +102,8 @@
         547
       ],
       "position_note": "保留官方position原值；未确认单位，不作为秒数或人工证据。",
-      "source_video_candidate_url": "https://www.youtube.com/watch?v=Oht0i1DACcA"
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=Oht0i1DACcA",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 0 秒。"
     },
     {
       "sample_id": "WHxBO7XecSY_0",
@@ -154,7 +156,8 @@
         162
       ],
       "position_note": "保留官方position原值；未确认单位，不作为秒数或人工证据。",
-      "source_video_candidate_url": "https://www.youtube.com/watch?v=WHxBO7XecSY"
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=WHxBO7XecSY",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 312 秒。"
     },
     {
       "sample_id": "PCz04UJFaUY_0",
@@ -206,7 +209,8 @@
         107
       ],
       "position_note": "保留官方position原值；未确认单位，不作为秒数或人工证据。",
-      "source_video_candidate_url": "https://www.youtube.com/watch?v=PCz04UJFaUY"
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=PCz04UJFaUY",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 262 秒。"
     },
     {
       "sample_id": "oO8OJZFZT9s_0",
@@ -257,7 +261,8 @@
         486
       ],
       "position_note": "保留官方position原值；未确认单位，不作为秒数或人工证据。",
-      "source_video_candidate_url": "https://www.youtube.com/watch?v=oO8OJZFZT9s"
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=oO8OJZFZT9s",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 57 秒。"
     },
     {
       "sample_id": "Y1YCvEip_ko_1",
@@ -310,7 +315,237 @@
         6582
       ],
       "position_note": "保留官方position原值；未确认单位，不作为秒数或人工证据。",
-      "source_video_candidate_url": "https://www.youtube.com/watch?v=Y1YCvEip_ko"
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=Y1YCvEip_ko",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 0 秒。"
+    },
+    {
+      "sample_id": "@placesunleashed-7293176969531870470_0",
+      "video_id": "@placesunleashed-7293176969531870470",
+      "subtask": "E3E / L2-Relation",
+      "question": "In the scene, a lady is walking towards a tree with yellow leaves. In the distance, there are some mountains and a lake. The sky is white. The lady is wearing a black top and black pants. What happens as the lady approaches the tree?",
+      "question_zh": "穿黑色上衣和裤子的女子走向黄叶树时，接着出现什么画面？",
+      "options": [
+        "A person is lying by the lake; in the distance, there's the tree with yellow leaves and mountains.",
+        "A person is jumping by the lake; in the distance, there's the tree with yellow leaves and mountains.",
+        "A person is kneeling by the lake; in the distance, there's the tree with yellow leaves and mountains.",
+        "A person is standing by the lake; in the distance, there's the tree with yellow leaves and mountains.",
+        "A person is sitting by the lake; in the distance, there's the tree with yellow leaves and mountains."
+      ],
+      "reference_answer": "C. A person is kneeling by the lake; in the distance, there's the tree with yellow leaves and mountains.（官方答案；人工核验待填写）",
+      "answer_index": 2,
+      "annotation_source": "https://huggingface.co/datasets/longvideobench/LongVideoBench/blob/60d1c89c1919a198b73be39c2babb213b29d6a5c/lvb_val.json",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "来自官方HF视频TAR包，精确Range提取；公开仓库不再上传原视频。",
+      "video_status": "官方处理后MP4已本地取得并完整解码通过；人工观看待填写。",
+      "review": {
+        "是否看过正式片段": "待填写",
+        "是否需要音频": "待填写",
+        "是否需要字幕": "待填写",
+        "适合的JEV输出": "Choice（沿用官方选项）；人工确认待填写",
+        "视频是否必要": "待填写",
+        "答案是否清楚": "待填写",
+        "证据时刻": "待填写",
+        "结论": "待填写",
+        "待解决问题": "实际人工答案、是否需要视频／字幕、JEV实际加载及原视频公开再分发条件待核查。",
+        "查看方式": "本地核查目录的本地浏览.html；视频、题目、可切换同步字幕及答案折叠栏齐备。",
+        "核查人": "待填写",
+        "核查日期": "待填写",
+        "核查重点": "确认先走向树、后出现的画面；是否需要顺序，还是一帧即可答。"
+      },
+      "formal_sample_id": "@placesunleashed-7293176969531870470_0",
+      "split": "validation",
+      "sample_origin": "official_validation_annotation",
+      "duration_seconds": 14.47,
+      "video_duration": "00:00:14.47",
+      "official_video_path": "7293176969531870470.mp4",
+      "subtitle_path": "7293176969531870470_en.json",
+      "starting_timestamp_for_subtitles": 0,
+      "duration_group": 15,
+      "topic_category": "LT-Lifestyle-Travel-Guides",
+      "official_position": [
+        281,
+        302
+      ],
+      "position_note": "官方position原值，单位未确认，不作为人工秒数证据。",
+      "content_access": "local_only",
+      "local_video_filename": "7293176969531870470.mp4",
+      "video_sha256": "953629c2af43e8b376d5ffe5d7e7bbf5e48a05224299ad516f62c6a2d170c2f6",
+      "hf_revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 0 秒。",
+      "source_video_candidate_url": "https://www.tiktok.com/@placesunleashed/video/7293176969531870470"
+    },
+    {
+      "sample_id": "MTmUo6QITo4_0",
+      "video_id": "MTmUo6QITo4",
+      "subtask": "TAA / L2-Relation",
+      "question": "The screen shows a woman with braided hair. She is wearing black clothes and is in a white room. On the right side of the screen, there's a clothes rack with clothes hanging on it. The woman is talking to the camera. When she mentions 'such a good mood today and I feel like', what change occurs in the woman?",
+      "question_zh": "白色房间里扎辫子、穿黑色衣服的女子说到“such a good mood today and I feel like”时，发生了什么变化？",
+      "options": [
+        "The woman picks up a book",
+        "The woman starts singing",
+        "The woman touches her own braid with one hand",
+        "The woman touches her hair",
+        "The woman turns to look for clothes"
+      ],
+      "reference_answer": "C. The woman touches her own braid with one hand（官方答案；人工核验待填写）",
+      "answer_index": 2,
+      "annotation_source": "https://huggingface.co/datasets/longvideobench/LongVideoBench/blob/60d1c89c1919a198b73be39c2babb213b29d6a5c/lvb_val.json",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "来自官方HF视频TAR包，精确Range提取；公开仓库不再上传原视频。",
+      "video_status": "官方处理后MP4已本地取得并完整解码通过；人工观看待填写。",
+      "review": {
+        "是否看过正式片段": "待填写",
+        "是否需要音频": "待填写",
+        "是否需要字幕": "待填写",
+        "适合的JEV输出": "Choice（沿用官方选项）；人工确认待填写",
+        "视频是否必要": "待填写",
+        "答案是否清楚": "待填写",
+        "证据时刻": "待填写",
+        "结论": "待填写",
+        "待解决问题": "实际人工答案、是否需要视频／字幕、JEV实际加载及原视频公开再分发条件待核查。",
+        "查看方式": "本地核查目录的本地浏览.html；视频、题目、可切换同步字幕及答案折叠栏齐备。",
+        "核查人": "待填写",
+        "核查日期": "待填写",
+        "核查重点": "先静音独立看动作，再用字幕定位指定发言；画面与字幕是否均必要。"
+      },
+      "formal_sample_id": "MTmUo6QITo4_0",
+      "split": "validation",
+      "sample_origin": "official_validation_annotation",
+      "duration_seconds": 13.98,
+      "video_duration": "00:00:13.98",
+      "official_video_path": "MTmUo6QITo4.mp4",
+      "subtitle_path": "MTmUo6QITo4_en.json",
+      "starting_timestamp_for_subtitles": 127,
+      "duration_group": 15,
+      "topic_category": "LV-Lifestyle-Life-Vlogs",
+      "official_position": [
+        84,
+        174
+      ],
+      "position_note": "官方position原值，单位未确认，不作为人工秒数证据。",
+      "content_access": "local_only",
+      "local_video_filename": "MTmUo6QITo4.mp4",
+      "video_sha256": "b668195746f2f4b18e58151c47fb789675521c52e2c9a0d4a9b3c4c3214edc1f",
+      "hf_revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 127 秒。",
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=MTmUo6QITo4"
+    },
+    {
+      "sample_id": "mbcvVYobCXI_0",
+      "video_id": "mbcvVYobCXI",
+      "subtask": "SSS / L2-Relation",
+      "question": "Which of the following sequences of scenes is correct?",
+      "question_zh": "以下哪一种海滩画面出现顺序正确？",
+      "options": [
+        "First, a black egg-shaped stone on the left and a white egg-shaped stone on the right, then a pile of seaweed on the beach, and finally, two white egg-shaped stones on the beach.",
+        "First, two white egg-shaped stones on the beach, then a black egg-shaped stone on the left and a white egg-shaped stone on the right, and finally, a pile of seaweed on the beach.",
+        "First, a pile of seaweed on the beach, then a black egg-shaped stone on the left and a white egg-shaped stone on the right, and finally, two white egg-shaped stones on the beach.",
+        "First, two white egg-shaped stones on the beach, then a pile of seaweed on the beach, and finally, a black egg-shaped stone on the left and a white egg-shaped stone on the right.",
+        "First, a pile of seaweed on the beach, then two white egg-shaped stones on the beach, and finally, a black egg-shaped stone on the left and a white egg-shaped stone on the right."
+      ],
+      "reference_answer": "C. First, a pile of seaweed on the beach, then a black egg-shaped stone on the left and a white egg-shaped stone on the right, and finally, two white egg-shaped stones on the beach.（官方答案；人工核验待填写）",
+      "answer_index": 2,
+      "annotation_source": "https://huggingface.co/datasets/longvideobench/LongVideoBench/blob/60d1c89c1919a198b73be39c2babb213b29d6a5c/lvb_val.json",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "来自官方HF视频TAR包，精确Range提取；公开仓库不再上传原视频。",
+      "video_status": "官方处理后MP4已本地取得并完整解码通过；人工观看待填写。",
+      "review": {
+        "是否看过正式片段": "待填写",
+        "是否需要音频": "待填写",
+        "是否需要字幕": "待填写",
+        "适合的JEV输出": "Choice（沿用官方选项）；人工确认待填写",
+        "视频是否必要": "待填写",
+        "答案是否清楚": "待填写",
+        "证据时刻": "待填写",
+        "结论": "待填写",
+        "待解决问题": "实际人工答案、是否需要视频／字幕、JEV实际加载及原视频公开再分发条件待核查。",
+        "查看方式": "本地核查目录的本地浏览.html；视频、题目、可切换同步字幕及答案折叠栏齐备。",
+        "核查人": "待填写",
+        "核查日期": "待填写",
+        "核查重点": "核对海草、黑白石头、两块白石头的先后，不凭题目猜答案。"
+      },
+      "formal_sample_id": "mbcvVYobCXI_0",
+      "split": "validation",
+      "sample_origin": "official_validation_annotation",
+      "duration_seconds": 192.09,
+      "video_duration": "00:03:12.09",
+      "official_video_path": "mbcvVYobCXI.mp4",
+      "subtitle_path": "mbcvVYobCXI_en.json",
+      "starting_timestamp_for_subtitles": 0,
+      "duration_group": 600,
+      "topic_category": "KA-Knowledge-Art",
+      "official_position": [
+        574,
+        884,
+        1426
+      ],
+      "position_note": "官方position原值，单位未确认，不作为人工秒数证据。",
+      "content_access": "local_only",
+      "local_video_filename": "mbcvVYobCXI.mp4",
+      "video_sha256": "6b0baadc2ded2bc4083f83f467c17db7d01175705dafe9ce4601f55bd2ffa4e8",
+      "hf_revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 0 秒。",
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=mbcvVYobCXI"
+    },
+    {
+      "sample_id": "LYvStKy8iAc_0",
+      "video_id": "LYvStKy8iAc",
+      "subtask": "E3E / L2-Relation",
+      "question": "In front of a white background wall, a woman with earrings and hair tied up, wearing a short-sleeved T-shirt, is pressing foundation liquid onto a sponge in her hand. Behind her, there are green leaf decorations on the wall. Her nails are pink, and she is wearing a ring on her finger. What happened after she pressed the foundation liquid onto the sponge?",
+      "question_zh": "女子把粉底液按到手中的海绵上后，接着做了什么？",
+      "options": [
+        "Pressed the sponge onto her neck",
+        "Pressed the sponge onto her face",
+        "Washed dishes with the sponge",
+        "Pressed the sponge onto her hand",
+        "Threw the sponge away"
+      ],
+      "reference_answer": "B. Pressed the sponge onto her face（官方答案；人工核验待填写）",
+      "answer_index": 1,
+      "annotation_source": "https://huggingface.co/datasets/longvideobench/LongVideoBench/blob/60d1c89c1919a198b73be39c2babb213b29d6a5c/lvb_val.json",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "来自官方HF视频TAR包，精确Range提取；公开仓库不再上传原视频。",
+      "video_status": "官方处理后MP4已本地取得并完整解码通过；人工观看待填写。",
+      "review": {
+        "是否看过正式片段": "待填写",
+        "是否需要音频": "待填写",
+        "是否需要字幕": "待填写",
+        "适合的JEV输出": "Choice（沿用官方选项）；人工确认待填写",
+        "视频是否必要": "待填写",
+        "答案是否清楚": "待填写",
+        "证据时刻": "待填写",
+        "结论": "待填写",
+        "待解决问题": "实际人工答案、是否需要视频／字幕、JEV实际加载及原视频公开再分发条件待核查。",
+        "查看方式": "本地核查目录的本地浏览.html；视频、题目、可切换同步字幕及答案折叠栏齐备。",
+        "核查人": "待填写",
+        "核查日期": "待填写",
+        "核查重点": "核对按粉底与接着动作；9分35秒的定位成本是否值得。"
+      },
+      "formal_sample_id": "LYvStKy8iAc_0",
+      "split": "validation",
+      "sample_origin": "official_validation_annotation",
+      "duration_seconds": 575.32,
+      "video_duration": "00:09:35.32",
+      "official_video_path": "LYvStKy8iAc.mp4",
+      "subtitle_path": "LYvStKy8iAc_en.json",
+      "starting_timestamp_for_subtitles": 0,
+      "duration_group": 600,
+      "topic_category": "LV-Lifestyle-Life-Vlogs",
+      "official_position": [
+        2423,
+        2424
+      ],
+      "position_note": "官方position原值，单位未确认，不作为人工秒数证据。",
+      "content_access": "local_only",
+      "local_video_filename": "LYvStKy8iAc.mp4",
+      "video_sha256": "ba058a79b3f59623dc4b8b3cfb9fbba22c8939d6e7dfa52e98aac29c2bd6adcb",
+      "hf_revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+      "subtitle_status": "对应官方字幕已本地取得；对齐偏移 0 秒。",
+      "source_video_candidate_url": "https://www.youtube.com/watch?v=LYvStKy8iAc"
     }
   ],
   "sample_template": {
@@ -343,9 +578,10 @@
     }
   },
   "preparation_status": {
-    "正式标注": "用户提供lvb_val.json，已解析1337题；抽取6题／5个视频ID。",
-    "媒体状态": "其中2题可使用作者展示视频预核查；另4个视频及所有对应正式字幕尚未取得。",
-    "输入原则": "字幕与画面同步配合的题可作为文本＋视频；仅字幕可答另归文本理解扩展。"
+    "正式标注": "1337条验证题；本清单保留原6题并新增4题，共10题／9个视频ID。",
+    "当前可查": "4题有官方处理后视频和字幕；另2题有作者展示视频及官方字幕，可以预核查。",
+    "后续候选": "原先另外4题尚未取得对应视频；保留不删除，不标为就绪。",
+    "为何新增": "按照包目录中已定位的正式视频补充短片、视觉顺序与字幕定位，减少等待和全量下载成本；不是统计代表性抽样。"
   },
   "annotation_provenance": {
     "filename": "lvb_val.json",
@@ -356,6 +592,7 @@
     "revision": "待填写（下载文件未附HF提交号）",
     "license": "CC BY-NC-SA 4.0",
     "attribution": "LongVideoBench, Haoning Wu, Dongxu Li, Bei Chen, Junnan Li (2024)",
-    "modifications": "选取6条；补充中文译文、样例获取状态及人工筛选字段；原英文题目、选项、答案索引保持原值。"
+    "modifications": "选取6条；补充中文译文、样例获取状态及人工筛选字段；原英文题目、选项、答案索引保持原值。",
+    "hf_revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c"
   }
 }
