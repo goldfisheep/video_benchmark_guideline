@@ -1,0 +1,680 @@
+window.BENCHMARK_DATA = {
+  "updated": "2026-10-02",
+  "datasets": [
+    {
+      "name": "TOMATO",
+      "category": "通用感知；运动计数、方向、旋转、轨迹等",
+      "version": "TOMATO；公开仓库，版本号／提交号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/yale-nlp/TOMATO"
+        },
+        {
+          "label": "代码与下载说明",
+          "url": "https://github.com/yale-nlp/TOMATO"
+        }
+      ],
+      "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/yale-nlp/TOMATO)；[代码与下载说明](https://github.com/yale-nlp/TOMATO)。视频和问答数据可获取。",
+      "priority": "第一版推荐",
+      "planned_questions": 200,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：原生选择题；计数不作为 Score。",
+      "viewing_guidance": "题目可在 HF 表格或 GitHub data 文件夹在线查看；正式视频在官方 [Google Drive 视频包](https://drive.google.com/file/d/1-dNt9bZcp6C3RXuGoAO3EBgWkAHg8NWR/view?usp=drive_link)。未确认官方逐题在线播放入口；先请已下载数据的同学按 key 提供少量片段。源素材不等于正式处理片段。",
+      "report_path": "数据源样例/TOMATO/人工筛选报告.md",
+      "samples_path": "数据源样例/TOMATO/样例清单.json",
+      "samples": [
+        {
+          "sample_id": "0209-03",
+          "video_id": "0209-03",
+          "subtask": "count / human",
+          "question": "How many trapezoid(s) does the person draw in the air throughout the entire video?",
+          "question_zh": "人物在整个视频中用手在空中画了多少次梯形？",
+          "options": [
+            "2",
+            "1",
+            "3",
+            "4",
+            "5",
+            "0"
+          ],
+          "reference_answer": "3 次（选项下标 2，从 0 编号）",
+          "answer_index": 2,
+          "annotation_source": "https://huggingface.co/datasets/yale-nlp/TOMATO/viewer/default/count?row=0",
+          "video_path": "",
+          "video_url": "",
+          "video_source": "拟从 lmms-eval/TOMATO 镜像 part_002.zip 提取 videos/human/0209-03.mp4；视频尚未取得。",
+          "video_status": "待填写",
+          "review": {
+            "是否看过正式片段": "待填写",
+            "是否需要音频": "待填写",
+            "是否需要字幕": "待填写",
+            "适合的JEV输出": "待填写",
+            "视频是否必要": "待填写",
+            "答案是否清楚": "待填写",
+            "证据时刻": "待填写",
+            "结论": "待填写",
+            "待解决问题": "待填写",
+            "查看方式": "待填写",
+            "核查人": "待填写",
+            "核查日期": "待填写"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MotionBench",
+      "category": "通用感知；细粒度运动理解",
+      "version": "MotionBench；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/zai-org/MotionBench"
+        },
+        {
+          "label": "官方说明",
+          "url": "https://github.com/zai-org/MotionBench"
+        }
+      ],
+      "source_notes": "**部分公开**。[官方 HF 数据](https://huggingface.co/datasets/zai-org/MotionBench)；[官方说明](https://github.com/zai-org/MotionBench)。自采数据有下载入口；部分视频来自既有数据集，需另从原数据集取得。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题，待核实本条选项及答案。",
+      "viewing_guidance": "按官方 README 找自采视频下载入口；其他来源按原数据集取得。先查看文件是否提供独立视频，再按选定 ID 获取少量片段；在线预览能力待填写。",
+      "report_path": "数据源样例/MotionBench/人工筛选报告.md",
+      "samples_path": "数据源样例/MotionBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "TVBench",
+      "category": "通用感知；时间顺序、动作与变化理解",
+      "version": "TVBench；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/FunAILab/TVBench"
+        },
+        {
+          "label": "代码",
+          "url": "https://github.com/daniel-cores/tvbench"
+        }
+      ],
+      "source_notes": "**公开，部分视频需按说明获取**。[官方 HF 数据](https://huggingface.co/datasets/FunAILab/TVBench)；[代码](https://github.com/daniel-cores/tvbench)。部分来源视频依赖 NTU RGB+D 等原数据源。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题，待核实本条选项及答案。",
+      "viewing_guidance": "先在 HF／官方代码查看标注并选视频 ID，再按官方说明去对应源数据集取片段；部分源涉及 NTU RGB+D，访问条件待填写。",
+      "report_path": "数据源样例/TVBench/人工筛选报告.md",
+      "samples_path": "数据源样例/TVBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "MVBench",
+      "category": "通用感知；多类别视频感知与理解",
+      "version": "MVBench；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/OpenGVLab/MVBench"
+        },
+        {
+          "label": "官方项目代码",
+          "url": "https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat2"
+        }
+      ],
+      "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/OpenGVLab/MVBench)；[官方项目代码](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat2)。",
+      "priority": "第一版推荐",
+      "planned_questions": 200,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：有选项子任务。",
+      "viewing_guidance": "从官方 HF 文件列表和项目的数据准备说明定位视频包；先选标注中的视频文件名，再查是否可单独获取或请组内提供该文件；不预设视频包可按条下载。",
+      "report_path": "数据源样例/MVBench/人工筛选报告.md",
+      "samples_path": "数据源样例/MVBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "TempCompass",
+      "category": "通用感知；时间理解，多种问答形式",
+      "version": "TempCompass；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方代码及视频下载说明",
+          "url": "https://github.com/llyx97/TempCompass"
+        }
+      ],
+      "source_notes": "**公开**。[官方代码及视频下载说明](https://github.com/llyx97/TempCompass)，包含题目，处理后视频可从其列出的网盘或 HF 获取。",
+      "priority": "第一版推荐",
+      "planned_questions": 200,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题；Noul：是非题；描述生成需另定输出。",
+      "viewing_guidance": "按官方 README 的处理后视频入口获取；先查看题目文件，再按视频 ID 找处理后的片段。网盘／HF 是否可在线播或按条取，待填写。",
+      "report_path": "数据源样例/TempCompass/人工筛选报告.md",
+      "samples_path": "数据源样例/TempCompass/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "PercTest",
+      "category": "通用感知；感知问答、跟踪等多任务",
+      "version": "暂按 Perception Test 对应；需确认截图简称及数据版本",
+      "sources": [
+        {
+          "label": "官方数据与下载说明",
+          "url": "https://github.com/google-deepmind/perception_test"
+        }
+      ],
+      "source_notes": "**公开，名称疑为简称**。按 **Perception Test** 核对：[官方数据与下载说明](https://github.com/google-deepmind/perception_test)。截图中的 PercTest 未见独立同名基准，建议回查原表。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题子任务；跟踪／定位需坐标等额外输出。",
+      "viewing_guidance": "按 Perception Test 官方下载说明选择视频和标注子任务；先确认所需文件和下载粒度，不必先取得全部任务的数据。",
+      "report_path": "数据源样例/PercTest/人工筛选报告.md",
+      "samples_path": "数据源样例/PercTest/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "VideoMME",
+      "category": "综合；综合视频理解，不同长度",
+      "version": "Video-MME 原版；数据修订号待填写（与 v2 分开记录）",
+      "sources": [
+        {
+          "label": "数据及视频",
+          "url": "https://huggingface.co/datasets/lmms-eval/Video-MME"
+        },
+        {
+          "label": "官方说明",
+          "url": "https://github.com/MME-Benchmarks/Video-MME"
+        }
+      ],
+      "source_notes": "**公开，研究用途限制**。[数据及视频](https://huggingface.co/datasets/lmms-eval/Video-MME)；[官方说明](https://github.com/MME-Benchmarks/Video-MME)。官方写明仅学术研究、禁止商用及未经许可再分发。",
+      "priority": "第一版推荐",
+      "planned_questions": 200,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：原生选择题。",
+      "viewing_guidance": "HF 查看问答，官方 README 查视频准备方式；按视频 ID 对应正式片段，若只看 YouTube 原视频需核查裁剪范围。能否按条获取待填写。",
+      "report_path": "数据源样例/VideoMME/人工筛选报告.md",
+      "samples_path": "数据源样例/VideoMME/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "VideoMME v2",
+      "category": "综合；新版本综合理解",
+      "version": "Video-MME v2；数据修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/MME-Benchmarks/Video-MME-v2"
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/MME-Benchmarks/Video-MME-v2"
+        }
+      ],
+      "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/MME-Benchmarks/Video-MME-v2)；[官方代码](https://github.com/MME-Benchmarks/Video-MME-v2)。与上一行是不同版本。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：待填写具体题型；有选项部分可接 Choice。",
+      "viewing_guidance": "按 v2 官方 HF／代码查看题目和视频准备说明；使用 v2 自己的标识匹配视频，不沿用上一版 ID。逐条预览／下载能力待填写。",
+      "report_path": "数据源样例/VideoMME v2/人工筛选报告.md",
+      "samples_path": "数据源样例/VideoMME v2/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "CGBench",
+      "category": "综合；长视频理解与证据定位",
+      "version": "CGBench；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/CG-Bench/CG-Bench"
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/CG-Bench/CG-Bench"
+        }
+      ],
+      "source_notes": "**需同意访问条件**。对应 **CG-Bench**：[官方 HF 数据](https://huggingface.co/datasets/CG-Bench/CG-Bench)；[官方代码](https://github.com/CG-Bench/CG-Bench)。页面公开，但文件需登录并接受条件。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题部分；证据定位需时间区间输出。",
+      "viewing_guidance": "先登录 HF 接受访问条件，再查看标注与文件组织；按选定视频 ID 请求少量片段，不能将公开页面当成已获得文件访问权。",
+      "report_path": "数据源样例/CGBench/人工筛选报告.md",
+      "samples_path": "数据源样例/CGBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "VideoZeroBench",
+      "category": "综合；挑战性视频理解",
+      "version": "VideoZeroBench；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "作者 HF 数据",
+          "url": "https://huggingface.co/datasets/marinero4972/VideoZeroBench"
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/marinero4972/VideoZeroBench"
+        }
+      ],
+      "source_notes": "**公开**。[作者 HF 数据](https://huggingface.co/datasets/marinero4972/VideoZeroBench)；[官方代码](https://github.com/marinero4972/VideoZeroBench)。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：待填写题型；有选项可接 Choice，是非命题可接 Noul。",
+      "viewing_guidance": "从作者 HF 与代码核查文件组织和标注；先选择样例 ID，再确认单视频入口或分包方式。在线示例和下载粒度待填写。",
+      "report_path": "数据源样例/VideoZeroBench/人工筛选报告.md",
+      "samples_path": "数据源样例/VideoZeroBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "MLVU-dev",
+      "category": "长视频；长视频多任务理解",
+      "version": "MLVU Dev 开发集；数据修订号待填写",
+      "sources": [
+        {
+          "label": "项目 HF 数据",
+          "url": "https://huggingface.co/datasets/MLVU/MVLU"
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/JUNJIE99/MLVU"
+        }
+      ],
+      "source_notes": "**公开开发集**。[项目 HF 数据](https://huggingface.co/datasets/MLVU/MVLU)；[官方代码](https://github.com/JUNJIE99/MLVU)。HF 仓库名是 `MVLU`，但内容为 MLVU；注意选 Dev 集。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：有选项子任务；其他生成任务另处理。",
+      "viewing_guidance": "先在官方 HF／代码选择 Dev 的题型和标注；按视频文件名定位相应视频包。能否取单条片段待填写。",
+      "report_path": "数据源样例/MLVU-dev/人工筛选报告.md",
+      "samples_path": "数据源样例/MLVU-dev/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "LVBench",
+      "category": "长视频；长视频综合理解",
+      "version": "LVBench；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方标注与视频 ID",
+          "url": "https://huggingface.co/datasets/zai-org/LVBench"
+        },
+        {
+          "label": "下载脚本",
+          "url": "https://github.com/zai-org/LVBench"
+        }
+      ],
+      "source_notes": "**部分公开**。[官方标注与视频 ID](https://huggingface.co/datasets/zai-org/LVBench)；[下载脚本](https://github.com/zai-org/LVBench)。原视频需按 YouTube ID 获取，可能有失效链接。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题部分。",
+      "viewing_guidance": "标注给出视频 ID；按官方脚本／YouTube 来源获取选定视频。记录链接是否失效、视频时长以及是否为完整评测素材。",
+      "report_path": "数据源样例/LVBench/人工筛选报告.md",
+      "samples_path": "数据源样例/LVBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "LongVideoBench",
+      "category": "长视频；长视频中的信息检索与理解",
+      "version": "LongVideoBench；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/longvideobench/LongVideoBench"
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/longvideobench/LongVideoBench"
+        }
+      ],
+      "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/longvideobench/LongVideoBench)；[官方代码](https://github.com/longvideobench/LongVideoBench)。部分网络视频需要根据链接获取。",
+      "priority": "第一版推荐",
+      "planned_questions": 100,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题。",
+      "viewing_guidance": "先选题目记录，再按官方 HF 和数据准备说明定位视频、字幕和时间信息；单条获取能力待填写。",
+      "report_path": "数据源样例/LongVideoBench/人工筛选报告.md",
+      "samples_path": "数据源样例/LongVideoBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "EgoSchema",
+      "category": "长视频；第一视角长视频理解",
+      "version": "EgoSchema；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方获取说明",
+          "url": "https://github.com/egoschema/EgoSchema"
+        },
+        {
+          "label": "项目页",
+          "url": "https://egoschema.github.io/"
+        }
+      ],
+      "source_notes": "**公开但需接受平台规则**。[官方获取说明](https://github.com/egoschema/EgoSchema)；[项目页](https://egoschema.github.io/)。推荐从 Kaggle 竞赛页接受规则后下载；视频源于 Ego4D，应遵守其许可。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题；需可获得标准答案或官方评测。",
+      "viewing_guidance": "按官方说明进入数据平台并接受规则；先选择公开答案子集，再取得对应视频。是否有可用在线示例／单视频入口待填写。",
+      "report_path": "数据源样例/EgoSchema/人工筛选报告.md",
+      "samples_path": "数据源样例/EgoSchema/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "Video-Holmes",
+      "category": "视频推理；视频中的多步推理",
+      "version": "Video-Holmes；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据及视频",
+          "url": "https://huggingface.co/datasets/TencentARC/Video-Holmes"
+        },
+        {
+          "label": "代码",
+          "url": "https://github.com/TencentARC/Video-Holmes"
+        }
+      ],
+      "source_notes": "**公开**。[官方 HF 数据及视频](https://huggingface.co/datasets/TencentARC/Video-Holmes)；[代码](https://github.com/TencentARC/Video-Holmes)。",
+      "priority": "第一版推荐",
+      "planned_questions": 100,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：待填写本条题型；有选项子集可接 Choice。",
+      "viewing_guidance": "在官方 HF 查看标注与视频文件组织，按选定 ID 找片段；独立视频预览或按条获取能力待填写。",
+      "report_path": "数据源样例/Video-Holmes/人工筛选报告.md",
+      "samples_path": "数据源样例/Video-Holmes/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "Minerva",
+      "category": "视频推理；复杂视频推理",
+      "version": "Minerva；数据版本／修订号待填写；将 Minerva w/sub. 合并为有字幕设置，不新增独立数据集。",
+      "sources": [
+        {
+          "label": "Google DeepMind 官方数据说明",
+          "url": "https://github.com/google-deepmind/neptune#minerva"
+        }
+      ],
+      "source_notes": "**标注公开，视频按链接获取**。[Google DeepMind 官方数据说明](https://github.com/google-deepmind/neptune#minerva)。提供问答及推理标注 JSON、YouTube 视频链接，未见统一的视频包。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题配置；推理文本不作为答案输入。",
+      "viewing_guidance": "先在官方 neptune 仓库读问答 JSON，再使用其中 YouTube 链接查看选定素材；核对所需时间范围和源链接可用性。",
+      "report_path": "数据源样例/Minerva/人工筛选报告.md",
+      "samples_path": "数据源样例/Minerva/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "VRBench",
+      "category": "视频推理；长叙事视频多步推理",
+      "version": "OpenGVLab VRBench 长叙事推理项目；数据版本待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/OpenGVLab/VRBench"
+        },
+        {
+          "label": "项目页",
+          "url": "https://vrbench.github.io/"
+        }
+      ],
+      "source_notes": "**公开**。对应长叙事视频多步推理基准：[官方 HF 数据](https://huggingface.co/datasets/OpenGVLab/VRBench)；[项目页](https://vrbench.github.io/)。另有同名迷宫视频 VR-Bench，此处按截图类别选前者。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：最终答案选择部分；推理过程另评。",
+      "viewing_guidance": "可先查看官方项目页了解例子，再在 HF 找相应标注和视频；项目例子是否可播放、是否对应公开样例 ID 待填写。",
+      "report_path": "数据源样例/VRBench/人工筛选报告.md",
+      "samples_path": "数据源样例/VRBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "VCRBench",
+      "category": "视频推理；长视频因果推理",
+      "version": "pritamqu VCRBench 长视频因果推理项目；需确认原表所指项目及版本",
+      "sources": [
+        {
+          "label": "作者 HF 数据",
+          "url": "https://huggingface.co/datasets/pritamqu/VCRBench"
+        },
+        {
+          "label": "代码",
+          "url": "https://github.com/pritamqu/VCRBench"
+        }
+      ],
+      "source_notes": "**公开**。对应长视频因果推理基准：[作者 HF 数据](https://huggingface.co/datasets/pritamqu/VCRBench)；[代码](https://github.com/pritamqu/VCRBench)。部分视频来自 CrossTask，需遵守原许可。不要与 `VCR-Bench` 视频思维链基准混淆。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：先确认项目与本条题型；若有原生选项可接 Choice。",
+      "viewing_guidance": "先确认使用 pritamqu 的这个项目，再按代码／HF 的标注和 CrossTask 等来源定位视频；具体片段获取方式待填写。",
+      "report_path": "数据源样例/VCRBench/人工筛选报告.md",
+      "samples_path": "数据源样例/VCRBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "LongVideoReason",
+      "category": "视频推理；长视频推理",
+      "version": "LongVideo-Reason；测试划分和版本待填写",
+      "sources": [
+        {
+          "label": "HF 数据",
+          "url": "https://huggingface.co/datasets/LongVideo-Reason/longvideo-reason"
+        },
+        {
+          "label": "项目代码",
+          "url": "https://github.com/NVlabs/Long-RL/tree/main/longvideo-reason"
+        }
+      ],
+      "source_notes": "**公开**。对应 **LongVideo-Reason**：[HF 数据](https://huggingface.co/datasets/LongVideo-Reason/longvideo-reason)；[项目代码](https://github.com/NVlabs/Long-RL/tree/main/longvideo-reason)。它还包含训练数据，评测时需选对应测试划分。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：待填写测试题型；有选项测试题可接 Choice。",
+      "viewing_guidance": "先在 HF／代码确认测试划分和标注，按测试样例定位视频；不要从训练集随意选题冒充测试。按条获取方式待填写。",
+      "report_path": "数据源样例/LongVideoReason/人工筛选报告.md",
+      "samples_path": "数据源样例/LongVideoReason/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "VideoMMMU",
+      "category": "视频知识；跨学科视频知识与理解",
+      "version": "VideoMMMU；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "项目 HF 数据",
+          "url": "https://huggingface.co/datasets/lmms-lab/VideoMMMU"
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/EvolvingLMMs-Lab/VideoMMMU"
+        }
+      ],
+      "source_notes": "**需同意访问条件**。[项目 HF 数据](https://huggingface.co/datasets/lmms-lab/VideoMMMU)；[官方代码](https://github.com/EvolvingLMMs-Lab/VideoMMMU)。公开页面可见，下载需登录并接受条件。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：选择题部分；其他题型另核查。",
+      "viewing_guidance": "先接受 HF 访问条件，再从官方数据准备说明定位视频；可先看项目例子了解任务，但正式片段和 ID 对应关系需要核查。",
+      "report_path": "数据源样例/VideoMMMU/人工筛选报告.md",
+      "samples_path": "数据源样例/VideoMMMU/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "MMVU-all",
+      "category": "视频知识；专业知识，多种问答形式",
+      "version": "MMVU；优先公开验证集，all 为全任务配置的暂定理解",
+      "sources": [
+        {
+          "label": "官方 HF 验证集",
+          "url": "https://huggingface.co/datasets/yale-nlp/MMVU"
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/yale-nlp/MMVU"
+        }
+      ],
+      "source_notes": "**部分公开**。按 **MMVU** 全任务理解：[官方 HF 验证集](https://huggingface.co/datasets/yale-nlp/MMVU)；[官方代码](https://github.com/yale-nlp/MMVU)。官方测试集隐藏；`all` 更像评测配置名。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：Choice：公开验证集选择题部分；自由答案另处理。",
+      "viewing_guidance": "先选官方公开验证集记录，再按视频标识和数据说明取得对应片段；隐藏测试集不作为本地有答案样例。",
+      "report_path": "数据源样例/MMVU-all/人工筛选报告.md",
+      "samples_path": "数据源样例/MMVU-all/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "VideoMathQA",
+      "category": "视频知识；视频数学理解与推理",
+      "version": "VideoMathQA；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据",
+          "url": "https://huggingface.co/datasets/MBZUAI/VideoMathQA"
+        },
+        {
+          "label": "代码",
+          "url": "https://github.com/mbzuai-oryx/VideoMathQA"
+        }
+      ],
+      "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/MBZUAI/VideoMathQA)；[代码](https://github.com/mbzuai-oryx/VideoMathQA)。",
+      "priority": "替补候选",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：待填写本条题型；有选项可接 Choice，自由数学答案需另定输出。",
+      "viewing_guidance": "在官方 HF／代码查看题目与视频组织；先定位指定样例，再确认独立视频、字幕、音轨的获取方式。",
+      "report_path": "数据源样例/VideoMathQA/人工筛选报告.md",
+      "samples_path": "数据源样例/VideoMathQA/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "OVOBench",
+      "category": "流式视频；持续视频中的在线理解／响应",
+      "version": "OVO-Bench；数据修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据与视频包",
+          "url": "https://huggingface.co/datasets/JoeLeelyf/OVO-Bench"
+        },
+        {
+          "label": "代码和下载说明",
+          "url": "https://github.com/JoeLeelyf/OVO-Bench"
+        }
+      ],
+      "source_notes": "**公开**。对应 **OVO-Bench**：[官方 HF 数据与视频包](https://huggingface.co/datasets/JoeLeelyf/OVO-Bench)；[代码和下载说明](https://github.com/JoeLeelyf/OVO-Bench)。数据采用 CC BY-NC-SA 4.0，视频还受来源许可约束。",
+      "priority": "扩展备用",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：按子任务核查 Choice／Noul 等映射；主动响应时机需要额外输出与指标。",
+      "viewing_guidance": "从官方 HF／README 选择在线任务样例和视频包；按提问／响应时刻观看此前内容。只看完整视频不能验证无未来信息的在线条件。",
+      "report_path": "数据源样例/OVOBench/人工筛选报告.md",
+      "samples_path": "数据源样例/OVOBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "OVBench",
+      "category": "流式视频；随时间到达的视频问答",
+      "version": "OVBench；数据版本／修订号待填写",
+      "sources": [
+        {
+          "label": "官方 HF 数据与视频包",
+          "url": "https://huggingface.co/datasets/MCG-NJU/OVBench"
+        },
+        {
+          "label": "官方项目与评测代码",
+          "url": "https://github.com/MCG-NJU/VideoChat-Online"
+        }
+      ],
+      "source_notes": "**公开**。[官方 HF 数据与视频包](https://huggingface.co/datasets/MCG-NJU/OVBench)；[官方项目与评测代码](https://github.com/MCG-NJU/VideoChat-Online)。视频包含序列帧和片段，下载时需按官方数据准备说明组织。",
+      "priority": "扩展备用",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：待填写每个在线问答子任务的答案类型；不能只凭流式类别判定 Choice。",
+      "viewing_guidance": "按官方数据准备说明读取序列帧或片段；对照问题时刻检查已见历史。在线视频入口与最小下载单位待填写。",
+      "report_path": "数据源样例/OVBench/人工筛选报告.md",
+      "samples_path": "数据源样例/OVBench/样例清单.json",
+      "samples": []
+    },
+    {
+      "name": "ODVBench",
+      "category": "流式视频；流式驾驶场景理解",
+      "version": "ODV-Bench；数据修订号待填写",
+      "sources": [
+        {
+          "label": "作者 HF 数据（视频、标注）",
+          "url": "https://huggingface.co/datasets/MCG-NJU/ODV-Bench"
+        },
+        {
+          "label": "项目代码",
+          "url": "https://github.com/MCG-NJU/StreamForest"
+        }
+      ],
+      "source_notes": "**公开**。对应 **ODV-Bench**：[作者 HF 数据（视频、标注）](https://huggingface.co/datasets/MCG-NJU/ODV-Bench)；[项目代码](https://github.com/MCG-NJU/StreamForest)。",
+      "priority": "扩展备用",
+      "planned_questions": 0,
+      "final_decision": "待填写",
+      "decision_reason": "待填写",
+      "selected_scope": "待填写",
+      "known_output": "初筛：待填写具体驾驶问答题型；有选项可接 Choice，开放答案另处理。",
+      "viewing_guidance": "从官方 HF／StreamForest 的数据说明定位驾驶视频与时间标注；以问题发生时刻为界观看，不能将后续画面用于回答。",
+      "report_path": "数据源样例/ODVBench/人工筛选报告.md",
+      "samples_path": "数据源样例/ODVBench/样例清单.json",
+      "samples": []
+    }
+  ]
+};

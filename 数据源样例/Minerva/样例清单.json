@@ -1,0 +1,33 @@
+{
+  "benchmark": "Minerva",
+  "samples": [],
+  "sample_template": {
+    "sample_id": "待填写",
+    "video_id": "待填写",
+    "subtask": "待填写",
+    "question": "待填写",
+    "question_zh": "待填写",
+    "options": [],
+    "reference_answer": "待填写",
+    "answer_index": null,
+    "annotation_source": "待填写",
+    "video_path": "",
+    "video_url": "",
+    "video_source": "待填写",
+    "video_status": "待填写",
+    "review": {
+      "是否看过正式片段": "待填写",
+      "是否需要音频": "待填写",
+      "是否需要字幕": "待填写",
+      "适合的JEV输出": "待填写",
+      "视频是否必要": "待填写",
+      "答案是否清楚": "待填写",
+      "证据时刻": "待填写",
+      "结论": "待填写",
+      "待解决问题": "待填写",
+      "查看方式": "待填写",
+      "核查人": "待填写",
+      "核查日期": "待填写"
+    }
+  }
+}

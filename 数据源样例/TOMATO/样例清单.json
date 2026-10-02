@@ -1,0 +1,70 @@
+{
+  "benchmark": "TOMATO",
+  "samples": [
+    {
+      "sample_id": "0209-03",
+      "video_id": "0209-03",
+      "subtask": "count / human",
+      "question": "How many trapezoid(s) does the person draw in the air throughout the entire video?",
+      "question_zh": "人物在整个视频中用手在空中画了多少次梯形？",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "4",
+        "5",
+        "0"
+      ],
+      "reference_answer": "3 次（选项下标 2，从 0 编号）",
+      "answer_index": 2,
+      "annotation_source": "https://huggingface.co/datasets/yale-nlp/TOMATO/viewer/default/count?row=0",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "拟从 lmms-eval/TOMATO 镜像 part_002.zip 提取 videos/human/0209-03.mp4；视频尚未取得。",
+      "video_status": "待填写",
+      "review": {
+        "是否看过正式片段": "待填写",
+        "是否需要音频": "待填写",
+        "是否需要字幕": "待填写",
+        "适合的JEV输出": "待填写",
+        "视频是否必要": "待填写",
+        "答案是否清楚": "待填写",
+        "证据时刻": "待填写",
+        "结论": "待填写",
+        "待解决问题": "待填写",
+        "查看方式": "待填写",
+        "核查人": "待填写",
+        "核查日期": "待填写"
+      }
+    }
+  ],
+  "sample_template": {
+    "sample_id": "待填写",
+    "video_id": "待填写",
+    "subtask": "待填写",
+    "question": "待填写",
+    "question_zh": "待填写",
+    "options": [],
+    "reference_answer": "待填写",
+    "answer_index": null,
+    "annotation_source": "待填写",
+    "video_path": "",
+    "video_url": "",
+    "video_source": "待填写",
+    "video_status": "待填写",
+    "review": {
+      "是否看过正式片段": "待填写",
+      "是否需要音频": "待填写",
+      "是否需要字幕": "待填写",
+      "适合的JEV输出": "待填写",
+      "视频是否必要": "待填写",
+      "答案是否清楚": "待填写",
+      "证据时刻": "待填写",
+      "结论": "待填写",
+      "待解决问题": "待填写",
+      "查看方式": "待填写",
+      "核查人": "待填写",
+      "核查日期": "待填写"
+    }
+  }
+}
