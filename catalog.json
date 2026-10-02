@@ -23,10 +23,10 @@
       "priority": "第一版推荐",
       "planned_questions": 200,
       "final_decision": "建议采纳子集（初筛；证据待补）",
-      "decision_reason": "已核查6题／6个视频ID。五条human记录与官方答案一致，三条具体时间证据待补；0731-00乐器题的证据尚不能支持长笛答案，暂缓。",
+      "decision_reason": "已核查6题／6个视频ID。五条human记录与官方答案一致，三条具体时间证据待补。0731-00无音频，且现有视觉证据不能支持发声顺序答案，当前不采纳。",
       "selected_scope": "第一版优先纯视觉Choice：计数、方向、旋转、轨迹形状、速度；排除真实音频依赖题。200题为预算，最终题量待定。",
       "known_output": "初筛：Choice：原生选择题；计数不作为 Score。",
-      "viewing_guidance": "六条样例视频均已上传仓库；按样例播放器查看。来自lmms-eval/TOMATO镜像ZIP的单文件提取。0731-00待补静音核验及原素材许可；镜像与作者原包一致性尚未逐字节核验。",
+      "viewing_guidance": "六条样例视频均已上传仓库；按样例播放器查看。来自lmms-eval/TOMATO镜像ZIP的单文件提取。0731-00据核查人补充没有音频，现有视觉证据不足，当前不采纳；原素材许可和镜像与作者原包一致性仍待核验。",
       "report_path": "数据源样例/TOMATO/人工筛选报告.md",
       "samples_path": "数据源样例/TOMATO/样例清单.json"
     },
