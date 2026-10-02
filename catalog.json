@@ -83,7 +83,7 @@
     {
       "name": "MVBench",
       "category": "通用感知；多类别视频感知与理解",
-      "version": "MVBench；数据版本／修订号待填写",
+      "version": "MVBench；HF提交 230a2d4fac8900333c61754641c7a13e069ac9c6（2026-10-02）",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -98,10 +98,10 @@
       "priority": "第一版推荐",
       "planned_questions": 200,
       "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "decision_reason": "已准备6题／6个视频，尚未人工核查。3条Perception Test视频已公开，3条CLEVRER视频暂仅本地保存。",
+      "selected_scope": "待填写：本批覆盖动作计数、遮挡追踪、移动方向、移动计数、反事实推理、状态变化；初筛Choice。",
       "known_output": "初筛：Choice：有选项子任务。",
-      "viewing_guidance": "从官方 HF 文件列表和项目的数据准备说明定位视频包；先选标注中的视频文件名，再查是否可单独获取或请组内提供该文件；不预设视频包可按条下载。",
+      "viewing_guidance": "本批六题均使用全片。三个真实场景视频可在网页播放；三个模拟视频已下载本地，因原项目再分发条件待确认暂不上传。逐条看后填写review；全片证据可写“全片”。",
       "report_path": "数据源样例/MVBench/人工筛选报告.md",
       "samples_path": "数据源样例/MVBench/样例清单.json"
     },
