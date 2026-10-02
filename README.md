@@ -2,6 +2,8 @@
 
 这里记录 JEV 视频评测数据的选择、样例与人工判断。当前有 25 个候选目录，其中 6 项为第一版推荐、3 项为流式扩展备用；所有最终决定待填写。已有 TOMATO 0209-03 的官方标注，尚未放入实际视频。
 
+**在线浏览：[视频样例与筛选判断](https://goldfisheep.github.io/video_benchmark_guideline/)**。成员可直接访问，无需下载仓库。
+
 ## 成员从哪里看
 
 1. [整体数据源选择](./整体数据源选择.md)：整体结论及证据入口。
@@ -29,7 +31,7 @@
 
 仓库地址：https://github.com/goldfisheep/video_benchmark_guideline
 
-网站地址：待发布后确认。拟使用 https://goldfisheep.github.io/video_benchmark_guideline/ ，该地址尚未验证可访问。
+网站地址：https://goldfisheep.github.io/video_benchmark_guideline/ 。2026-10-02 已验证网站可访问，数据源切换、搜索、答案展开及手机布局正常；实际视频尚待加入。
 
 公开仓库内容和 Pages 页面可被他人访问；视频是否允许再分发需逐来源核查，受限素材可仅记录来源。不要将整个原始视频数据集放入本样例库。
 

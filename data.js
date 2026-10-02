@@ -13,6 +13,10 @@ window.BENCHMARK_DATA = {
         {
           "label": "代码与下载说明",
           "url": "https://github.com/yale-nlp/TOMATO"
+        },
+        {
+          "label": "评测框架镜像（第三方）",
+          "url": "https://huggingface.co/datasets/lmms-eval/TOMATO"
         }
       ],
       "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/yale-nlp/TOMATO)；[代码与下载说明](https://github.com/yale-nlp/TOMATO)。视频和问答数据可获取。",
@@ -22,7 +26,7 @@ window.BENCHMARK_DATA = {
       "decision_reason": "待填写",
       "selected_scope": "待填写",
       "known_output": "初筛：Choice：原生选择题；计数不作为 Score。",
-      "viewing_guidance": "题目可在 HF 表格或 GitHub data 文件夹在线查看；正式视频在官方 [Google Drive 视频包](https://drive.google.com/file/d/1-dNt9bZcp6C3RXuGoAO3EBgWkAHg8NWR/view?usp=drive_link)。未确认官方逐题在线播放入口；先请已下载数据的同学按 key 提供少量片段。源素材不等于正式处理片段。",
+      "viewing_guidance": "官方 HF 可在线查看题目。已在 lmms-eval/TOMATO 镜像 part_002.zip 索引定位 videos/human/0209-03.mp4（约 1.39 MB），服务器支持分段读取，可用 remotezip 仅提取该文件。正式视频尚未取得；镜像与作者原包一致性待填写。",
       "report_path": "数据源样例/TOMATO/人工筛选报告.md",
       "samples_path": "数据源样例/TOMATO/样例清单.json",
       "samples": [
