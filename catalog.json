@@ -118,9 +118,9 @@
       "source_notes": "**公开**。[官方代码及视频下载说明](https://github.com/llyx97/TempCompass)，包含题目，处理后视频可从其列出的网盘或 HF 获取。",
       "priority": "第一版推荐",
       "planned_questions": 200,
-      "final_decision": "待填写",
-      "decision_reason": "已准备6题／5视频，人工核查待填写；覆盖五类时序能力及原片／倒放对照。",
-      "selected_scope": "候选Choice选择题与Noul是非题；编码映射、正式采用范围待填写。",
+      "final_decision": "建议采纳时序子集（本轮初筛完成）",
+      "decision_reason": "已核查6题／5视频。方向对照、速度、顺序、亮度变化5题建议作为核心时序候选；动作题被成员判断单帧可答，保留为图片／视频对照。",
+      "selected_scope": "4条时序Choice＋1条是非题候选Noul；另保留1条单帧可答Choice对照。200题为预算，Noul编码与原素材再分发条件待确认。",
       "known_output": "初筛：Choice：选择题；Noul：是非题；描述生成需另定输出。",
       "viewing_guidance": "五个完整视频已本地下载并通过FFmpeg解码；原Shutterstock素材再分发条件未确认，暂不公开上传。看全片，证据可写全片。",
       "report_path": "数据源样例/TempCompass/人工筛选报告.md",
@@ -150,7 +150,7 @@
     {
       "name": "VideoMME",
       "category": "综合；综合视频理解，不同长度",
-      "version": "Video-MME 原版；数据修订号待填写（与 v2 分开记录）",
+      "version": "VideoMME v1；HF提交 ead1408f75b618502df9a1d8e0950166bf0a2a0b",
       "sources": [
         {
           "label": "数据及视频",
@@ -161,14 +161,14 @@
           "url": "https://github.com/MME-Benchmarks/Video-MME"
         }
       ],
-      "source_notes": "**公开，研究用途限制**。[数据及视频](https://huggingface.co/datasets/lmms-eval/Video-MME)；[官方说明](https://github.com/MME-Benchmarks/Video-MME)。官方写明仅学术研究、禁止商用及未经许可再分发。",
+      "source_notes": "官方限制学术研究用途，未经批准不能再发布全部或部分原数据；完整问答与视频仅本地保存。",
       "priority": "第一版推荐",
       "planned_questions": 200,
       "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "decision_reason": "本地已准备短中长各1视频、每片2题，共6题／3视频及对应字幕；尚未人工核查。",
+      "selected_scope": "候选Choice；纯画面与带字幕文字输入分别记录，必须声音且字幕无法替代的题目暂不纳入。实际采用待填写。",
       "known_output": "初筛：Choice：原生选择题。",
-      "viewing_guidance": "HF 查看问答，官方 README 查视频准备方式；按视频 ID 对应正式片段，若只看 YouTube 原视频需核查裁剪范围。能否按条获取待填写。",
+      "viewing_guidance": "双击公开仓库目录之外“VideoMME本地核查/本地浏览.html”。先静音无字幕，再检查字幕和声音依赖；公开网页仅提供来源与进度。",
       "report_path": "数据源样例/VideoMME/人工筛选报告.md",
       "samples_path": "数据源样例/VideoMME/样例清单.json"
     },
