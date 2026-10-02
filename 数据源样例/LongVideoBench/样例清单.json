@@ -123,7 +123,7 @@
       "annotation_source": "https://huggingface.co/datasets/longvideobench/LongVideoBench/blob/main/lvb_val.json",
       "video_path": "",
       "video_url": "",
-      "video_source": "正式标注已取得；对应处理后MP4及字幕尚未取得。YouTube入口由官方video_id构造，在线可用性及原片与正式片段一致性待核验。",
+      "video_source": "正式标注已取得；对应处理后MP4尚未取得，字幕已取得。YouTube入口由官方video_id构造，在线可用性及原片与正式片段一致性待核验。",
       "video_status": "正式视频待取得；尚不可标记为看过正式片段。",
       "review": {
         "是否看过正式片段": "待填写",
@@ -134,7 +134,7 @@
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "正式视频与字幕获取、片段一致性、人工答案和画面必要性待核查。",
+        "待解决问题": "正式视频获取（字幕已取得）、片段一致性、人工答案和画面必要性待核查。",
         "查看方式": "正式MP4待获取；原视频候选入口见人工报告，不用完整YouTube原片替代正式片段核查。",
         "核查人": "待填写",
         "核查日期": "待填写",
@@ -177,7 +177,7 @@
       "annotation_source": "https://huggingface.co/datasets/longvideobench/LongVideoBench/blob/main/lvb_val.json",
       "video_path": "",
       "video_url": "",
-      "video_source": "正式标注已取得；对应处理后MP4及字幕尚未取得。YouTube入口由官方video_id构造，在线可用性及原片与正式片段一致性待核验。",
+      "video_source": "正式标注已取得；对应处理后MP4尚未取得，字幕已取得。YouTube入口由官方video_id构造，在线可用性及原片与正式片段一致性待核验。",
       "video_status": "正式视频待取得；尚不可标记为看过正式片段。",
       "review": {
         "是否看过正式片段": "待填写",
@@ -188,7 +188,7 @@
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "正式视频与字幕获取、片段一致性、人工答案和画面必要性待核查。",
+        "待解决问题": "正式视频获取（字幕已取得）、片段一致性、人工答案和画面必要性待核查。",
         "查看方式": "正式MP4待获取；原视频候选入口见人工报告，不用完整YouTube原片替代正式片段核查。",
         "核查人": "待填写",
         "核查日期": "待填写",
@@ -229,7 +229,7 @@
       "annotation_source": "https://huggingface.co/datasets/longvideobench/LongVideoBench/blob/main/lvb_val.json",
       "video_path": "",
       "video_url": "",
-      "video_source": "正式标注已取得；对应处理后MP4及字幕尚未取得。YouTube入口由官方video_id构造，在线可用性及原片与正式片段一致性待核验。",
+      "video_source": "正式标注已取得；对应处理后MP4尚未取得，字幕已取得。YouTube入口由官方video_id构造，在线可用性及原片与正式片段一致性待核验。",
       "video_status": "正式视频待取得；尚不可标记为看过正式片段。",
       "review": {
         "是否看过正式片段": "待填写",
@@ -240,7 +240,7 @@
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "正式视频与字幕获取、片段一致性、人工答案和画面必要性待核查。",
+        "待解决问题": "正式视频获取（字幕已取得）、片段一致性、人工答案和画面必要性待核查。",
         "查看方式": "正式MP4待获取；原视频候选入口见人工报告，不用完整YouTube原片替代正式片段核查。",
         "核查人": "待填写",
         "核查日期": "待填写",
@@ -282,7 +282,7 @@
       "annotation_source": "https://huggingface.co/datasets/longvideobench/LongVideoBench/blob/main/lvb_val.json",
       "video_path": "",
       "video_url": "",
-      "video_source": "正式标注已取得；对应处理后MP4及字幕尚未取得。YouTube入口由官方video_id构造，在线可用性及原片与正式片段一致性待核验。",
+      "video_source": "正式标注已取得；对应处理后MP4尚未取得，字幕已取得。YouTube入口由官方video_id构造，在线可用性及原片与正式片段一致性待核验。",
       "video_status": "正式视频待取得；尚不可标记为看过正式片段。",
       "review": {
         "是否看过正式片段": "待填写",
@@ -293,7 +293,7 @@
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "正式视频与字幕获取、片段一致性、人工答案和画面必要性待核查。",
+        "待解决问题": "正式视频获取（字幕已取得）、片段一致性、人工答案和画面必要性待核查。",
         "查看方式": "正式MP4待获取；原视频候选入口见人工报告，不用完整YouTube原片替代正式片段核查。",
         "核查人": "待填写",
         "核查日期": "待填写",
@@ -589,10 +589,11 @@
     "provided_by": "用户下载提供",
     "received_date": "2026-10-02",
     "sha256": "d32bf2e0cbbdb4fa2e99666a5a49b5a19bca2ceec69222c9a7d3aad567d1fa23",
-    "revision": "待填写（下载文件未附HF提交号）",
+    "revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
     "license": "CC BY-NC-SA 4.0",
     "attribution": "LongVideoBench, Haoning Wu, Dongxu Li, Bei Chen, Junnan Li (2024)",
     "modifications": "选取6条；补充中文译文、样例获取状态及人工筛选字段；原英文题目、选项、答案索引保持原值。",
-    "hf_revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c"
+    "hf_revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+    "revision_check": "用户提供文件SHA256与该官方提交的lvb_val.json一致。"
   }
 }
