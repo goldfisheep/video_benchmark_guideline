@@ -1,6 +1,49 @@
 {
   "benchmark": "LongVideoBench",
-  "samples": [],
+  "samples": [
+    {
+      "sample_id": "official-web-backpack-change",
+      "video_id": "banner_video",
+      "subtask": "作者网页展示例／跨时间画面比较；正式子任务待核对",
+      "question": "At the beginning of the video (0:19 - 0:22), a woman with a headband tied to her head, wearing a red top, carrying a black backpack, when the woman comes down from a hill with tall rocks (3:34 - 3:40), what changes occur to her backpack?",
+      "question_zh": "比较开头戴头带、穿红色上衣女子的黑色背包，与她从高大岩石山坡下来时的背包：发生了什么变化？",
+      "options": [
+        "There is a dark red jacket hanging on her black backpack",
+        "Nothing changed",
+        "There is a white jacket hanging on her black backpack",
+        "There is a dark blue jacket hanging on her black backpack"
+      ],
+      "reference_answer": "D. There is a dark blue jacket hanging on her black backpack（作者网页展示答案；人工核验待填写）",
+      "answer_index": 3,
+      "annotation_source": "https://longvideobench.github.io/",
+      "video_path": "",
+      "video_url": "https://longvideobench.github.io/static/videos/banner_video.mp4",
+      "video_source": "作者项目网页公开展示视频；链接原站播放，不向本仓库再上传视频。",
+      "video_status": "作者展示视频已本地获取、首帧解码通过；不是已确认的正式验证集样例。",
+      "review": {
+        "是否看过正式片段": "待填写",
+        "是否需要音频": "待填写",
+        "是否需要字幕": "待填写",
+        "适合的JEV输出": "初筛 Choice；人工确认待填写",
+        "视频是否必要": "待填写",
+        "答案是否清楚": "待填写",
+        "证据时刻": "待填写",
+        "结论": "待填写",
+        "待解决问题": "正式样例ID、划分及字幕配套待核对；先确认前后画面是否必要。",
+        "查看方式": "网页原站视频或本地 videos/banner_video.mp4；先静音作答，再核对官方展示答案。",
+        "核查人": "待填写",
+        "核查日期": "待填写"
+      },
+      "sample_origin": "author_public_demo",
+      "formal_sample_id": "待填写",
+      "split": "待填写",
+      "video_duration": "00:03:58.91",
+      "author_referenced_times": [
+        "00:19–00:22",
+        "03:34–03:40"
+      ]
+    }
+  ],
   "sample_template": {
     "sample_id": "待填写",
     "video_id": "待填写",
@@ -29,5 +72,9 @@
       "核查人": "待填写",
       "核查日期": "待填写"
     }
+  },
+  "preparation_status": {
+    "正式数据访问": "用户已完成HF条件确认；浏览器下载连接本轮未完成，正式样例仍待取得。",
+    "展示样例": "作者公开演示1题；不可计入正式验证集抽样。"
   }
 }
