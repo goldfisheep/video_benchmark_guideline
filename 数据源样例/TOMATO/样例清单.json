@@ -18,10 +18,10 @@
       "reference_answer": "3 次（选项下标 2，从 0 编号）",
       "answer_index": 2,
       "annotation_source": "https://huggingface.co/datasets/yale-nlp/TOMATO/viewer/default/count?row=0",
-      "video_path": "",
+      "video_path": "数据源样例/TOMATO/videos/0209-03.mp4",
       "video_url": "",
       "video_source": "拟从 lmms-eval/TOMATO 镜像 part_002.zip 提取 videos/human/0209-03.mp4；视频尚未取得。",
-      "video_status": "待填写",
+      "video_status": "已上传，在线播放待检查",
       "review": {
         "是否看过正式片段": "是",
         "是否需要音频": "否",
