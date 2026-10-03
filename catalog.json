@@ -568,7 +568,7 @@
     {
       "name": "VideoMathQA",
       "category": "视频知识；视频数学理解与推理",
-      "version": "VideoMathQA；数据版本／修订号待填写",
+      "version": "videomathqa_mcq_test.parquet；固定HF版本 702cdd480f89c525b35f0f5b46a7d3c78b320318",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -582,11 +582,11 @@
       "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/MBZUAI/VideoMathQA)；[代码](https://github.com/mbzuai-oryx/VideoMathQA)。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "保留420条原生五选一配置。题干中匹配/排列视图仍通过选择现有选项作答，与VCRBench的完整序列输出不同。其他配置未纳入本次统计。",
-      "known_output": "初筛：待填写本条题型；有选项可接 Choice，自由数学答案需另定输出。",
-      "viewing_guidance": "在官方 HF／代码查看题目与视频组织；先定位指定样例，再确认独立视频、字幕、音轨的获取方式。",
+      "final_decision": "3图片数学候选；本轮连续视频核心0题",
+      "decision_reason": "3例人工初筛均为5—11秒基础几何/空间推理，成员认为终帧可答、无需音频字幕；保留3条图片数学对照候选，不计连续视频核心。全420题包含长/中/短标签，不能据3例认定全源均单帧可答。",
+      "selected_scope": "基础几何/空间推理的图片、图片/视频对照；其他中长片和跨步骤题另核查。",
+      "known_output": "420条已取得mcq_test均为原生五选一Choice；本组三例均short、单帧可答。",
+      "viewing_guidance": "本地批量预审/VideoMathQA三例已有人工记录；公开页同步问答、原始来源与判断，打包媒体保留本地。",
       "report_path": "数据源样例/VideoMathQA/人工筛选报告.md",
       "samples_path": "数据源样例/VideoMathQA/样例清单.json",
       "format_prescreen": {
@@ -598,13 +598,19 @@
         ],
         "records": 420,
         "scope": "保留420条原生五选一配置。题干中匹配/排列视图仍通过选择现有选项作答，与VCRBench的完整序列输出不同。其他配置未纳入本次统计。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "原生输出预筛保持；本轮3条人工记录及范围见报告。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "image_candidates": 3,
+        "continuous_video_core_adopted": 0
       }
     },
     {
       "name": "OVOBench",
       "category": "流式视频；持续视频中的在线理解／响应",
-      "version": "OVO-Bench；数据修订号待填写",
+      "version": "https://raw.githubusercontent.com/JoeLeelyf/OVO-Bench/c34093f9a072d93f9e1c6b923446dfba71f4528e/data/ovo_bench_new.json；固定HF版本 fec29e3385747b5642d995370143ba92d2819bd2",
       "sources": [
         {
           "label": "官方 HF 数据与视频包",
@@ -618,11 +624,11 @@
       "source_notes": "**公开**。对应 **OVO-Bench**：[官方 HF 数据与视频包](https://huggingface.co/datasets/JoeLeelyf/OVO-Bench)；[代码和下载说明](https://github.com/JoeLeelyf/OVO-Bench)。数据采用 CC BY-NC-SA 4.0，视频还受来源许可约束。",
       "priority": "扩展备用",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "9类原生选择任务共1468条标注可接Choice；REC82条要求输出原生整数计数，本轮排除；SSR42条和CRR48条官方提示要求Yes/No，可接Noul但流式时刻及评分接口需另接。这里统计标注记录，不是展开多个测试时刻后的查询数。",
+      "final_decision": "3例EPM初筛：1暂缓、2条件候选；流式扩展",
+      "decision_reason": "3例人工初筛均为EPM，提问时刻7、81、82秒：35目标含糊暂缓，74与105保留短历史/图片对照条件候选；静态线索可能有用、视频帮助确认放置与目标，未证明长时记忆有必要。仅本轮EPM，非全12任务结论。",
+      "selected_scope": "本轮EPM短历史位置/跟踪及终帧对照；全源保留原生Choice、REC排除、SSR/CRR条件Noul，不报全源12任务成绩。",
       "known_output": "9类选择任务：Choice；SSR/CRR：Noul条件扩展；REC原生整数计数本轮排除。",
-      "viewing_guidance": "从官方 HF／README 选择在线任务样例和视频包；按提问／响应时刻观看此前内容。只看完整视频不能验证无未来信息的在线条件。",
+      "viewing_guidance": "本地批量预审/OVOBench三例已有人工记录；公开页同步问答、原始来源与判断，打包媒体保留本地。",
       "report_path": "数据源样例/OVOBench/人工筛选报告.md",
       "samples_path": "数据源样例/OVOBench/样例清单.json",
       "format_prescreen": {
@@ -655,7 +661,14 @@
           "CRR"
         ],
         "scope": "9类原生选择任务共1468条标注可接Choice；REC82条要求输出原生整数计数，本轮排除；SSR42条和CRR48条官方提示要求Yes/No，可接Noul但流式时刻及评分接口需另接。这里统计标注记录，不是展开多个测试时刻后的查询数。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "原生输出预筛保持；本轮3条人工记录及范围见报告。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "deferred_samples": 1,
+        "conditional_candidates": 2,
+        "officially_adopted": 0
       }
     },
     {
