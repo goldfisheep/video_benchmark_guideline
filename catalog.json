@@ -373,25 +373,29 @@
       "samples_path": "数据源样例/Video-Holmes/样例清单.json"
     },
     {
-      "name": "Minerva",
+      "name": "Minerva w/sub.",
       "category": "视频推理；复杂视频推理",
-      "version": "2025 MINERVA；官方标注SHA256 3992d435844b535eb8be45e43ae16fbbe448498fd8ca157c2c0b4578cbf945cb；README提交 bdde4b1919fba9a02954be7cbb1c9da7e4bd8001",
+      "version": "2025 MINERVA问答＋w/sub.带字幕设置；官方标注SHA256 3992d435844b535eb8be45e43ae16fbbe448498fd8ca157c2c0b4578cbf945cb",
       "sources": [
         {
           "label": "Google DeepMind 官方数据说明",
           "url": "https://github.com/google-deepmind/neptune#minerva"
         }
       ],
-      "source_notes": "官方问答与五选一答案公开，当前存储桶文件1285题；视频预览为第三方镜像，保持来源区别。",
+      "source_notes": "w/sub.是同一MINERVA问答的带字幕设置；保留设置名称，不默认合并为无字幕输入。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "6题／6片准备完成；人工与原片一致性待核查",
-      "decision_reason": "正式问答1285题中选择六题，覆盖篮球、桌游、数学、动画、烹饪、动物；镜像预览可读，不提前认定适用。",
-      "selected_scope": "跨场景视频推理候选；复核单帧可答、仅文字可答、知识和音频依赖。",
+      "final_decision": "带字幕设置准备中：6题预览、5份字幕、1题缺字幕",
+      "decision_reason": "本轮目标为视频＋字幕文本；五份原站英文字幕取得，但非作者论文ASR，准确性与时轴待核验；人工判断待填写。",
+      "selected_scope": "MINERVA五选一；本轮提供字幕，字幕是否答题必需及画面是否仍必要逐题核查。",
       "known_output": "初筛：Choice：选择题配置；推理文本不作为答案输入。",
-      "viewing_guidance": "本地浏览.html六题；镜像来自haonan3/MINERVA，原片完整性与时间轴待核验。作答后才看官方reasoning。",
-      "report_path": "数据源样例/Minerva/人工筛选报告.md",
-      "samples_path": "数据源样例/Minerva/样例清单.json"
+      "viewing_guidance": "Minerva本地核查/本地浏览.html默认显示字幕；五题已取得，一题缺字幕。解题推理不能当字幕或模型输入。",
+      "report_path": "数据源样例/Minerva-w-sub/人工筛选报告.md",
+      "samples_path": "数据源样例/Minerva-w-sub/样例清单.json",
+      "aliases": [
+        "Minerva"
+      ],
+      "base_benchmark": "MINERVA"
     },
     {
       "name": "VRBench",

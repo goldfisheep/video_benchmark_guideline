@@ -42,7 +42,7 @@
 | 长视频 | EgoSchema | **公开但需接受平台规则**。[官方获取说明](https://github.com/egoschema/EgoSchema)；[项目页](https://egoschema.github.io/)。推荐从 Kaggle 竞赛页接受规则后下载；视频源于 Ego4D，应遵守其许可。 | 第一视角长视频理解 | **第二批：Choice** | 与真实行为观察相关；先用可获得答案的部分，全量隐藏答案走官方评测。 |
 | 视频推理 | Video-Holmes | **公开**。[官方 HF 数据及视频](https://huggingface.co/datasets/TencentARC/Video-Holmes)；[代码](https://github.com/TencentARC/Video-Holmes)。 | 视频中的多步推理 | **第二批：按题型选子集** | 适合提高推理难度；核实选项、音频依赖和输入配置。 |
 | 视频推理 | Minerva | **标注公开，视频按链接获取**。[Google DeepMind 官方数据说明](https://github.com/google-deepmind/neptune#minerva)。提供问答及推理标注 JSON、YouTube 视频链接，未见统一的视频包。 | 复杂视频推理 | **第二批：选择题配置** | 有公开标注，但原视频需按链接获得；推理文字不能当作输入泄漏答案。 |
-| 视频推理 | Minerva w/sub. | **同一数据的字幕评测设置**。[Minerva 官方数据](https://github.com/google-deepmind/neptune#minerva)。未查到独立的“w/sub.”数据集；它通常表示评测时额外提供字幕，字幕是否齐全需对视频逐一核实。 | 同一任务加字幕 | **第二批：独立输入设置** | 不重复算成新的数据集；用于比较字幕是否帮助视频推理。 |
+| 视频推理 | Minerva w/sub.（本轮采用） | **同一数据的字幕评测设置**。[Minerva 官方数据](https://github.com/google-deepmind/neptune#minerva)。未查到独立的“w/sub.”数据集；它通常表示评测时额外提供字幕，字幕是否齐全需对视频逐一核实。 | 同一任务加字幕 | **第二批：独立输入设置** | 不重复算成新的数据集；用于比较字幕是否帮助视频推理。 |
 | 视频推理 | VRBench | **公开**。对应长叙事视频多步推理基准：[官方 HF 数据](https://huggingface.co/datasets/OpenGVLab/VRBench)；[项目页](https://vrbench.github.io/)。另有同名迷宫视频 VR-Bench，此处按截图类别选前者。 | 长叙事视频多步推理 | **第二批：最终答案选择部分** | 适合最终判断；原有推理过程评价不等于 JEV 的选项概率评价。 |
 | 视频推理 | VCRBench | **公开**。对应长视频因果推理基准：[作者 HF 数据](https://huggingface.co/datasets/pritamqu/VCRBench)；[代码](https://github.com/pritamqu/VCRBench)。部分视频来自 CrossTask，需遵守原许可。不要与 `VCR-Bench` 视频思维链基准混淆。 | 长视频因果推理 | **条件接入** | 先确认截图指向的具体项目与最终题型，再决定 Choice 映射；注意同名项目。 |
 | 视频推理 | VideoReasonBench | **公开**。[官方 HF 数据](https://huggingface.co/datasets/lyx97/reasoning_videos)；[代码](https://github.com/llyx97/video_reason_bench)。 | 观察、隐状态推断与预测 | **适合能力研究，暂缓直接按原题接入** | 原题含状态、坐标、序列等开放答案；可设计派生 Choice／Noul，但需独立命名、检查候选答案。 |
@@ -133,3 +133,8 @@
 - 推荐第一批／第二批／暂缓的理由，以及仍需确认的问题。
 
 交接后由 pipeline 负责人完成视频解码、输入格式适配、模型调用和评分；你们一起确认第一版任务清单。正式汇总时保留原题、字幕设置、帧数／采样规则和评测划分，避免同名基准实际测的是不同任务。
+
+
+## 本轮MINERVA设置修正（2026-10-03）
+
+本轮目标为Minerva w/sub.：视频＋带时间信息的字幕／ASR文本。底层MINERVA问答共用，不重复算独立数据源，但必须保留字幕输入要求。已取得五条YouTube现有英文字幕，一题未取得；它们不是论文作者ASR，不能宣称与原表设置完全等价。详见[带字幕核查报告](../数据源样例/Minerva-w-sub/人工筛选报告.md)。

@@ -1,5 +1,5 @@
 {
-  "benchmark": "Minerva",
+  "benchmark": "Minerva w/sub.",
   "version": {
     "annotation_source": "https://storage.googleapis.com/neptunedata/minerva.json",
     "annotation_sha256": "3992d435844b535eb8be45e43ae16fbbe448498fd8ca157c2c0b4578cbf945cb",
@@ -38,7 +38,7 @@
       "duration_seconds": 119.46,
       "has_audio": true,
       "audio_status": "镜像文件有音轨；题目是否需要音频待填写。",
-      "subtitle_status": "未准备独立字幕；画面内文字另核查。",
+      "subtitle_status": "已取得YouTube自动生成英文字幕；非论文作者ASR，准确性及镜像时轴待核查。",
       "content_access": "local_only",
       "local_video_filename": "--w-FuLNttw.mp4",
       "mirror_file_url": "https://huggingface.co/datasets/haonan3/MINERVA/resolve/c62f0f25003d360a6a11db64599af363fbcd2ebc/video/--w-FuLNttw.webm",
@@ -48,18 +48,26 @@
       "review": {
         "是否看过正式片段": "待填写",
         "是否需要音频": "待填写",
-        "是否需要字幕": "待填写",
+        "是否需要字幕": "待填写（本轮设置提供字幕；是否为解题必要条件须另判）",
         "适合的JEV输出": "Choice（原生五选一；实际接入待验证）",
         "视频是否必要": "待填写",
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "先核对镜像与官方YouTube原片、关键事件及时轴是否一致；其余待填写。",
-        "查看方式": "本地浏览.html第1题；先看视频独立选择，再展开官方答案与推理。",
+        "待解决问题": "核对字幕转写、镜像时轴与关键事件；字幕单独是否可答，以及画面是否仍必要，待填写。",
+        "查看方式": "本地浏览.html；默认显示已取得字幕，并可展开转写文本。先核对镜像与原片，再判断视频＋字幕是否可答。",
         "核查人": "待填写",
         "核查日期": "待填写",
-        "核查重点": "连续观察第一次精彩回合，区分运球、传球与投篮；是否需要声音以及官方计数是否准确。"
-      }
+        "核查重点": "连续观察第一次精彩回合，区分运球、传球与投篮；是否需要声音以及官方计数是否准确。",
+        "本轮目标输入设置": "Minerva w/sub.：视频＋字幕／ASR文本；原始声音不是JEV模型输入。"
+      },
+      "evaluation_setting": "视频＋带时间信息的字幕／ASR文本＋问题＋选项；输出Choice",
+      "subtitle_source_url": "https://www.youtube.com/watch?v=--w-FuLNttw",
+      "subtitle_origin": "youtube_auto_captions",
+      "subtitle_language": "en",
+      "subtitle_segment_count": 49,
+      "subtitle_last_end_seconds": 121.36,
+      "subtitle_local_path": "subtitles/--w-FuLNttw.json"
     },
     {
       "sample_id": "r4cn92VyHbk:7e5829e401ddca4ce232695dc2fd76cea455b1fe",
@@ -90,7 +98,7 @@
       "duration_seconds": 187.99,
       "has_audio": true,
       "audio_status": "镜像文件有音轨；题目是否需要音频待填写。",
-      "subtitle_status": "未准备独立字幕；画面内文字另核查。",
+      "subtitle_status": "已取得YouTube自动生成英文字幕；非论文作者ASR，准确性及镜像时轴待核查。",
       "content_access": "local_only",
       "local_video_filename": "r4cn92VyHbk.mp4",
       "mirror_file_url": "https://huggingface.co/datasets/haonan3/MINERVA/resolve/c62f0f25003d360a6a11db64599af363fbcd2ebc/video/r4cn92VyHbk.mp4",
@@ -100,18 +108,26 @@
       "review": {
         "是否看过正式片段": "待填写",
         "是否需要音频": "待填写",
-        "是否需要字幕": "待填写",
+        "是否需要字幕": "待填写（本轮设置提供字幕；是否为解题必要条件须另判）",
         "适合的JEV输出": "Choice（原生五选一；实际接入待验证）",
         "视频是否必要": "待填写",
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "先核对镜像与官方YouTube原片、关键事件及时轴是否一致；其余待填写。",
-        "查看方式": "本地浏览.html第2题；先看视频独立选择，再展开官方答案与推理。",
+        "待解决问题": "核对字幕转写、镜像时轴与关键事件；字幕单独是否可答，以及画面是否仍必要，待填写。",
+        "查看方式": "本地浏览.html；默认显示已取得字幕，并可展开转写文本。先核对镜像与原片，再判断视频＋字幕是否可答。",
         "核查人": "待填写",
         "核查日期": "待填写",
-        "核查重点": "数沙漏的出现次数，再定位卡片计数；避免只看卡片一帧就误认为已验证时间关系。"
-      }
+        "核查重点": "数沙漏的出现次数，再定位卡片计数；避免只看卡片一帧就误认为已验证时间关系。",
+        "本轮目标输入设置": "Minerva w/sub.：视频＋字幕／ASR文本；原始声音不是JEV模型输入。"
+      },
+      "evaluation_setting": "视频＋带时间信息的字幕／ASR文本＋问题＋选项；输出Choice",
+      "subtitle_source_url": "https://www.youtube.com/watch?v=r4cn92VyHbk",
+      "subtitle_origin": "youtube_auto_captions",
+      "subtitle_language": "en",
+      "subtitle_segment_count": 75,
+      "subtitle_last_end_seconds": 188.4,
+      "subtitle_local_path": "subtitles/r4cn92VyHbk.json"
     },
     {
       "sample_id": "uMfnJ6TJinc:273e0d21fb74216da07c9f71c939da0a1eb82aaf",
@@ -142,7 +158,7 @@
       "duration_seconds": 554.1,
       "has_audio": true,
       "audio_status": "镜像文件有音轨；题目是否需要音频待填写。",
-      "subtitle_status": "未准备独立字幕；画面内文字另核查。",
+      "subtitle_status": "已取得YouTube自动生成英文字幕；非论文作者ASR，准确性及镜像时轴待核查。",
       "content_access": "local_only",
       "local_video_filename": "uMfnJ6TJinc.mp4",
       "mirror_file_url": "https://huggingface.co/datasets/haonan3/MINERVA/resolve/c62f0f25003d360a6a11db64599af363fbcd2ebc/video/uMfnJ6TJinc.mp4",
@@ -152,18 +168,26 @@
       "review": {
         "是否看过正式片段": "待填写",
         "是否需要音频": "待填写",
-        "是否需要字幕": "待填写",
+        "是否需要字幕": "待填写（本轮设置提供字幕；是否为解题必要条件须另判）",
         "适合的JEV输出": "Choice（原生五选一；实际接入待验证）",
         "视频是否必要": "待填写",
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "先核对镜像与官方YouTube原片、关键事件及时轴是否一致；其余待填写。",
-        "查看方式": "本地浏览.html第3题；先看视频独立选择，再展开官方答案与推理。",
+        "待解决问题": "核对字幕转写、镜像时轴与关键事件；字幕单独是否可答，以及画面是否仍必要，待填写。",
+        "查看方式": "本地浏览.html；默认显示已取得字幕，并可展开转写文本。先核对镜像与原片，再判断视频＋字幕是否可答。",
         "核查人": "待填写",
         "核查日期": "待填写",
-        "核查重点": "跨时刻读取图形角度和三角函数表；小字是否清晰，是否仅需几张图片，题目是否主要测数学知识。"
-      }
+        "核查重点": "跨时刻读取图形角度和三角函数表；小字是否清晰，是否仅需几张图片，题目是否主要测数学知识。",
+        "本轮目标输入设置": "Minerva w/sub.：视频＋字幕／ASR文本；原始声音不是JEV模型输入。"
+      },
+      "evaluation_setting": "视频＋带时间信息的字幕／ASR文本＋问题＋选项；输出Choice",
+      "subtitle_source_url": "https://www.youtube.com/watch?v=uMfnJ6TJinc",
+      "subtitle_origin": "youtube_auto_captions",
+      "subtitle_language": "en",
+      "subtitle_segment_count": 229,
+      "subtitle_last_end_seconds": 556.0,
+      "subtitle_local_path": "subtitles/uMfnJ6TJinc.json"
     },
     {
       "sample_id": "iqaM4QNusng:b76ea24925adb1343b881f9763a52d7b31e34f32",
@@ -194,7 +218,7 @@
       "duration_seconds": 183.09,
       "has_audio": true,
       "audio_status": "镜像文件有音轨；题目是否需要音频待填写。",
-      "subtitle_status": "未准备独立字幕；画面内文字另核查。",
+      "subtitle_status": "未取得原站字幕；不能将仅视频预览算作w/sub.准备完成。",
       "content_access": "local_only",
       "local_video_filename": "iqaM4QNusng.mp4",
       "mirror_file_url": "https://huggingface.co/datasets/haonan3/MINERVA/resolve/c62f0f25003d360a6a11db64599af363fbcd2ebc/video/iqaM4QNusng.mp4",
@@ -204,18 +228,25 @@
       "review": {
         "是否看过正式片段": "待填写",
         "是否需要音频": "待填写",
-        "是否需要字幕": "待填写",
+        "是否需要字幕": "待填写（本轮设置提供字幕；是否为解题必要条件须另判）",
         "适合的JEV输出": "Choice（原生五选一；实际接入待验证）",
         "视频是否必要": "待填写",
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "先核对镜像与官方YouTube原片、关键事件及时轴是否一致；其余待填写。",
-        "查看方式": "本地浏览.html第4题；先看视频独立选择，再展开官方答案与推理。",
+        "待解决问题": "此视频未取得字幕；需核实原片是否有发言及是否可合法取得／生成转写，解决前w/sub.样例未就绪。",
+        "查看方式": "本地浏览.html；默认显示已取得字幕，并可展开转写文本。先核对镜像与原片，再判断视频＋字幕是否可答。",
         "核查人": "待填写",
         "核查日期": "待填写",
-        "核查重点": "先定位蝴蝶出蛹，再观察最先落点；是否单帧即可答，动画故事是否需要额外背景。"
-      }
+        "核查重点": "先定位蝴蝶出蛹，再观察最先落点；是否单帧即可答，动画故事是否需要额外背景。",
+        "本轮目标输入设置": "Minerva w/sub.：视频＋字幕／ASR文本；原始声音不是JEV模型输入。"
+      },
+      "evaluation_setting": "视频＋带时间信息的字幕／ASR文本＋问题＋选项；输出Choice",
+      "subtitle_source_url": "https://www.youtube.com/watch?v=iqaM4QNusng",
+      "subtitle_origin": "unavailable",
+      "subtitle_language": "待确认",
+      "subtitle_segment_count": 0,
+      "subtitle_local_path": ""
     },
     {
       "sample_id": "nq9WnmCGoFQ:206516dc02751ec6ffab5d3fa88114dcd19f9504",
@@ -246,7 +277,7 @@
       "duration_seconds": 351.09,
       "has_audio": true,
       "audio_status": "镜像文件有音轨；题目是否需要音频待填写。",
-      "subtitle_status": "未准备独立字幕；画面内文字另核查。",
+      "subtitle_status": "已取得YouTube自动生成英文字幕；非论文作者ASR，准确性及镜像时轴待核查。",
       "content_access": "local_only",
       "local_video_filename": "nq9WnmCGoFQ.mp4",
       "mirror_file_url": "https://huggingface.co/datasets/haonan3/MINERVA/resolve/c62f0f25003d360a6a11db64599af363fbcd2ebc/video/nq9WnmCGoFQ.mp4",
@@ -256,18 +287,26 @@
       "review": {
         "是否看过正式片段": "待填写",
         "是否需要音频": "待填写",
-        "是否需要字幕": "待填写",
+        "是否需要字幕": "待填写（本轮设置提供字幕；是否为解题必要条件须另判）",
         "适合的JEV输出": "Choice（原生五选一；实际接入待验证）",
         "视频是否必要": "待填写",
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "先核对镜像与官方YouTube原片、关键事件及时轴是否一致；其余待填写。",
-        "查看方式": "本地浏览.html第5题；先看视频独立选择，再展开官方答案与推理。",
+        "待解决问题": "核对字幕转写、镜像时轴与关键事件；字幕单独是否可答，以及画面是否仍必要，待填写。",
+        "查看方式": "本地浏览.html；默认显示已取得字幕，并可展开转写文本。先核对镜像与原片，再判断视频＋字幕是否可答。",
         "核查人": "待填写",
         "核查日期": "待填写",
-        "核查重点": "同时核对食谱文字与实际展示动作；“完成”和“镜头展示”是否被区分，画面内文字是否必要。"
-      }
+        "核查重点": "同时核对食谱文字与实际展示动作；“完成”和“镜头展示”是否被区分，画面内文字是否必要。",
+        "本轮目标输入设置": "Minerva w/sub.：视频＋字幕／ASR文本；原始声音不是JEV模型输入。"
+      },
+      "evaluation_setting": "视频＋带时间信息的字幕／ASR文本＋问题＋选项；输出Choice",
+      "subtitle_source_url": "https://www.youtube.com/watch?v=nq9WnmCGoFQ",
+      "subtitle_origin": "youtube_auto_captions",
+      "subtitle_language": "en",
+      "subtitle_segment_count": 160,
+      "subtitle_last_end_seconds": 347.479,
+      "subtitle_local_path": "subtitles/nq9WnmCGoFQ.json"
     },
     {
       "sample_id": "u62j1So3Zwo:47e3b0e44e7e46728da4617dbe79ec9c8ba5df0f",
@@ -298,7 +337,7 @@
       "duration_seconds": 751.35,
       "has_audio": true,
       "audio_status": "镜像文件有音轨；题目是否需要音频待填写。",
-      "subtitle_status": "未准备独立字幕；画面内文字另核查。",
+      "subtitle_status": "已取得YouTube非自动生成英文字幕；非论文作者ASR，准确性及镜像时轴待核查。",
       "content_access": "local_only",
       "local_video_filename": "u62j1So3Zwo.mp4",
       "mirror_file_url": "https://huggingface.co/datasets/haonan3/MINERVA/resolve/c62f0f25003d360a6a11db64599af363fbcd2ebc/video/u62j1So3Zwo.mp4",
@@ -308,18 +347,26 @@
       "review": {
         "是否看过正式片段": "待填写",
         "是否需要音频": "待填写",
-        "是否需要字幕": "待填写",
+        "是否需要字幕": "待填写（本轮设置提供字幕；是否为解题必要条件须另判）",
         "适合的JEV输出": "Choice（原生五选一；实际接入待验证）",
         "视频是否必要": "待填写",
         "答案是否清楚": "待填写",
         "证据时刻": "待填写",
         "结论": "待填写",
-        "待解决问题": "先核对镜像与官方YouTube原片、关键事件及时轴是否一致；其余待填写。",
-        "查看方式": "本地浏览.html第6题；先看视频独立选择，再展开官方答案与推理。",
+        "待解决问题": "核对字幕转写、镜像时轴与关键事件；字幕单独是否可答，以及画面是否仍必要，待填写。",
+        "查看方式": "本地浏览.html；默认显示已取得字幕，并可展开转写文本。先核对镜像与原片，再判断视频＋字幕是否可答。",
         "核查人": "待填写",
         "核查日期": "待填写",
-        "核查重点": "跟踪第二只大猩猩与它吃的第二种蔬菜；是否把不同个体或进食次数混淆。"
-      }
+        "核查重点": "跟踪第二只大猩猩与它吃的第二种蔬菜；是否把不同个体或进食次数混淆。",
+        "本轮目标输入设置": "Minerva w/sub.：视频＋字幕／ASR文本；原始声音不是JEV模型输入。"
+      },
+      "evaluation_setting": "视频＋带时间信息的字幕／ASR文本＋问题＋选项；输出Choice",
+      "subtitle_source_url": "https://www.youtube.com/watch?v=u62j1So3Zwo",
+      "subtitle_origin": "youtube_non_auto_captions",
+      "subtitle_language": "en",
+      "subtitle_segment_count": 16,
+      "subtitle_last_end_seconds": 677.573,
+      "subtitle_local_path": "subtitles/u62j1So3Zwo.json"
     }
   ],
   "sample_template": {
@@ -355,6 +402,11 @@
     "正式标注": "作者官方Google存储桶minerva.json，本次1285题，SHA256见version；不混入Minerva-Ego或Minerva-cultural。",
     "选取": "6题／6视频，覆盖4个官方split和6类内容；优先小文件，不是随机代表性抽样。",
     "视频": "第三方haonan3/MINERVA镜像；原文件SHA256与镜像LFS核对、全长转码与预览完整解码通过。原片完整性和时轴尚待人工核验。",
-    "人工核查": "0题完成；判断待填写。"
-  }
+    "人工核查": "逐题人工结果仍待填写；不能凭视频可播放或字幕已下载标为带字幕核查完成。",
+    "本轮目标": "Minerva w/sub.（2025 MINERVA带字幕设置）；不是无字幕设置，也不是新的独立问答集合。",
+    "字幕": "五个视频原站英文字幕已取得，四份自动生成、一份非自动生成；动画iqaM4QNusng未取得。未取得论文作者原始ASR。"
+  },
+  "base_benchmark": "MINERVA",
+  "evaluation_setting": "视频＋带时间信息的字幕／ASR文本＋问题＋选项；输出Choice",
+  "setting_status": "五份原站字幕已取得，一份未取得；字幕准确性、时轴与作者论文转写等价性待核查。"
 }
