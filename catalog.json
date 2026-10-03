@@ -385,11 +385,11 @@
       "source_notes": "w/sub.是同一MINERVA问答的带字幕设置；保留设置名称，不默认合并为无字幕输入。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "带字幕设置准备中：6题预览、5份字幕、1题缺字幕",
-      "decision_reason": "本轮目标为视频＋字幕文本；五份原站英文字幕取得，但非作者论文ASR，准确性与时轴待核验；人工判断待填写。",
-      "selected_scope": "MINERVA五选一；本轮提供字幕，字幕是否答题必需及画面是否仍必要逐题核查。",
+      "final_decision": "3例人工初筛：2视觉候选、1图片/数学补充",
+      "decision_reason": "3例人工初筛：2条视觉时序/操作核对候选，1条数学/OCR图片对照；仍需原片一致性、精确计数及字幕对照。",
+      "selected_scope": "带字幕设置下的计数、食谱与动作核对；数学题单列图片对照。",
       "known_output": "初筛：Choice：选择题配置；推理文本不作为答案输入。",
-      "viewing_guidance": "Minerva本地核查/本地浏览.html默认显示字幕；五题已取得，一题缺字幕。解题推理不能当字幕或模型输入。",
+      "viewing_guidance": "批量预审/Minerva-w-sub三例已填；镜像全长预览，正式原片一致性尚需核查。",
       "report_path": "数据源样例/Minerva-w-sub/人工筛选报告.md",
       "samples_path": "数据源样例/Minerva-w-sub/样例清单.json",
       "aliases": [
@@ -400,7 +400,7 @@
     {
       "name": "VRBench",
       "category": "视频推理；长叙事视频多步推理",
-      "version": "OpenGVLab VRBench 长叙事推理项目；数据版本待填写",
+      "version": "OpenGVLab/VRBench；固定HF版本 9ac0bbcb691f28ad552c4c59ad515464de6f2657",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -414,11 +414,11 @@
       "source_notes": "**公开**。对应长叙事视频多步推理基准：[官方 HF 数据](https://huggingface.co/datasets/OpenGVLab/VRBench)；[项目页](https://vrbench.github.io/)。另有同名迷宫视频 VR-Bench，此处按截图类别选前者。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "final_decision": "3例初筛：1排除、2条件扩展；核心暂缓",
+      "decision_reason": "3例人工初筛：1条排除，1条情节预测条件补充，1条带字幕长情节理解扩展；首批视觉核心暂缓。",
+      "selected_scope": "情节预测和视频加字幕长情节理解扩展；时轴异常采访题排除。",
       "known_output": "初筛：Choice：最终答案选择部分；推理过程另评。",
-      "viewing_guidance": "可先查看官方项目页了解例子，再在 HF 找相应标注和视频；项目例子是否可播放、是否对应公开样例 ID 待填写。",
+      "viewing_guidance": "批量预审/VRBench三例已填；公开清单提供原站/作者视频包链接。",
       "report_path": "数据源样例/VRBench/人工筛选报告.md",
       "samples_path": "数据源样例/VRBench/样例清单.json"
     },

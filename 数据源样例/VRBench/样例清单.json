@@ -1,33 +1,324 @@
 {
   "benchmark": "VRBench",
-  "samples": [],
-  "sample_template": {
-    "sample_id": "待填写",
-    "video_id": "待填写",
-    "subtask": "待填写",
-    "question": "待填写",
-    "question_zh": "待填写",
-    "options": [],
-    "reference_answer": "待填写",
-    "answer_index": null,
-    "annotation_source": "待填写",
-    "video_path": "",
-    "video_url": "",
-    "video_source": "待填写",
-    "video_status": "待填写",
-    "review": {
-      "是否看过正式片段": "待填写",
-      "是否需要音频": "待填写",
-      "是否需要字幕": "待填写",
-      "适合的JEV输出": "待填写",
-      "视频是否必要": "待填写",
-      "答案是否清楚": "待填写",
-      "证据时刻": "待填写",
-      "结论": "待填写",
-      "待解决问题": "待填写",
-      "查看方式": "待填写",
-      "核查人": "待填写",
-      "核查日期": "待填写"
+  "version": {
+    "hf_repo": "OpenGVLab/VRBench",
+    "hf_revision": "9ac0bbcb691f28ad552c4c59ad515464de6f2657",
+    "official_project": "https://github.com/OpenGVLab/VRBench",
+    "annotation": "VRBench_eval.jsonl"
+  },
+  "updated": "2026-10-03",
+  "status": "人工初筛已填写；候选及未决事项见逐题记录",
+  "sampling_note": "方便获取的目的性抽样，每源3例，优先可取得文件并覆盖不同场景/题型；不是随机抽样，不能用3例推断全量质量。",
+  "summary_draft": "3例人工初筛：1条排除，1条情节预测条件补充，1条带字幕长情节理解扩展；首批视觉核心暂缓。",
+  "samples": [
+    {
+      "sample_id": "Z82BjSmO00Y&list=PLflm0N_Hu0mZdcsGzpKeRfO2--2OZVLtN&index=3:qa1",
+      "subtask": "Counting Porblems",
+      "question": "Several of the people featured in the interviews in the video are related to the work of Vuong Vinh Chieu",
+      "question_zh": "采访中的多少人与题目所指人物的工作有关？",
+      "options": [
+        "Four individuals mentioned in the interviews are cited in Vuong Vinh's publications",
+        "All interviewees collaborated directly with Vuong Vinh on his projects",
+        "Only one participant has a professional connection to Vuong Vinh's research",
+        "Three of the interviewees are related to Vuong Vinh's work"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reference_answer": "D. Three of the interviewees are related to Vuong Vinh's work",
+      "answer_index": 3,
+      "official_reasoning": {
+        "1": "The first one, Chen Guoying, a member of the A6 guards responsible for protecting Wu Wenjie [00:05:14->00:05:54]",
+        "2": "The second one, Nguyen Hoang Anh, a member of the A6 guard who was responsible for protecting Vu Van Jie [00:07:46->00:08:13]",
+        "3": "The third one, Vu Duc Tam, former secretary of Vu Man Kiat [00:36:16->00:37:10]"
+      },
+      "annotation_source": "https://huggingface.co/datasets/OpenGVLab/VRBench/tree/9ac0bbcb691f28ad552c4c59ad515464de6f2657",
+      "annotation_file": "VRBench_eval.jsonl",
+      "original_record": {
+        "question": "Several of the people featured in the interviews in the video are related to the work of Vuong Vinh Chieu",
+        "options": {
+          "A": "Four individuals mentioned in the interviews are cited in Vuong Vinh's publications",
+          "B": "All interviewees collaborated directly with Vuong Vinh on his projects",
+          "C": "Only one participant has a professional connection to Vuong Vinh's research",
+          "D": "Three of the interviewees are related to Vuong Vinh's work"
+        },
+        "answer": "D",
+        "original_question": "Several of the people featured in the interviews in the video are related to the work of Vuong Vinh Chieu",
+        "original_answer": "Three of the interviewees are related to Vuong Vinh's work",
+        "reasoning_process": {
+          "1": "The first one, Chen Guoying, a member of the A6 guards responsible for protecting Wu Wenjie [00:05:14->00:05:54]",
+          "2": "The second one, Nguyen Hoang Anh, a member of the A6 guard who was responsible for protecting Vu Van Jie [00:07:46->00:08:13]",
+          "3": "The third one, Vu Duc Tam, former secretary of Vu Man Kiat [00:36:16->00:37:10]"
+        },
+        "reasoning_type": "Counting Porblems"
+      },
+      "video_path": "",
+      "source_video_url": "https://www.youtube.com/watch?v=Z82BjSmO00Y",
+      "video_source": "作者提供的HF视频包或独立视频文件",
+      "video_status": "核查人已查看作者包视频并填写判断；逐题结论及未决问题见review。",
+      "video_duration_seconds": 269.17,
+      "has_audio": true,
+      "video_codec": "h264",
+      "original_file_sha256": "0e97daa21dd4403efc4727a58b012dc0d4dfedfd659c5ea9e79ea9b12815204b",
+      "content_access": "local_only",
+      "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+      "review_status": "人工初筛已填写；没有自动认定最终可用",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "问题涉及采访关系，拟需音频或准确字幕二选一。",
+        "是否需要字幕": "发言理解原则上可用音频或字幕二选一；本题未取得字幕，当前JEV无音频输入时不能直接接入。",
+        "适合的JEV输出": "Choice（原生4选一，保留原题选项与答案映射）",
+        "视频是否必要": "通常需要内容证据，但该题可能主要是访谈文本计数；必须比较仅字幕与视频加字幕。",
+        "答案是否清楚": "否",
+        "证据时间": "未定位到可靠答题证据（原填写“不清楚”）；文件仅269.17秒，作者推理中05:14、07:46、36:16均超出时长。",
+        "结论": "剔除本例，保留为文件/标注时轴异常示例，不据此剔除整个VRBench。",
+        "待解决问题": "核查是否缺失原片、裁剪版本或时间尺度不同；修复前不能采纳或把时间按比例换算；部分片段声音缺失。",
+        "查看方式": "批量预审/VRBench/本地浏览.html第1例；人工判断已填写，按待解决问题复核。公开仓库提供原站/作者来源链接。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "采访中的多少人与题目所指人物的工作有关？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "previewed_frame_seconds": [
+        21.533600000000003,
+        80.751,
+        161.502,
+        242.25300000000001
+      ],
+      "evaluation_setting": "按题记录视觉/字幕设置；原始声音不是当前JEV输入",
+      "archive": "v001_360p.zip",
+      "archive_member": "v001_360p/Z82BjSmO00Y&list=PLflm0N_Hu0mZdcsGzpKeRfO2--2OZVLtN&index=3.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "问题涉及采访关系，拟需音频或准确字幕二选一。",
+        "是否需要字幕": "未取得本题字幕。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "通常需要内容证据，但该题可能主要是访谈文本计数；必须比较仅字幕与视频加字幕。",
+        "答案是否清楚": "否",
+        "证据时间": "不清楚",
+        "结论": "剔除本例，保留为文件/标注时轴异常示例，不据此剔除整个VRBench。",
+        "待解决问题": "核查是否缺失原片、裁剪版本或时间尺度不同；修复前不能采纳或把时间按比例换算；部分片段声音缺失。",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "采访中的多少人与题目所指人物的工作有关？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "audio_status": "核查人反馈部分片段声音缺失；文件存在音轨不代表发言完整可听。",
+      "local_video_filename": "Z82BjSmO00Y&list=PLflm0N_Hu0mZdcsGzpKeRfO2--2OZVLtN&index=3.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "视频在本地批量预审/VRBench，公开页以source_video_url追溯。"
+    },
+    {
+      "sample_id": "a6yHAOIh24o:qa1",
+      "subtask": "Event Prediction",
+      "question": "What might the man sitting on the bed reading in the video do next?",
+      "question_zh": "坐在床上阅读的男子接下来可能做什么？",
+      "options": [
+        "He might continue reading without paying attention to the package.",
+        "He might open the package to find out what's in it.",
+        "He might place the package aside and focus on his book.",
+        "He might leave the room without interacting with the package."
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reference_answer": "B. He might open the package to find out what's in it.",
+      "answer_index": 1,
+      "official_reasoning": {
+        "1": "The video shows the man sitting on his bed reading, and the room appears empty, radiating a sense of loneliness. [00:00:01->00:00:38]",
+        "2": "The package on the bed is an obvious clue that he is about to receive something. [00:00:28->00:00:56]",
+        "3": "As a result, he is likely to open the package out of curiosity or anticipation in order to discover its contents."
+      },
+      "annotation_source": "https://huggingface.co/datasets/OpenGVLab/VRBench/tree/9ac0bbcb691f28ad552c4c59ad515464de6f2657",
+      "annotation_file": "VRBench_eval.jsonl",
+      "original_record": {
+        "question": "What might the man sitting on the bed reading in the video do next?",
+        "options": {
+          "A": "He might continue reading without paying attention to the package.",
+          "B": "He might open the package to find out what's in it.",
+          "C": "He might place the package aside and focus on his book.",
+          "D": "He might leave the room without interacting with the package."
+        },
+        "answer": "B",
+        "original_question": "What might the man sitting on the bed reading in the video do next?",
+        "original_answer": "He might open the package to find out what's in it.",
+        "reasoning_process": {
+          "1": "The video shows the man sitting on his bed reading, and the room appears empty, radiating a sense of loneliness. [00:00:01->00:00:38]",
+          "2": "The package on the bed is an obvious clue that he is about to receive something. [00:00:28->00:00:56]",
+          "3": "As a result, he is likely to open the package out of curiosity or anticipation in order to discover its contents."
+        },
+        "reasoning_type": "Event Prediction"
+      },
+      "video_path": "",
+      "source_video_url": "https://www.youtube.com/watch?v=a6yHAOIh24o",
+      "video_source": "作者提供的HF视频包或独立视频文件",
+      "video_status": "核查人已查看作者包视频并填写判断；逐题结论及未决问题见review。",
+      "video_duration_seconds": 1418.29,
+      "has_audio": true,
+      "video_codec": "h264",
+      "original_file_sha256": "9dfe6ad513e5afec6840393b2b57d0bb4515b428568d63a1622828dd64aaeecf",
+      "content_access": "local_only",
+      "subtitle_status": "YouTube现有英文字幕；非作者原始ASR；需核对时轴",
+      "review_status": "人工初筛已填写；没有自动认定最终可用",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "否，可先用无声画面判断包裹与动作。",
+        "是否需要字幕": "否；可选辅助。",
+        "适合的JEV输出": "Choice（原生4选一，保留原题选项与答案映射）",
+        "视频是否必要": "预测需要当前情境；不一定必须看完整23分多钟。",
+        "答案是否清楚": "是（核查人判断）；“可能的下一步”是否有其他合理选项仍需复核。",
+        "证据时间": "视频开头片段可预测",
+        "结论": "条件补充为情节预测，暂不进入首批严格客观视觉题。",
+        "待解决问题": "核对开头00:01—00:56及真实后续；区别常识预测与事实观察；本片为科幻惊悚，后段字幕涉及自杀等成人话题，记录题材范围并决定使用局部还是整片。",
+        "查看方式": "批量预审/VRBench/本地浏览.html第2例；人工判断已填写，按待解决问题复核。公开仓库提供原站/作者来源链接。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "坐在床上阅读的男子接下来可能做什么？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "previewed_frame_seconds": [
+        113.4632,
+        425.48699999999997,
+        850.9739999999999,
+        1276.461
+      ],
+      "evaluation_setting": "按题记录视觉/字幕设置；原始声音不是当前JEV输入",
+      "archive": "v001_360p.zip",
+      "archive_member": "v001_360p/a6yHAOIh24o.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "否，可先用无声画面判断包裹与动作。",
+        "是否需要字幕": "否；可选辅助。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "预测需要当前情境；不一定必须看完整23分多钟。",
+        "答案是否清楚": "是",
+        "证据时间": "视频开头片段可预测",
+        "结论": "条件补充为情节预测，暂不进入首批严格客观视觉题。",
+        "待解决问题": "核对开头00:01—00:56及真实后续；区别常识预测与事实观察；本片为科幻惊悚，后段字幕涉及自杀等成人话题，记录题材范围并决定使用局部还是整片。",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "坐在床上阅读的男子接下来可能做什么？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "local_video_filename": "a6yHAOIh24o.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "视频在本地批量预审/VRBench，公开页以source_video_url追溯。"
+    },
+    {
+      "sample_id": "W5ESt_Zh4Tg:qa2",
+      "subtask": "Event Attribution",
+      "question": "Why the woman in the video wants this messenger mission",
+      "question_zh": "女子为何想执行信使任务？",
+      "options": [
+        "Because women intend to create a cultural exchange program with alien immigrants to foster mutual understanding",
+        "Because women want to meet and talk with alien immigrants to answer all the questions they have in their minds, and the possibility exists that in order to ask for their help",
+        "Because women aim to establish a diplomatic relationship with alien immigrants to negotiate resource sharing agreements",
+        "Because women seek to study the technological advancements of alien immigrants to enhance human scientific knowledge"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reference_answer": "B. Because women want to meet and talk with alien immigrants to answer all the questions they have in their minds, and the possibility exists that in order to ask for their help",
+      "answer_index": 1,
+      "official_reasoning": {
+        "1": "The messenger mission is a mission assigned to the woman from above, from the on-screen message it is clear that the mission is non-compulsory, for the woman it is an opportunity to find the alien immigrants [00:00:15->00:01:18]",
+        "2": "She wants to understand and study these lost immigrants, and at the same time she wants to explore the other side that had to give up Earth to give up their loved ones on Earth in the first place [00:10:25->00:11:52].",
+        "3": "From the woman's speech, it is known that Earth is still in a state of power struggle, and that there may also be a purpose to this mission to seek military assistance from the alien settlers [00:12:07->00:12:43].",
+        "4": "In fact the woman just longs to meet the alien immigrants and talk to them, so she wants to carry out this mission [00:19:30->00:20:18]"
+      },
+      "annotation_source": "https://huggingface.co/datasets/OpenGVLab/VRBench/tree/9ac0bbcb691f28ad552c4c59ad515464de6f2657",
+      "annotation_file": "VRBench_eval.jsonl",
+      "original_record": {
+        "question": "Why the woman in the video wants this messenger mission",
+        "options": {
+          "A": "Because women intend to create a cultural exchange program with alien immigrants to foster mutual understanding",
+          "B": "Because women want to meet and talk with alien immigrants to answer all the questions they have in their minds, and the possibility exists that in order to ask for their help",
+          "C": "Because women aim to establish a diplomatic relationship with alien immigrants to negotiate resource sharing agreements",
+          "D": "Because women seek to study the technological advancements of alien immigrants to enhance human scientific knowledge"
+        },
+        "answer": "B",
+        "original_question": "Why the woman in the video wants this messenger mission",
+        "original_answer": "Because women want to meet and talk with alien immigrants to answer all the questions they have in their minds, and the possibility exists that in order to ask for their help",
+        "reasoning_process": {
+          "1": "The messenger mission is a mission assigned to the woman from above, from the on-screen message it is clear that the mission is non-compulsory, for the woman it is an opportunity to find the alien immigrants [00:00:15->00:01:18]",
+          "2": "She wants to understand and study these lost immigrants, and at the same time she wants to explore the other side that had to give up Earth to give up their loved ones on Earth in the first place [00:10:25->00:11:52].",
+          "3": "From the woman's speech, it is known that Earth is still in a state of power struggle, and that there may also be a purpose to this mission to seek military assistance from the alien settlers [00:12:07->00:12:43].",
+          "4": "In fact the woman just longs to meet the alien immigrants and talk to them, so she wants to carry out this mission [00:19:30->00:20:18]"
+        },
+        "reasoning_type": "Event Attribution"
+      },
+      "video_path": "",
+      "source_video_url": "https://www.youtube.com/watch?v=W5ESt_Zh4Tg",
+      "video_source": "作者提供的HF视频包或独立视频文件",
+      "video_status": "核查人已查看作者包视频并填写判断；逐题结论及未决问题见review。",
+      "video_duration_seconds": 1263.47,
+      "has_audio": true,
+      "video_codec": "h264",
+      "original_file_sha256": "2dddc01e975ab25b64a0994aac660a0f0dfaf6bf37595768d87ca86b40bf241a",
+      "content_access": "local_only",
+      "subtitle_status": "YouTube现有英文字幕；非作者原始ASR；需核对时轴",
+      "review_status": "人工初筛已填写；没有自动认定最终可用",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "需音频或字幕二选一；动机来自发言。",
+        "是否需要字幕": "需要字幕作为当前JEV的发言输入。",
+        "适合的JEV输出": "Choice（原生4选一，保留原题选项与答案映射）",
+        "视频是否必要": "对白很可能已足够表达动机，画面辅助理解；不适合作为无声视觉核心，应做仅字幕对照。",
+        "答案是否清楚": "是",
+        "证据时间": "全片对白理解",
+        "结论": "放入视频加字幕的长情节理解扩展，首批视觉核心暂缓。",
+        "待解决问题": "核对00:15—01:18、10:25—12:43、19:30—20:18与选项措辞；检查仅字幕可答和题意翻译，避免将作者推理当输入。",
+        "查看方式": "批量预审/VRBench/本地浏览.html第3例；人工判断已填写，按待解决问题复核。公开仓库提供原站/作者来源链接。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "女子为何想执行信使任务？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "当前JEV以视频＋字幕文本输入发言；音频用于人工听读校验。该题仅字幕能否作答仍需对照。"
+      },
+      "previewed_frame_seconds": [
+        101.0776,
+        379.041,
+        758.082,
+        1137.123
+      ],
+      "evaluation_setting": "按题记录视觉/字幕设置；原始声音不是当前JEV输入",
+      "archive": "v001_360p.zip",
+      "archive_member": "v001_360p/W5ESt_Zh4Tg.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "需音频或字幕二选一；动机来自发言。",
+        "是否需要字幕": "需要字幕作为当前JEV的发言输入。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "对白很可能已足够表达动机，画面辅助理解；不适合作为无声视觉核心，应做仅字幕对照。",
+        "答案是否清楚": "是",
+        "证据时间": "全片对白理解",
+        "结论": "放入视频加字幕的长情节理解扩展，首批视觉核心暂缓。",
+        "待解决问题": "核对00:15—01:18、10:25—12:43、19:30—20:18与选项措辞；检查仅字幕可答和题意翻译，避免将作者推理当输入。",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "女子为何想执行信使任务？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "local_video_filename": "W5ESt_Zh4Tg.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "视频在本地批量预审/VRBench，公开页以source_video_url追溯。"
     }
+  ],
+  "submission_source": "用户导出的样例清单；已与助手原稿和官方题目字段对照",
+  "source_screening": {
+    "依据": "余金洋本轮3条人工记录",
+    "本轮结论": "3例人工初筛：1条排除，1条情节预测条件补充，1条带字幕长情节理解扩展；首批视觉核心暂缓。",
+    "适用范围": "原生四选一；情节预测与视频加字幕理解扩展；不整源删除"
   }
 }
