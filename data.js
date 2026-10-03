@@ -3334,32 +3334,6 @@ window.BENCHMARK_DATA = {
       ]
     },
     {
-      "name": "VCRBench",
-      "category": "视频推理；长视频因果推理",
-      "version": "pritamqu VCRBench 长视频因果推理项目；需确认原表所指项目及版本",
-      "sources": [
-        {
-          "label": "作者 HF 数据",
-          "url": "https://huggingface.co/datasets/pritamqu/VCRBench"
-        },
-        {
-          "label": "代码",
-          "url": "https://github.com/pritamqu/VCRBench"
-        }
-      ],
-      "source_notes": "**公开**。对应长视频因果推理基准：[作者 HF 数据](https://huggingface.co/datasets/pritamqu/VCRBench)；[代码](https://github.com/pritamqu/VCRBench)。部分视频来自 CrossTask，需遵守原许可。不要与 `VCR-Bench` 视频思维链基准混淆。",
-      "priority": "替补候选",
-      "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：先确认项目与本条题型；若有原生选项可接 Choice。",
-      "viewing_guidance": "先确认使用 pritamqu 的这个项目，再按代码／HF 的标注和 CrossTask 等来源定位视频；具体片段获取方式待填写。",
-      "report_path": "数据源样例/VCRBench/人工筛选报告.md",
-      "samples_path": "数据源样例/VCRBench/样例清单.json",
-      "samples": []
-    },
-    {
       "name": "LongVideoReason",
       "category": "视频推理；长视频推理",
       "version": "LongVideo-Reason；测试划分和版本待填写",
@@ -3378,12 +3352,23 @@ window.BENCHMARK_DATA = {
       "planned_questions": 0,
       "final_decision": "待填写",
       "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "selected_scope": "原生A—D选择题可用；排除选项污染、时轴或证据异常的题，不整源删除。",
       "known_output": "初筛：待填写测试题型；有选项测试题可接 Choice。",
       "viewing_guidance": "先在 HF／代码确认测试划分和标注，按测试样例定位视频；不要从训练集随意选题冒充测试。按条获取方式待填写。",
       "report_path": "数据源样例/LongVideoReason/人工筛选报告.md",
       "samples_path": "数据源样例/LongVideoReason/样例清单.json",
-      "samples": []
+      "samples": [],
+      "format_prescreen": {
+        "hf_repo": "LongVideo-Reason/longvideo-reason",
+        "hf_revision": "311eccbd25e9646db8492fb6e728068828ee0684",
+        "whole_source_removed": false,
+        "files": [
+          "test.jsonl"
+        ],
+        "records": 1000,
+        "scope": "原生A—D选择题可用；排除选项污染、时轴或证据异常的题，不整源删除。",
+        "status": "格式预筛；视频人工核查尚未完成"
+      }
     },
     {
       "name": "VideoMMMU",
@@ -3404,12 +3389,35 @@ window.BENCHMARK_DATA = {
       "planned_questions": 0,
       "final_decision": "待填写",
       "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "selected_scope": "已取得感知/理解600条均为原生选择题，选项数4—14；可用Choice，适配器须保留实际选项数。Adaptation未纳入本次格式统计。",
       "known_output": "初筛：Choice：选择题部分；其他题型另核查。",
       "viewing_guidance": "先接受 HF 访问条件，再从官方数据准备说明定位视频；可先看项目例子了解任务，但正式片段和 ID 对应关系需要核查。",
       "report_path": "数据源样例/VideoMMMU/人工筛选报告.md",
       "samples_path": "数据源样例/VideoMMMU/样例清单.json",
-      "samples": []
+      "samples": [],
+      "format_prescreen": {
+        "hf_repo": "lmms-lab/VideoMMMU",
+        "hf_revision": "d1c35ac933123d79e877b7f1b9506afb0309cf1b",
+        "whole_source_removed": false,
+        "files": [
+          "Perception.parquet",
+          "Comprehension.parquet"
+        ],
+        "records": 600,
+        "option_counts": {
+          "10": 523,
+          "4": 20,
+          "5": 15,
+          "8": 12,
+          "6": 18,
+          "14": 1,
+          "7": 6,
+          "9": 4,
+          "11": 1
+        },
+        "scope": "已取得感知/理解600条均为原生选择题，选项数4—14；可用Choice，适配器须保留实际选项数。Adaptation未纳入本次格式统计。",
+        "status": "格式预筛；视频人工核查尚未完成"
+      }
     },
     {
       "name": "MMVU-all",
@@ -3430,12 +3438,27 @@ window.BENCHMARK_DATA = {
       "planned_questions": 0,
       "final_decision": "待填写",
       "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：公开验证集选择题部分；自由答案另处理。",
+      "selected_scope": "仅保留625条multiple-choice候选；375条open-ended本轮排除。不是完整MMVU-all评测，不报all总分。",
+      "known_output": "本轮仅原生multiple-choice映射Choice；open-ended排除；不计算MMVU-all总分。",
       "viewing_guidance": "先选官方公开验证集记录，再按视频标识和数据说明取得对应片段；隐藏测试集不作为本地有答案样例。",
       "report_path": "数据源样例/MMVU-all/人工筛选报告.md",
       "samples_path": "数据源样例/MMVU-all/样例清单.json",
-      "samples": []
+      "samples": [],
+      "format_prescreen": {
+        "hf_repo": "yale-nlp/MMVU",
+        "hf_revision": "b937f414a87e9012acba49d95669020b24fa9ee9",
+        "whole_source_removed": false,
+        "files": [
+          "validation.json"
+        ],
+        "records": 1000,
+        "question_types": {
+          "open-ended": 375,
+          "multiple-choice": 625
+        },
+        "scope": "仅保留625条multiple-choice候选；375条open-ended本轮排除。不是完整MMVU-all评测，不报all总分。",
+        "status": "格式预筛；视频人工核查尚未完成"
+      }
     },
     {
       "name": "VideoMathQA",
@@ -3456,12 +3479,23 @@ window.BENCHMARK_DATA = {
       "planned_questions": 0,
       "final_decision": "待填写",
       "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "selected_scope": "保留420条原生五选一配置。题干中匹配/排列视图仍通过选择现有选项作答，与VCRBench的完整序列输出不同。其他配置未纳入本次统计。",
       "known_output": "初筛：待填写本条题型；有选项可接 Choice，自由数学答案需另定输出。",
       "viewing_guidance": "在官方 HF／代码查看题目与视频组织；先定位指定样例，再确认独立视频、字幕、音轨的获取方式。",
       "report_path": "数据源样例/VideoMathQA/人工筛选报告.md",
       "samples_path": "数据源样例/VideoMathQA/样例清单.json",
-      "samples": []
+      "samples": [],
+      "format_prescreen": {
+        "hf_repo": "MBZUAI/VideoMathQA",
+        "hf_revision": "702cdd480f89c525b35f0f5b46a7d3c78b320318",
+        "whole_source_removed": false,
+        "files": [
+          "videomathqa_mcq_test.parquet"
+        ],
+        "records": 420,
+        "scope": "保留420条原生五选一配置。题干中匹配/排列视图仍通过选择现有选项作答，与VCRBench的完整序列输出不同。其他配置未纳入本次统计。",
+        "status": "格式预筛；视频人工核查尚未完成"
+      }
     },
     {
       "name": "OVOBench",
@@ -3482,12 +3516,44 @@ window.BENCHMARK_DATA = {
       "planned_questions": 0,
       "final_decision": "待填写",
       "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：按子任务核查 Choice／Noul 等映射；主动响应时机需要额外输出与指标。",
+      "selected_scope": "9类原生选择任务共1468条标注可接Choice；REC82条要求输出原生整数计数，本轮排除；SSR42条和CRR48条官方提示要求Yes/No，可接Noul但流式时刻及评分接口需另接。这里统计标注记录，不是展开多个测试时刻后的查询数。",
+      "known_output": "9类选择任务：Choice；SSR/CRR：Noul条件扩展；REC原生整数计数本轮排除。",
       "viewing_guidance": "从官方 HF／README 选择在线任务样例和视频包；按提问／响应时刻观看此前内容。只看完整视频不能验证无未来信息的在线条件。",
       "report_path": "数据源样例/OVOBench/人工筛选报告.md",
       "samples_path": "数据源样例/OVOBench/样例清单.json",
-      "samples": []
+      "samples": [],
+      "format_prescreen": {
+        "hf_repo": "JoeLeelyf/OVO-Bench",
+        "hf_revision": "fec29e3385747b5642d995370143ba92d2819bd2",
+        "whole_source_removed": false,
+        "files": [
+          "ovo_bench_new.json（官方GitHub）"
+        ],
+        "records": 1640,
+        "task_counts": {
+          "EPM": 297,
+          "HLD": 186,
+          "ASI": 148,
+          "STU": 178,
+          "OJR": 184,
+          "ATR": 116,
+          "FPD": 101,
+          "ACR": 109,
+          "OCR": 149,
+          "CRR": 48,
+          "SSR": 42,
+          "REC": 82
+        },
+        "excluded_tasks": [
+          "REC"
+        ],
+        "conditional_tasks": [
+          "SSR",
+          "CRR"
+        ],
+        "scope": "9类原生选择任务共1468条标注可接Choice；REC82条要求输出原生整数计数，本轮排除；SSR42条和CRR48条官方提示要求Yes/No，可接Noul但流式时刻及评分接口需另接。这里统计标注记录，不是展开多个测试时刻后的查询数。",
+        "status": "格式预筛；视频人工核查尚未完成"
+      }
     },
     {
       "name": "OVBench",
@@ -3508,12 +3574,29 @@ window.BENCHMARK_DATA = {
       "planned_questions": 0,
       "final_decision": "待填写",
       "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "selected_scope": "三类文件共7090道原生选择题。保留格式可用方向；动作标注/时轴问题逐题核对。截到提问时刻并保持历史，不能看后续视频再答。",
       "known_output": "初筛：待填写每个在线问答子任务的答案类型；不能只凭流式类别判定 Choice。",
       "viewing_guidance": "按官方数据准备说明读取序列帧或片段；对照问题时刻检查已见历史。在线视频入口与最小下载单位待填写。",
       "report_path": "数据源样例/OVBench/人工筛选报告.md",
       "samples_path": "数据源样例/OVBench/样例清单.json",
-      "samples": []
+      "samples": [],
+      "format_prescreen": {
+        "hf_repo": "MCG-NJU/OVBench",
+        "hf_revision": "4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+        "whole_source_removed": false,
+        "files": [
+          "ovbench_action.json",
+          "ovbench_event.json",
+          "ovbench_object.json"
+        ],
+        "questions_by_file": {
+          "action": 1396,
+          "event": 3747,
+          "object": 1947
+        },
+        "scope": "三类文件共7090道原生选择题。保留格式可用方向；动作标注/时轴问题逐题核对。截到提问时刻并保持历史，不能看后续视频再答。",
+        "status": "格式预筛；视频人工核查尚未完成"
+      }
     },
     {
       "name": "ODVBench",
@@ -3534,12 +3617,23 @@ window.BENCHMARK_DATA = {
       "planned_questions": 0,
       "final_decision": "待填写",
       "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "selected_scope": "6348条有原生candidates且答案在候选中；坐标题选择预置坐标选项，不要求生成框。Choice可用，未来预测仍需核对时间窗和标注规则。",
       "known_output": "初筛：待填写具体驾驶问答题型；有选项可接 Choice，开放答案另处理。",
       "viewing_guidance": "从官方 HF／StreamForest 的数据说明定位驾驶视频与时间标注；以问题发生时刻为界观看，不能将后续画面用于回答。",
       "report_path": "数据源样例/ODVBench/人工筛选报告.md",
       "samples_path": "数据源样例/ODVBench/样例清单.json",
-      "samples": []
+      "samples": [],
+      "format_prescreen": {
+        "hf_repo": "MCG-NJU/ODV-Bench",
+        "hf_revision": "5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
+        "whole_source_removed": false,
+        "files": [
+          "ODVbench.json"
+        ],
+        "records": 6348,
+        "scope": "6348条有原生candidates且答案在候选中；坐标题选择预置坐标选项，不要求生成框。Choice可用，未来预测仍需核对时间窗和标注规则。",
+        "status": "格式预筛；视频人工核查尚未完成"
+      }
     }
   ]
 };

@@ -1,0 +1,347 @@
+{
+  "benchmark": "VCRBench",
+  "version": {
+    "hf_repo": "pritamqu/VCRBench",
+    "hf_revision": "bd4f33495e8181c1a9bd8258e96cacdcaddb3674",
+    "official_project": "https://github.com/pritamqu/VCRBench",
+    "annotation": "data.json"
+  },
+  "updated": "2026-10-03",
+  "status": "人工初筛已填写；因原生输出不适配，已移出本轮候选",
+  "sampling_note": "方便获取的目的性抽样，每源3例，优先可取得文件并覆盖不同场景/题型；不是随机抽样，不能用3例推断全量质量。",
+  "summary_draft": "VCRBench本轮整源剔除：365题均输出片段编号排列，当前Choice/Noul/Score无法直接沿用原题。三条人工核查记录保留为依据。",
+  "samples": [
+    {
+      "sample_id": "175",
+      "subtask": "Clip Ordering / Add Oil to Your Car",
+      "question": "The given video consists of multiple short clips, each showing a different segment needed to complete the task: Add Oil to Your Car. \nThese clips are randomly shuffled, and your job is to arrange them in the correct order to complete the task: Add Oil to Your Car. \nThe clip numbers are mentioned at the beginning of each clip as Clip 1, Clip 2, and so on.\nIn order to solve this task, first, you should identify the activity that is performed in each clip, and then use your reasoning and common sense to arrange these clips to successfully complete the task.\n\nThe final output should be in this format:\n\nCorrect order: <mention the Clip numbers separated by a comma>\n",
+      "question_zh": "将给汽车加油的三个已打乱片段按正确操作顺序排列。",
+      "options": [],
+      "option_labels": [],
+      "reference_answer": "Correct order: 3, 1, 2",
+      "answer_index": [
+        3,
+        1,
+        2
+      ],
+      "official_reasoning": {
+        "current_order_desc": [
+          "Place funnel into the oil tank.",
+          "Pour oil into the car engine.",
+          "Take off the oil cap."
+        ],
+        "ground_truth_zero_based": [
+          2,
+          0,
+          1
+        ]
+      },
+      "annotation_source": "https://huggingface.co/datasets/pritamqu/VCRBench/tree/bd4f33495e8181c1a9bd8258e96cacdcaddb3674",
+      "annotation_file": "data.json",
+      "original_record": {
+        "qid": "175",
+        "video_file": "video_175.mp4",
+        "url": "https://www.youtube.com/watch?v=yaH0WOFpx7A",
+        "question": "",
+        "current_order": [
+          1,
+          2,
+          0
+        ],
+        "current_order_desc": [
+          "Place funnel into the oil tank.",
+          "Pour oil into the car engine.",
+          "Take off the oil cap."
+        ],
+        "ground_truth": [
+          2,
+          0,
+          1
+        ],
+        "goal": "Add Oil to Your Car",
+        "process_id": "44789",
+        "video_src": "CrossTask"
+      },
+      "video_path": "",
+      "source_video_url": "https://www.youtube.com/watch?v=yaH0WOFpx7A",
+      "video_source": "作者提供的HF视频包或独立视频文件",
+      "video_status": "核查人已查看作者包片段；原生格式不适配，保存为剔除证据。",
+      "video_duration_seconds": 24.07,
+      "has_audio": false,
+      "video_codec": "h264",
+      "original_file_sha256": "2a6726be99440ee73e7e095e97280ac58796cfc08215e283daa0c20d1abe4278",
+      "content_access": "local_only",
+      "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+      "review_status": "人工初筛已填写；本轮剔除",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；官方文件本身无音轨，动作可视觉辨认。",
+        "是否需要字幕": "不需要；片头Clip编号是画面文字，不能当作外部字幕。",
+        "适合的JEV输出": "原生为整数片段序列；当前Choice/Noul/Score不能直接表达。",
+        "视频是否必要": "是；需要观察各段动作，但许多顺序可由常识推断；仍须视频识别编号对应动作。",
+        "答案是否清楚": "官方代码把0基索引[2,0,1]转为片段号[3,1,2]",
+        "证据时间": "片段排序",
+        "结论": "本轮剔除（原生片段排列序列不适配当前JEV输出）；支持序列输出和对应评分后可恢复。",
+        "待解决问题": "无",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "将给汽车加油的三个已打乱片段按正确操作顺序排列。 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "previewed_frame_seconds": [
+        1.9256,
+        7.221,
+        14.442,
+        21.663
+      ],
+      "evaluation_setting": "按题记录视觉/字幕设置；原始声音不是当前JEV输入",
+      "answer_format": "one_based_clip_sequence",
+      "official_video_url": "https://huggingface.co/datasets/pritamqu/VCRBench/resolve/bd4f33495e8181c1a9bd8258e96cacdcaddb3674/videos/video_175.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；官方文件本身无音轨，动作可视觉辨认。",
+        "是否需要字幕": "不需要；片头Clip编号是画面文字，不能当作外部字幕。",
+        "适合的JEV输出": "原生为整数片段序列；当前Choice/Noul/Score不能直接表达。",
+        "视频是否必要": "是；需要观察各段动作，但许多顺序可由常识推断；仍须视频识别编号对应动作。",
+        "答案是否清楚": "官方代码把0基索引[2,0,1]转为片段号[3,1,2]",
+        "证据时间": "片段排序",
+        "结论": "当前JEV输出不能直接表达原生排列；拟暂不采纳，扩展序列输出后再用。",
+        "待解决问题": "无",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "将给汽车加油的三个已打乱片段按正确操作顺序排列。 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "local_video_filename": "video_175.mp4",
+      "video_url": ""
+    },
+    {
+      "sample_id": "11",
+      "subtask": "Clip Ordering / Make Banana Ice Cream",
+      "question": "The given video consists of multiple short clips, each showing a different segment needed to complete the task: Make Banana Ice Cream. \nThese clips are randomly shuffled, and your job is to arrange them in the correct order to complete the task: Make Banana Ice Cream. \nThe clip numbers are mentioned at the beginning of each clip as Clip 1, Clip 2, and so on.\nIn order to solve this task, first, you should identify the activity that is performed in each clip, and then use your reasoning and common sense to arrange these clips to successfully complete the task.\n\nThe final output should be in this format:\n\nCorrect order: <mention the Clip numbers separated by a comma>\n",
+      "question_zh": "把制作香蕉冰淇淋的三个片段排成正确顺序。",
+      "options": [],
+      "option_labels": [],
+      "reference_answer": "Correct order: 3, 1, 2",
+      "answer_index": [
+        3,
+        1,
+        2
+      ],
+      "official_reasoning": {
+        "current_order_desc": [
+          "Pour milk into the blender.",
+          "Mix ingredients together for the banana ice cream.",
+          "Blend bananas into a puree."
+        ],
+        "ground_truth_zero_based": [
+          2,
+          0,
+          1
+        ]
+      },
+      "annotation_source": "https://huggingface.co/datasets/pritamqu/VCRBench/tree/bd4f33495e8181c1a9bd8258e96cacdcaddb3674",
+      "annotation_file": "data.json",
+      "original_record": {
+        "qid": "11",
+        "video_file": "video_11.mp4",
+        "url": "https://www.youtube.com/watch?v=ZvuZQzDCGaI",
+        "question": "",
+        "current_order": [
+          1,
+          2,
+          0
+        ],
+        "current_order_desc": [
+          "Pour milk into the blender.",
+          "Mix ingredients together for the banana ice cream.",
+          "Blend bananas into a puree."
+        ],
+        "ground_truth": [
+          2,
+          0,
+          1
+        ],
+        "goal": "Make Banana Ice Cream",
+        "process_id": "109972",
+        "video_src": "CrossTask"
+      },
+      "video_path": "",
+      "source_video_url": "https://www.youtube.com/watch?v=ZvuZQzDCGaI",
+      "video_source": "作者提供的HF视频包或独立视频文件",
+      "video_status": "核查人已查看作者包片段；原生格式不适配，保存为剔除证据。",
+      "video_duration_seconds": 42.07,
+      "has_audio": false,
+      "video_codec": "h264",
+      "original_file_sha256": "0272f6f598fd4ab841b9e20ec62166e31cd5566b47e34e79a0d6db2a2b25c094",
+      "content_access": "local_only",
+      "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+      "review_status": "人工初筛已填写；本轮剔除",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；正式片段无音轨。",
+        "是否需要字幕": "不需要；以Clip编号和可见搅拌动作判断。",
+        "适合的JEV输出": "原生为整数片段序列；当前Choice/Noul/Score不能直接表达。",
+        "视频是否必要": "需要视频将片段编号与动作对应，但厨房常识也参与排序；不是普通选择题。",
+        "答案是否清楚": "是",
+        "证据时间": "视频理解排序",
+        "结论": "本轮剔除（原生片段排列序列不适配当前JEV输出）；支持序列输出和对应评分后可恢复。",
+        "待解决问题": "无",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "把制作香蕉冰淇淋的三个片段排成正确顺序。 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "previewed_frame_seconds": [
+        3.3656,
+        12.621,
+        25.242,
+        37.863
+      ],
+      "evaluation_setting": "按题记录视觉/字幕设置；原始声音不是当前JEV输入",
+      "answer_format": "one_based_clip_sequence",
+      "official_video_url": "https://huggingface.co/datasets/pritamqu/VCRBench/resolve/bd4f33495e8181c1a9bd8258e96cacdcaddb3674/videos/video_11.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；正式片段无音轨。",
+        "是否需要字幕": "不需要；以Clip编号和可见搅拌动作判断。",
+        "适合的JEV输出": "原生为整数片段序列；当前Choice/Noul/Score不能直接表达。",
+        "视频是否必要": "需要视频将片段编号与动作对应，但厨房常识也参与排序；不是普通选择题。",
+        "答案是否清楚": "是",
+        "证据时间": "视频理解排序",
+        "结论": "暂不采纳当前原题评测；扩展序列输出后可补充步骤推理。",
+        "待解决问题": "无",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "把制作香蕉冰淇淋的三个片段排成正确顺序。 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "local_video_filename": "video_11.mp4",
+      "video_url": ""
+    },
+    {
+      "sample_id": "90",
+      "subtask": "Clip Ordering / Make Jello Shots",
+      "question": "The given video consists of multiple short clips, each showing a different segment needed to complete the task: Make Jello Shots. \nThese clips are randomly shuffled, and your job is to arrange them in the correct order to complete the task: Make Jello Shots. \nThe clip numbers are mentioned at the beginning of each clip as Clip 1, Clip 2, and so on.\nIn order to solve this task, first, you should identify the activity that is performed in each clip, and then use your reasoning and common sense to arrange these clips to successfully complete the task.\n\nThe final output should be in this format:\n\nCorrect order: <mention the Clip numbers separated by a comma>\n",
+      "question_zh": "把制作果冻酒的三个片段排成正确顺序。",
+      "options": [],
+      "option_labels": [],
+      "reference_answer": "Correct order: 2, 3, 1",
+      "answer_index": [
+        2,
+        3,
+        1
+      ],
+      "official_reasoning": {
+        "current_order_desc": [
+          "Pour mixture into cup.",
+          "Pour water into the jello mix, pour juice into the jello shot molds, and pour jello powder into the shot glasses.",
+          "Stir the jello mixture and pour in the alcohol."
+        ],
+        "ground_truth_zero_based": [
+          1,
+          2,
+          0
+        ]
+      },
+      "annotation_source": "https://huggingface.co/datasets/pritamqu/VCRBench/tree/bd4f33495e8181c1a9bd8258e96cacdcaddb3674",
+      "annotation_file": "data.json",
+      "original_record": {
+        "qid": "90",
+        "video_file": "video_90.mp4",
+        "url": "https://www.youtube.com/watch?v=bBDF0QpJmjU",
+        "question": "",
+        "current_order": [
+          2,
+          0,
+          1
+        ],
+        "current_order_desc": [
+          "Pour mixture into cup.",
+          "Pour water into the jello mix, pour juice into the jello shot molds, and pour jello powder into the shot glasses.",
+          "Stir the jello mixture and pour in the alcohol."
+        ],
+        "ground_truth": [
+          1,
+          2,
+          0
+        ],
+        "goal": "Make Jello Shots",
+        "process_id": "23521",
+        "video_src": "CrossTask"
+      },
+      "video_path": "",
+      "source_video_url": "https://www.youtube.com/watch?v=bBDF0QpJmjU",
+      "video_source": "作者提供的HF视频包或独立视频文件",
+      "video_status": "核查人已查看作者包片段；原生格式不适配，保存为剔除证据。",
+      "video_duration_seconds": 58.93,
+      "has_audio": false,
+      "video_codec": "h264",
+      "original_file_sha256": "3f9452191e8ea0ef2923602b7af32da892345c6ac438d33f14ccad5cbd27ef4f",
+      "content_access": "local_only",
+      "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+      "review_status": "人工初筛已填写；本轮剔除",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；正式片段无音轨。",
+        "是否需要字幕": "不需要；画面动作是主要证据。",
+        "适合的JEV输出": "原生为整数片段序列；当前Choice/Noul/Score不能直接表达。",
+        "视频是否必要": "视频提供编号动作，配方常识提供依赖关系；需要序列输出而非单个Choice。",
+        "答案是否清楚": "原生正确片段号为[2,3,1]",
+        "证据时间": "视频理解排序",
+        "结论": "本轮剔除（原生片段排列序列不适配当前JEV输出）；支持序列输出和对应评分后可恢复。",
+        "待解决问题": "题材为含酒精食品制作，按项目内容范围记录，不代表整个数据源题材。",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "把制作果冻酒的三个片段排成正确顺序。 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "previewed_frame_seconds": [
+        4.7144,
+        17.679,
+        35.358,
+        53.037
+      ],
+      "evaluation_setting": "按题记录视觉/字幕设置；原始声音不是当前JEV输入",
+      "answer_format": "one_based_clip_sequence",
+      "official_video_url": "https://huggingface.co/datasets/pritamqu/VCRBench/resolve/bd4f33495e8181c1a9bd8258e96cacdcaddb3674/videos/video_90.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；正式片段无音轨。",
+        "是否需要字幕": "不需要；画面动作是主要证据。",
+        "适合的JEV输出": "原生为整数片段序列；当前Choice/Noul/Score不能直接表达。",
+        "视频是否必要": "视频提供编号动作，配方常识提供依赖关系；需要序列输出而非单个Choice。",
+        "答案是否清楚": "原生正确片段号为[2,3,1]",
+        "证据时间": "视频理解排序",
+        "结论": "暂不采纳当前JEV；可作未来序列推理扩展。",
+        "待解决问题": "题材为含酒精食品制作，按项目内容范围记录，不代表整个数据源题材。",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "把制作果冻酒的三个片段排成正确顺序。 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "local_video_filename": "video_90.mp4",
+      "video_url": ""
+    }
+  ],
+  "screening_status": "excluded",
+  "format_screening": {
+    "annotation_count": 365,
+    "sequence_lengths": {
+      "4": 105,
+      "3": 126,
+      "5": 80,
+      "6": 30,
+      "7": 24
+    },
+    "native_output": "按正确操作顺序输出片段编号的排列",
+    "reason": "Choice选择现有候选项、Noul是非概率、Score有序等级，均不直接输出任意长度的片段排列。",
+    "recovery": "增加序列输出与排列评分；如改编选择题，须另命名、另报告，不沿用原版成绩。"
+  }
+}
