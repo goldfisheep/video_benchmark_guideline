@@ -375,21 +375,21 @@
     {
       "name": "Minerva",
       "category": "视频推理；复杂视频推理",
-      "version": "Minerva；数据版本／修订号待填写；将 Minerva w/sub. 合并为有字幕设置，不新增独立数据集。",
+      "version": "2025 MINERVA；官方标注SHA256 3992d435844b535eb8be45e43ae16fbbe448498fd8ca157c2c0b4578cbf945cb；README提交 bdde4b1919fba9a02954be7cbb1c9da7e4bd8001",
       "sources": [
         {
           "label": "Google DeepMind 官方数据说明",
           "url": "https://github.com/google-deepmind/neptune#minerva"
         }
       ],
-      "source_notes": "**标注公开，视频按链接获取**。[Google DeepMind 官方数据说明](https://github.com/google-deepmind/neptune#minerva)。提供问答及推理标注 JSON、YouTube 视频链接，未见统一的视频包。",
+      "source_notes": "官方问答与五选一答案公开，当前存储桶文件1285题；视频预览为第三方镜像，保持来源区别。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
+      "final_decision": "6题／6片准备完成；人工与原片一致性待核查",
+      "decision_reason": "正式问答1285题中选择六题，覆盖篮球、桌游、数学、动画、烹饪、动物；镜像预览可读，不提前认定适用。",
+      "selected_scope": "跨场景视频推理候选；复核单帧可答、仅文字可答、知识和音频依赖。",
       "known_output": "初筛：Choice：选择题配置；推理文本不作为答案输入。",
-      "viewing_guidance": "先在官方 neptune 仓库读问答 JSON，再使用其中 YouTube 链接查看选定素材；核对所需时间范围和源链接可用性。",
+      "viewing_guidance": "本地浏览.html六题；镜像来自haonan3/MINERVA，原片完整性与时间轴待核验。作答后才看官方reasoning。",
       "report_path": "数据源样例/Minerva/人工筛选报告.md",
       "samples_path": "数据源样例/Minerva/样例清单.json"
     },
