@@ -290,7 +290,7 @@
     {
       "name": "MLVU-dev",
       "category": "长视频；长视频多任务理解",
-      "version": "MLVU Dev 开发集；数据修订号待填写",
+      "version": "MLVU/json/{2_needle,4_count,5_order}.json；视频固定提交 06ddc388aa34746b3abba77972b7a7dfd977f7a3",
       "sources": [
         {
           "label": "项目 HF 数据",
@@ -302,20 +302,26 @@
         }
       ],
       "source_notes": "**公开开发集**。[项目 HF 数据](https://huggingface.co/datasets/MLVU/MVLU)；[官方代码](https://github.com/JUNJIE99/MLVU)。HF 仓库名是 `MVLU`，但内容为 MLVU；注意选 Dev 集。",
-      "priority": "替补候选",
+      "priority": "抗干扰检索与时序扩展",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：有选项子任务；其他生成任务另处理。",
-      "viewing_guidance": "先在官方 HF／代码选择 Dev 的题型和标注；按视频文件名定位相应视频包。能否取单条片段待填写。",
+      "final_decision": "2计数/顺序条件扩展＋1知识图片对照",
+      "decision_reason": "三例成员已审。长背景插入目标短片适合抗干扰检索、事件计数与顺序扩展；保留计数/顺序两条条件候选，鱼类栖息地题另作视觉知识/图片对照。第一版低时延核心暂不分配完整长片题量，保留小规模接入测试。",
+      "selected_scope": "Dev原生选择题的计数、顺序与抗干扰检索；鱼类题另作知识/图片对照，生成任务另审。",
+      "known_output": "本轮原生四选一Choice，JEV输出选项概率及整体置信度。",
+      "viewing_guidance": "三例已完成本轮初筛；正式视频与完整问答见本地剩余来源准备，公开页提供身份、摘要与作者入口。",
       "report_path": "数据源样例/MLVU-dev/人工筛选报告.md",
-      "samples_path": "数据源样例/MLVU-dev/样例清单.json"
+      "samples_path": "数据源样例/MLVU-dev/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 3,
+        "item_reviews_received": 3,
+        "assistant_window_reviewed_samples": 0
+      }
     },
     {
       "name": "LVBench",
       "category": "长视频；长视频综合理解",
-      "version": "LVBench；数据版本／修订号待填写",
+      "version": "video_info.meta.jsonl；视频固定提交 0caedb92002cc268bad486449e551c76f0485670",
       "sources": [
         {
           "label": "官方标注与视频 ID",
@@ -327,15 +333,21 @@
         }
       ],
       "source_notes": "**部分公开**。[官方标注与视频 ID](https://huggingface.co/datasets/zai-org/LVBench)；[下载脚本](https://github.com/zai-org/LVBench)。原视频需按 YouTube ID 获取，可能有失效链接。",
-      "priority": "替补候选",
+      "priority": "长检索扩展；完整长片暂缓",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题部分。",
-      "viewing_guidance": "标注给出视频 ID；按官方脚本／YouTube 来源获取选定视频。记录链接是否失效、视频时长以及是否为完整评测素材。",
+      "final_decision": "完整长视频第一版建议0题；保留短片/图片派生扩展",
+      "decision_reason": "助手完成三例代审：全片统计题仍需明确嘉宾配对和去重；开锁遇水题画面支持B；图表最高49%支持D，但单帧足够。三段完整视频34—40分钟，第一版完整长视频建议0题，保留长检索扩展及独立标记的短片/图片派生候选。",
+      "selected_scope": "完整检索/去重作扩展；清楚事件窗与图表分别标为短片派生/图片对照。",
+      "known_output": "本轮原生四选一Choice，JEV输出选项概率及整体置信度。",
+      "viewing_guidance": "三例已完成本轮初筛；正式视频与完整问答见本地剩余来源准备，公开页提供身份、摘要与作者入口。",
       "report_path": "数据源样例/LVBench/人工筛选报告.md",
-      "samples_path": "数据源样例/LVBench/样例清单.json"
+      "samples_path": "数据源样例/LVBench/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 0,
+        "item_reviews_received": 0,
+        "assistant_window_reviewed_samples": 3
+      }
     },
     {
       "name": "LongVideoBench",
@@ -365,7 +377,7 @@
     {
       "name": "EgoSchema",
       "category": "长视频；第一视角长视频理解",
-      "version": "EgoSchema；数据版本／修订号待填写",
+      "version": "questions.json + subset_answers.json；视频固定提交 58350524ea7eb29c47000121f4f4b65eb6b4acb9",
       "sources": [
         {
           "label": "官方获取说明",
@@ -377,15 +389,21 @@
         }
       ],
       "source_notes": "**公开但需接受平台规则**。[官方获取说明](https://github.com/egoschema/EgoSchema)；[项目页](https://egoschema.github.io/)。推荐从 Kaggle 竞赛页接受规则后下载；视频源于 Ego4D，应遵守其许可。",
-      "priority": "替补候选",
+      "priority": "第一人称过程推理条件候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题；需可获得标准答案或官方评测。",
-      "viewing_guidance": "按官方说明进入数据平台并接受规则；先选择公开答案子集，再取得对应视频。是否有可用在线示例／单视频入口待填写。",
+      "final_decision": "1工具候选；1完整题暂缓；1心理题不采用",
+      "decision_reason": "三例成员已审，均180秒。保留工具/过程理解条件候选；游戏题有单帧捷径且题干与选项覆盖不完整，原完整题暂缓；摩擦手推断心理原因题不采用。推理本身不排除，优先有可见行为证据的推理。",
+      "selected_scope": "公开答案子集中的工具/过程理解；排除心理动机多解题，暂停问题覆盖不全者暂缓。",
+      "known_output": "本轮原生五选一Choice；使用公开正确答案子集。",
+      "viewing_guidance": "三例已完成本轮初筛；正式视频与完整问答见本地剩余来源准备，公开页提供身份、摘要与作者入口。",
       "report_path": "数据源样例/EgoSchema/人工筛选报告.md",
-      "samples_path": "数据源样例/EgoSchema/样例清单.json"
+      "samples_path": "数据源样例/EgoSchema/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 3,
+        "item_reviews_received": 3,
+        "assistant_window_reviewed_samples": 0
+      }
     },
     {
       "name": "Video-Holmes",
