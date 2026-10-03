@@ -145,7 +145,7 @@
     {
       "name": "PercTest",
       "category": "通用感知；感知问答、跟踪等多任务",
-      "version": "sample_annotations.zip / sample.json；作者公开sample包valid三例；文件哈希保留",
+      "version": "sample_annotations.zip / sample.json；作者sample包",
       "sources": [
         {
           "label": "官方数据与下载说明",
@@ -155,20 +155,18 @@
       "source_notes": "**公开，名称疑为简称**。按 **Perception Test** 核对：[官方数据与下载说明](https://github.com/google-deepmind/perception_test)。截图中的 PercTest 未见独立同名基准，建议回查原表。",
       "priority": "第一版综合理解优先候选",
       "planned_questions": 0,
-      "final_decision": "综合理解优先候选；2条件视频＋1图片对照",
-      "decision_reason": "暂按Perception Test纳入综合理解优先候选；成员已看三例并评价质量较好。2条动作/前后比较条件候选、1条末帧图片对照；未收到逐题导出，官方答案未全部人工明确确认。",
-      "selected_scope": "暂按Perception Test选择题；动作与前后位置题优先，末帧字母题单列图片对照。",
-      "known_output": "本组三题原生三选一Choice；跟踪/定位任务不并入本轮。",
-      "viewing_guidance": "三例观看已据文字反馈记录；公开sample视频可播放；逐题答案确认未收到导出。",
+      "final_decision": "2视频候选＋1图片对照；导出已收到",
+      "decision_reason": "已收到3题导出，保留2条动作/前后比较视频候选与1条末帧图片对照；前两题成员标记答案清楚，第三题画面支持位置变化计数。名称暂按Perception Test。",
+      "selected_scope": "原生Choice，动作/前后变化优先；末帧单列图片。",
+      "known_output": "原生Choice；三选一。",
+      "viewing_guidance": "三题导出已收到，公开原sample视频可播放。",
       "report_path": "数据源样例/PercTest/人工筛选报告.md",
       "samples_path": "数据源样例/PercTest/样例清单.json",
       "review_progress": {
         "prepared_samples": 3,
         "human_viewed_samples": 3,
-        "item_reviews_received": 0,
-        "video_candidates": 2,
-        "image_candidates": 1,
-        "excluded_samples": 0
+        "item_reviews_received": 3,
+        "assistant_window_reviewed_samples": 0
       }
     },
     {
@@ -199,7 +197,7 @@
     {
       "name": "VideoMME v2",
       "category": "综合；新版本综合理解",
-      "version": "Video-MME v2；数据修订号待填写",
+      "version": "test.parquet；6e4bebb03202e1ddbf3d37703e560e51c5aa2d64",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -211,20 +209,26 @@
         }
       ],
       "source_notes": "**公开**。[官方 HF 数据](https://huggingface.co/datasets/MME-Benchmarks/Video-MME-v2)；[官方代码](https://github.com/MME-Benchmarks/Video-MME-v2)。与上一行是不同版本。",
-      "priority": "替补候选",
+      "priority": "多题综合理解条件候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：待填写具体题型；有选项部分可接 Choice。",
-      "viewing_guidance": "按 v2 官方 HF／代码查看题目和视频准备说明；使用 v2 自己的标识匹配视频，不沿用上一版 ID。逐条预览／下载能力待填写。",
+      "final_decision": "筛选子集条件采用；整源暂不分配题量",
+      "decision_reason": "已核查3个视频、12题；保留一视频多题的组织方式，逐题筛选。两条关卡变化题条件候选；单帧可答题另列图片对照；交换轮次、完整车厢与人物所在车厢有歧义，暂缓相关题。第一版暂不分配整源题量。",
+      "selected_scope": "组内清楚的阶段变化；单帧题另列；歧义题暂缓，完整组级成绩另报。",
+      "known_output": "原生Choice；保留不确定类和四题组ID。",
+      "viewing_guidance": "正式视频和完整问答本地查看；公开样例索引与筛选摘要。",
       "report_path": "数据源样例/VideoMME v2/人工筛选报告.md",
-      "samples_path": "数据源样例/VideoMME v2/样例清单.json"
+      "samples_path": "数据源样例/VideoMME v2/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 12,
+        "human_viewed_samples": 12,
+        "item_reviews_received": 12,
+        "assistant_window_reviewed_samples": 0
+      }
     },
     {
       "name": "CGBench",
       "category": "综合；长视频理解与证据定位",
-      "version": "CGBench；数据版本／修订号待填写",
+      "version": "cgbench_mini.json；a3be039f6ba85e022a749eca111b64ffcafadd1d",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -236,20 +240,26 @@
         }
       ],
       "source_notes": "**需同意访问条件**。对应 **CG-Bench**：[官方 HF 数据](https://huggingface.co/datasets/CG-Bench/CG-Bench)；[官方代码](https://github.com/CG-Bench/CG-Bench)。页面公开，但文件需登录并接受条件。",
-      "priority": "替补候选",
+      "priority": "长视频扩展；第一版暂缓",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题部分；证据定位需时间区间输出。",
-      "viewing_guidance": "先登录 HF 接受访问条件，再查看标注与文件组织；按选定视频 ID 请求少量片段，不能将公开页面当成已获得文件访问权。",
+      "final_decision": "第一版完整视频建议0题；保留扩展",
+      "decision_reason": "助手代审3例的正式证据窗口；完整视频约18—24分钟，第一版完整长视频题包建议0题，保留扩展。官方clue_acc短证据模式可条件采用；界面细节仍补核，识字题作图片对照，跨片段计数需核对全片完整性。",
+      "selected_scope": "官方clue_acc短证据条件候选；long_acc另列，图片题不算时序。",
+      "known_output": "选择题Choice；时间定位和开放答案另需适配。",
+      "viewing_guidance": "正式视频和完整问答本地查看；公开样例索引与筛选摘要。",
       "report_path": "数据源样例/CGBench/人工筛选报告.md",
-      "samples_path": "数据源样例/CGBench/样例清单.json"
+      "samples_path": "数据源样例/CGBench/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 0,
+        "item_reviews_received": 0,
+        "assistant_window_reviewed_samples": 3
+      }
     },
     {
       "name": "VideoZeroBench",
       "category": "综合；挑战性视频理解",
-      "version": "VideoZeroBench；数据版本／修订号待填写",
+      "version": "VideoZeroBench_500_v0.json；aef3b0613ad2909a1355a99201b4a0c48e073836",
       "sources": [
         {
           "label": "作者 HF 数据",
@@ -261,15 +271,21 @@
         }
       ],
       "source_notes": "**公开**。[作者 HF 数据](https://huggingface.co/datasets/marinero4972/VideoZeroBench)；[官方代码](https://github.com/marinero4972/VideoZeroBench)。",
-      "priority": "替补候选",
+      "priority": "长视频扩展；第一版暂缓",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：待填写题型；有选项可接 Choice，是非命题可接 Noul。",
-      "viewing_guidance": "从作者 HF 与代码核查文件组织和标注；先选择样例 ID，再确认单视频入口或分包方式。在线示例和下载粒度待填写。",
+      "final_decision": "第一版完整视频建议0题；保留扩展",
+      "decision_reason": "助手代审3例的正式证据窗口；完整视频约9—16分钟。第一版建议0题；方向参照、镜像视角和转动判据仍有未决项，全源开放答案及时间/位置框输出亦需功能适配。保留长视频扩展，不删除来源。",
+      "selected_scope": "仅清楚的有限方向回答作派生Choice；开放答案/时间框不纳入第一版。",
+      "known_output": "本轮有限答案派生Choice；全源并非原生选择题，L5含时间/位置框。",
+      "viewing_guidance": "正式视频和完整问答本地查看；公开样例索引与筛选摘要。",
       "report_path": "数据源样例/VideoZeroBench/人工筛选报告.md",
-      "samples_path": "数据源样例/VideoZeroBench/样例清单.json"
+      "samples_path": "数据源样例/VideoZeroBench/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 0,
+        "item_reviews_received": 0,
+        "assistant_window_reviewed_samples": 3
+      }
     },
     {
       "name": "MLVU-dev",

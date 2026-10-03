@@ -1,33 +1,112 @@
 {
   "benchmark": "VideoZeroBench",
-  "samples": [],
-  "sample_template": {
-    "sample_id": "待填写",
-    "video_id": "待填写",
-    "subtask": "待填写",
-    "question": "待填写",
-    "question_zh": "待填写",
-    "options": [],
-    "reference_answer": "待填写",
-    "answer_index": null,
-    "annotation_source": "待填写",
-    "video_path": "",
-    "video_url": "",
-    "video_source": "待填写",
-    "video_status": "待填写",
-    "review": {
-      "是否看过正式片段": "待填写",
-      "是否需要音频": "待填写",
-      "是否需要字幕": "待填写",
-      "适合的JEV输出": "待填写",
-      "视频是否必要": "待填写",
-      "答案是否清楚": "待填写",
-      "证据时刻": "待填写",
-      "结论": "待填写",
-      "待解决问题": "待填写",
-      "查看方式": "待填写",
-      "核查人": "待填写",
-      "核查日期": "待填写"
+  "version": {
+    "official_project": "https://github.com/marinero4972/VideoZeroBench",
+    "annotation": "VideoZeroBench_500_v0.json",
+    "readme_provenance": {
+      "repo": "marinero4972/VideoZeroBench",
+      "sha": "e687f0122862d860727c4f794e8c312f68e4d59d",
+      "html_url": "https://github.com/marinero4972/VideoZeroBench/blob/main/README.md"
+    },
+    "hf_repo": "marinero4972/VideoZeroBench",
+    "hf_revision": "aef3b0613ad2909a1355a99201b4a0c48e073836"
+  },
+  "updated": "2026-10-03",
+  "status": "助手代审已完成：正式证据窗口抽帧，未连续看完整视频",
+  "sampling_note": "每源选3段便于获取的视频并兼顾题型，目的性抽样，不是随机抽样；不据3段推断全源质量。VideoMME v2保留每段完整4题组。",
+  "summary_draft": "助手代审3例的正式证据窗口；完整视频约9—16分钟。第一版建议0题；方向参照、镜像视角和转动判据仍有未决项，全源开放答案及时间/位置框输出亦需功能适配。保留长视频扩展，不删除来源。",
+  "video_count": 3,
+  "question_count": 3,
+  "source_screening": {
+    "本轮结论": "助手代审3例的正式证据窗口；完整视频约9—16分钟。第一版建议0题；方向参照、镜像视角和转动判据仍有未决项，全源开放答案及时间/位置框输出亦需功能适配。保留长视频扩展，不删除来源。",
+    "依据": "用户授权助手代审；作者标注、时长与正式证据窗口抽帧",
+    "human_viewed_samples": 0,
+    "human_item_reviews_received": 0,
+    "assistant_window_reviewed_samples": 3,
+    "assistant_full_video_continuous_review": false,
+    "第一版完整长视频建议题数": 0,
+    "质量限制": "目的性抽样；不估计全源错误率。无实测JEV视频时延/帧数限制，长视频暂缓是阶段选择而非能力上限。"
+  },
+  "content_access": "local_only",
+  "public_scope": "仅样例身份与本仓库自写筛选摘要；原始问答及媒体保留本地。",
+  "samples": [
+    {
+      "sample_id": "2",
+      "video_group_id": "2",
+      "subtask": "Daily Vlogs",
+      "question": "空间参照和短运动方向。自写核查摘要，原始问答仅本地查看。",
+      "question_zh": "空间参照和短运动方向。自写核查摘要，原始问答仅本地查看。",
+      "options": [],
+      "answer_index": null,
+      "reference_answer": "官方题目、选项及答案仅本地核查；请按样例ID从作者数据取得。",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "正式媒体已取得并在本地核查；本轮公开筛选摘要，不新增复制媒体。",
+      "source_video_url": "https://github.com/marinero4972/VideoZeroBench",
+      "video_duration_seconds": 969.7,
+      "annotation_source": "https://huggingface.co/datasets/marinero4972/VideoZeroBench/tree/aef3b0613ad2909a1355a99201b4a0c48e073836",
+      "content_access": "local_only",
+      "review": {
+        "是否看过正式片段": "部分；助手查看正式文件的证据窗口抽帧，未连续看完整视频",
+        "核查人": "助手代审（非成员人工观看）",
+        "核查日期": "2026-10-03",
+        "结论": "暂缓本题；保留空间参照扩展。",
+        "待解决问题": "必须判断博主相对女孩，不能反向回答；统一人物坐标与屏幕坐标，再确认方向。",
+        "视频是否必要": "局部画面/多图可能足够；全片定位目标另有检索成本。",
+        "答案核查状态": "有明确未决项者暂不采用；详细官方问答对照仅在本地核查记录。"
+      }
+    },
+    {
+      "sample_id": "10",
+      "video_group_id": "10",
+      "subtask": "Daily Vlogs",
+      "question": "空间参照和短运动方向。自写核查摘要，原始问答仅本地查看。",
+      "question_zh": "空间参照和短运动方向。自写核查摘要，原始问答仅本地查看。",
+      "options": [],
+      "answer_index": null,
+      "reference_answer": "官方题目、选项及答案仅本地核查；请按样例ID从作者数据取得。",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "正式媒体已取得并在本地核查；本轮公开筛选摘要，不新增复制媒体。",
+      "source_video_url": "https://github.com/marinero4972/VideoZeroBench",
+      "video_duration_seconds": 877.52,
+      "annotation_source": "https://huggingface.co/datasets/marinero4972/VideoZeroBench/tree/aef3b0613ad2909a1355a99201b4a0c48e073836",
+      "content_access": "local_only",
+      "review": {
+        "是否看过正式片段": "部分；助手查看正式文件的证据窗口抽帧，未连续看完整视频",
+        "核查人": "助手代审（非成员人工观看）",
+        "核查日期": "2026-10-03",
+        "结论": "暂缓本题；保留镜像空间理解扩展。",
+        "待解决问题": "区分实景人物和镜像；不能按屏幕左右直接纠正官方答案，先定义人物朝向和空间参照。",
+        "视频是否必要": "定位到场景后单帧或少量画面可能足够；不必然需要14分钟记忆。",
+        "答案核查状态": "有明确未决项者暂不采用；详细官方问答对照仅在本地核查记录。"
+      }
+    },
+    {
+      "sample_id": "105",
+      "video_group_id": "105",
+      "subtask": "Fashion&Beauty",
+      "question": "空间参照和短运动方向。自写核查摘要，原始问答仅本地查看。",
+      "question_zh": "空间参照和短运动方向。自写核查摘要，原始问答仅本地查看。",
+      "options": [],
+      "answer_index": null,
+      "reference_answer": "官方题目、选项及答案仅本地核查；请按样例ID从作者数据取得。",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "正式媒体已取得并在本地核查；本轮公开筛选摘要，不新增复制媒体。",
+      "source_video_url": "https://github.com/marinero4972/VideoZeroBench",
+      "video_duration_seconds": 542.02,
+      "annotation_source": "https://huggingface.co/datasets/marinero4972/VideoZeroBench/tree/aef3b0613ad2909a1355a99201b4a0c48e073836",
+      "content_access": "local_only",
+      "review": {
+        "是否看过正式片段": "部分；助手查看正式文件的证据窗口抽帧，未连续看完整视频",
+        "核查人": "助手代审（非成员人工观看）",
+        "核查日期": "2026-10-03",
+        "结论": "短运动片段扩展条件候选；完整9分钟视频暂缓。",
+        "待解决问题": "统一从摄像机视角观察、按刷头轨迹判定，必要时连续慢放复核。当前字母选项是由原题有限回答集合派生；不报完整L5成绩。",
+        "视频是否必要": "方向要比较连续时刻，单帧不足；固定少量均匀帧可能丢失短运动。",
+        "答案核查状态": "有明确未决项者暂不采用；详细官方问答对照仅在本地核查记录。"
+      }
     }
-  }
+  ]
 }

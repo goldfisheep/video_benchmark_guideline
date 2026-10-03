@@ -1,33 +1,112 @@
 {
   "benchmark": "CGBench",
-  "samples": [],
-  "sample_template": {
-    "sample_id": "待填写",
-    "video_id": "待填写",
-    "subtask": "待填写",
-    "question": "待填写",
-    "question_zh": "待填写",
-    "options": [],
-    "reference_answer": "待填写",
-    "answer_index": null,
-    "annotation_source": "待填写",
-    "video_path": "",
-    "video_url": "",
-    "video_source": "待填写",
-    "video_status": "待填写",
-    "review": {
-      "是否看过正式片段": "待填写",
-      "是否需要音频": "待填写",
-      "是否需要字幕": "待填写",
-      "适合的JEV输出": "待填写",
-      "视频是否必要": "待填写",
-      "答案是否清楚": "待填写",
-      "证据时刻": "待填写",
-      "结论": "待填写",
-      "待解决问题": "待填写",
-      "查看方式": "待填写",
-      "核查人": "待填写",
-      "核查日期": "待填写"
+  "version": {
+    "official_project": "https://github.com/CG-Bench/CG-Bench",
+    "annotation": "cgbench_mini.json",
+    "readme_provenance": {
+      "repo": "CG-Bench/CG-Bench",
+      "sha": "95c6bd6cade4f5c815565903c4f94dbd94521ed2",
+      "html_url": "https://github.com/CG-Bench/CG-Bench/blob/main/README.md"
+    },
+    "hf_repo": "CG-Bench/CG-Bench",
+    "hf_revision": "a3be039f6ba85e022a749eca111b64ffcafadd1d"
+  },
+  "updated": "2026-10-03",
+  "status": "助手代审已完成：正式证据窗口抽帧，未连续看完整视频",
+  "sampling_note": "每源选3段便于获取的视频并兼顾题型，目的性抽样，不是随机抽样；不据3段推断全源质量。VideoMME v2保留每段完整4题组。",
+  "summary_draft": "助手代审3例的正式证据窗口；完整视频约18—24分钟，第一版完整长视频题包建议0题，保留扩展。官方clue_acc短证据模式可条件采用；界面细节仍补核，识字题作图片对照，跨片段计数需核对全片完整性。",
+  "video_count": 3,
+  "question_count": 3,
+  "source_screening": {
+    "本轮结论": "助手代审3例的正式证据窗口；完整视频约18—24分钟，第一版完整长视频题包建议0题，保留扩展。官方clue_acc短证据模式可条件采用；界面细节仍补核，识字题作图片对照，跨片段计数需核对全片完整性。",
+    "依据": "用户授权助手代审；作者标注、时长与正式证据窗口抽帧",
+    "human_viewed_samples": 0,
+    "human_item_reviews_received": 0,
+    "assistant_window_reviewed_samples": 3,
+    "assistant_full_video_continuous_review": false,
+    "第一版完整长视频建议题数": 0,
+    "质量限制": "目的性抽样；不估计全源错误率。无实测JEV视频时延/帧数限制，长视频暂缓是阶段选择而非能力上限。"
+  },
+  "content_access": "local_only",
+  "public_scope": "仅样例身份与本仓库自写筛选摘要；原始问答及媒体保留本地。",
+  "samples": [
+    {
+      "sample_id": "5982",
+      "video_group_id": "5982",
+      "subtask": "Hallucination",
+      "question": "正式长视频中的界面操作、画面文字和跨片段数量汇总。自写核查摘要，原始问答仅本地查看。",
+      "question_zh": "正式长视频中的界面操作、画面文字和跨片段数量汇总。自写核查摘要，原始问答仅本地查看。",
+      "options": [],
+      "answer_index": null,
+      "reference_answer": "官方题目、选项及答案仅本地核查；请按样例ID从作者数据取得。",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "正式媒体已取得并在本地核查；本轮公开筛选摘要，不新增复制媒体。",
+      "source_video_url": "https://github.com/CG-Bench/CG-Bench",
+      "video_duration_seconds": 1202.16,
+      "annotation_source": "https://huggingface.co/datasets/CG-Bench/CG-Bench/tree/a3be039f6ba85e022a749eca111b64ffcafadd1d",
+      "content_access": "local_only",
+      "review": {
+        "是否看过正式片段": "部分；助手查看正式文件的证据窗口抽帧，未连续看完整视频",
+        "核查人": "助手代审（非成员人工观看）",
+        "核查日期": "2026-10-03",
+        "结论": "完整视频暂缓；官方短证据模式的界面变化条件候选。",
+        "待解决问题": "提高原始分辨率核对指定操作前后，不仅凭红圈确认组合答案；clue_acc与long_acc分开。",
+        "视频是否必要": "需前后画面核对条指针方向；完整视频输入时还包含关键操作检索成本。",
+        "答案核查状态": "有明确未决项者暂不采用；详细官方问答对照仅在本地核查记录。"
+      }
+    },
+    {
+      "sample_id": "680",
+      "video_group_id": "680",
+      "subtask": "Text Perception",
+      "question": "正式长视频中的界面操作、画面文字和跨片段数量汇总。自写核查摘要，原始问答仅本地查看。",
+      "question_zh": "正式长视频中的界面操作、画面文字和跨片段数量汇总。自写核查摘要，原始问答仅本地查看。",
+      "options": [],
+      "answer_index": null,
+      "reference_answer": "官方题目、选项及答案仅本地核查；请按样例ID从作者数据取得。",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "正式媒体已取得并在本地核查；本轮公开筛选摘要，不新增复制媒体。",
+      "source_video_url": "https://github.com/CG-Bench/CG-Bench",
+      "video_duration_seconds": 1104.65,
+      "annotation_source": "https://huggingface.co/datasets/CG-Bench/CG-Bench/tree/a3be039f6ba85e022a749eca111b64ffcafadd1d",
+      "content_access": "local_only",
+      "review": {
+        "是否看过正式片段": "部分；助手查看正式文件的证据窗口抽帧，未连续看完整视频",
+        "核查人": "助手代审（非成员人工观看）",
+        "核查日期": "2026-10-03",
+        "结论": "完整视频暂缓；短窗识字作图片/检索对照。",
+        "待解决问题": "不用此题证明时序推理；原始长视频模式保留检索难度，短证据模式单列。",
+        "视频是否必要": "定位后单帧足够；全片寻找目标与单帧识字是两个能力。",
+        "答案核查状态": "有明确未决项者暂不采用；详细官方问答对照仅在本地核查记录。"
+      }
+    },
+    {
+      "sample_id": "1319",
+      "video_group_id": "1319",
+      "subtask": "Event Perception",
+      "question": "正式长视频中的界面操作、画面文字和跨片段数量汇总。自写核查摘要，原始问答仅本地查看。",
+      "question_zh": "正式长视频中的界面操作、画面文字和跨片段数量汇总。自写核查摘要，原始问答仅本地查看。",
+      "options": [],
+      "answer_index": null,
+      "reference_answer": "官方题目、选项及答案仅本地核查；请按样例ID从作者数据取得。",
+      "video_path": "",
+      "video_url": "",
+      "video_source": "正式媒体已取得并在本地核查；本轮公开筛选摘要，不新增复制媒体。",
+      "source_video_url": "https://github.com/CG-Bench/CG-Bench",
+      "video_duration_seconds": 1440.56,
+      "annotation_source": "https://huggingface.co/datasets/CG-Bench/CG-Bench/tree/a3be039f6ba85e022a749eca111b64ffcafadd1d",
+      "content_access": "local_only",
+      "review": {
+        "是否看过正式片段": "部分；助手查看正式文件的证据窗口抽帧，未连续看完整视频",
+        "核查人": "助手代审（非成员人工观看）",
+        "核查日期": "2026-10-03",
+        "结论": "完整视频暂缓；跨片段汇总扩展条件候选，也设末帧图片对照。",
+        "待解决问题": "按不同颜色/产品计数而非涂抹次数；核对全片完整性。抽帧含内嵌文字，未完成文字遮蔽对照。",
+        "视频是否必要": "多个试色片段可支持比较，但最后展示帧可能直接提供数量；不是必然长记忆题。",
+        "答案核查状态": "有明确未决项者暂不采用；详细官方问答对照仅在本地核查记录。"
+      }
     }
-  }
+  ]
 }
