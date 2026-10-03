@@ -33,7 +33,7 @@
     {
       "name": "MotionBench",
       "category": "通用感知；细粒度运动理解",
-      "version": "MotionBench；数据版本／修订号待填写",
+      "version": "MotionBench/video_info.meta.jsonl；固定HF f099db892172a015c489507c9abe56b036d960ef",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -45,20 +45,28 @@
         }
       ],
       "source_notes": "**部分公开**。[官方 HF 数据](https://huggingface.co/datasets/zai-org/MotionBench)；[官方说明](https://github.com/zai-org/MotionBench)。自采数据有下载入口；部分视频来自既有数据集，需另从原数据集取得。",
-      "priority": "替补候选",
+      "priority": "第一版无声视频核心候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题，待核实本条选项及答案。",
-      "viewing_guidance": "按官方 README 找自采视频下载入口；其他来源按原数据集取得。先查看文件是否提供独立视频，再按选定 ID 获取少量片段；在线预览能力待填写。",
+      "final_decision": "采纳筛选子集；2候选、1异常排除",
+      "decision_reason": "纳入第一版无声运动理解候选：本轮2题通过初筛；第1题问答与画面不符，排除该题。裁剪只是可能原因，未证实；保留数据源。",
+      "selected_scope": "无声动作计数/镜头运动；排除本轮顺序异常题，其他顺序题按标签与片段一致性选。",
+      "known_output": "本组三题原生Choice；计数、方向及动作顺序用原选项字母。",
+      "viewing_guidance": "三例已观看，作者HF单文件源站播放与报告已同步。",
       "report_path": "数据源样例/MotionBench/人工筛选报告.md",
-      "samples_path": "数据源样例/MotionBench/样例清单.json"
+      "samples_path": "数据源样例/MotionBench/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 3,
+        "item_reviews_received": 3,
+        "video_candidates": 2,
+        "image_candidates": 0,
+        "excluded_samples": 1
+      }
     },
     {
       "name": "TVBench",
       "category": "通用感知；时间顺序、动作与变化理解",
-      "version": "TVBench；数据版本／修订号待填写",
+      "version": "json/*.json；固定HF 1d933b2aced8da5d6b315bb6a37807d126e05526",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -70,15 +78,23 @@
         }
       ],
       "source_notes": "**公开，部分视频需按说明获取**。[官方 HF 数据](https://huggingface.co/datasets/FunAILab/TVBench)；[代码](https://github.com/daniel-cores/tvbench)。部分来源视频依赖 NTU RGB+D 等原数据源。",
-      "priority": "替补候选",
+      "priority": "第一版无声视频核心候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题，待核实本条选项及答案。",
-      "viewing_guidance": "先在 HF／官方代码查看标注并选视频 ID，再按官方说明去对应源数据集取片段；部分源涉及 NTU RGB+D，访问条件待填写。",
+      "final_decision": "采纳时序子集；3题初筛候选",
+      "decision_reason": "纳入第一版无声时序候选：本轮3题通过整体初筛，覆盖先后、运动计数和方向；与MotionBench能力相近，与MVBench需查重。",
+      "selected_scope": "原生Choice的动作先后、运动计数、方向；补核计数、跨源去重。",
+      "known_output": "本组三题原生Choice；计数、方向及动作顺序用原选项字母。",
+      "viewing_guidance": "三例正式片段已在本地查看；公开问答/报告，视频按作者归档取得。",
       "report_path": "数据源样例/TVBench/人工筛选报告.md",
-      "samples_path": "数据源样例/TVBench/样例清单.json"
+      "samples_path": "数据源样例/TVBench/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 3,
+        "item_reviews_received": 3,
+        "video_candidates": 3,
+        "image_candidates": 0,
+        "excluded_samples": 0
+      }
     },
     {
       "name": "MVBench",
@@ -129,7 +145,7 @@
     {
       "name": "PercTest",
       "category": "通用感知；感知问答、跟踪等多任务",
-      "version": "暂按 Perception Test 对应；需确认截图简称及数据版本",
+      "version": "sample_annotations.zip / sample.json；作者公开sample包valid三例；文件哈希保留",
       "sources": [
         {
           "label": "官方数据与下载说明",
@@ -137,15 +153,23 @@
         }
       ],
       "source_notes": "**公开，名称疑为简称**。按 **Perception Test** 核对：[官方数据与下载说明](https://github.com/google-deepmind/perception_test)。截图中的 PercTest 未见独立同名基准，建议回查原表。",
-      "priority": "替补候选",
+      "priority": "第一版综合理解优先候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题子任务；跟踪／定位需坐标等额外输出。",
-      "viewing_guidance": "按 Perception Test 官方下载说明选择视频和标注子任务；先确认所需文件和下载粒度，不必先取得全部任务的数据。",
+      "final_decision": "综合理解优先候选；2条件视频＋1图片对照",
+      "decision_reason": "暂按Perception Test纳入综合理解优先候选；成员已看三例并评价质量较好。2条动作/前后比较条件候选、1条末帧图片对照；未收到逐题导出，官方答案未全部人工明确确认。",
+      "selected_scope": "暂按Perception Test选择题；动作与前后位置题优先，末帧字母题单列图片对照。",
+      "known_output": "本组三题原生三选一Choice；跟踪/定位任务不并入本轮。",
+      "viewing_guidance": "三例观看已据文字反馈记录；公开sample视频可播放；逐题答案确认未收到导出。",
       "report_path": "数据源样例/PercTest/人工筛选报告.md",
-      "samples_path": "数据源样例/PercTest/样例清单.json"
+      "samples_path": "数据源样例/PercTest/样例清单.json",
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 3,
+        "item_reviews_received": 0,
+        "video_candidates": 2,
+        "image_candidates": 1,
+        "excluded_samples": 0
+      }
     },
     {
       "name": "VideoMME",

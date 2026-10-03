@@ -250,7 +250,7 @@ window.BENCHMARK_DATA = {
     {
       "name": "MotionBench",
       "category": "通用感知；细粒度运动理解",
-      "version": "MotionBench；数据版本／修订号待填写",
+      "version": "MotionBench/video_info.meta.jsonl；固定HF f099db892172a015c489507c9abe56b036d960ef",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -262,21 +262,371 @@ window.BENCHMARK_DATA = {
         }
       ],
       "source_notes": "**部分公开**。[官方 HF 数据](https://huggingface.co/datasets/zai-org/MotionBench)；[官方说明](https://github.com/zai-org/MotionBench)。自采数据有下载入口；部分视频来自既有数据集，需另从原数据集取得。",
-      "priority": "替补候选",
+      "priority": "第一版无声视频核心候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题，待核实本条选项及答案。",
-      "viewing_guidance": "按官方 README 找自采视频下载入口；其他来源按原数据集取得。先查看文件是否提供独立视频，再按选定 ID 获取少量片段；在线预览能力待填写。",
+      "final_decision": "采纳筛选子集；2候选、1异常排除",
+      "decision_reason": "纳入第一版无声运动理解候选：本轮2题通过初筛；第1题问答与画面不符，排除该题。裁剪只是可能原因，未证实；保留数据源。",
+      "selected_scope": "无声动作计数/镜头运动；排除本轮顺序异常题，其他顺序题按标签与片段一致性选。",
+      "known_output": "本组三题原生Choice；计数、方向及动作顺序用原选项字母。",
+      "viewing_guidance": "三例已观看，作者HF单文件源站播放与报告已同步。",
       "report_path": "数据源样例/MotionBench/人工筛选报告.md",
       "samples_path": "数据源样例/MotionBench/样例清单.json",
-      "samples": []
+      "samples": [
+        {
+          "sample_id": "ggqGrLl5uBMMNzW2",
+          "video_group_id": "ggqGrLl5uBMMNzW2",
+          "subtask": "Action Order",
+          "question": "Please describe the detailed breakdown of the action in the video.",
+          "question_zh": "请选择视频中动作的先后顺序：跳跃、躺下、站立。",
+          "options": [
+            "Jump, Lay down, Stand",
+            "Jump, Stand, Lay down",
+            "Lay down, Stand, Jump"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C"
+          ],
+          "reference_answer": "C. Lay down, Stand, Jump",
+          "answer_index": 2,
+          "official_answer_raw": "C",
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://huggingface.co/datasets/zai-org/MotionBench/tree/f099db892172a015c489507c9abe56b036d960ef",
+          "annotation_file": [
+            "video_info.meta.jsonl"
+          ],
+          "annotation_sha256": {
+            "video_info.meta.jsonl": "0f6cc2a3a329470d9d2e945480829b23937025a4aeb0f1fb9c63a0e91bbf6d3b"
+          },
+          "original_record": {
+            "question_type": "Action Order",
+            "video_type": "Gaming",
+            "key": "37e1b635be3544d5a45106ea71c3b97c",
+            "qa": [
+              {
+                "uid": "ggqGrLl5uBMMNzW2",
+                "start": null,
+                "end": null,
+                "answer": "C",
+                "question": "Please describe the detailed breakdown of the action in the video.\nA. Jump, Lay down, Stand\nB. Jump, Stand, Lay down\nC. Lay down, Stand, Jump"
+              }
+            ],
+            "video_path": "37e1b635be3544d5a45106ea71c3b97c.mp4",
+            "video_info": {
+              "duration": 8.383333206176758,
+              "fps": 60,
+              "resolution": {
+                "width": 1280,
+                "height": 1280
+              }
+            }
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/zai-org/MotionBench/blob/f099db892172a015c489507c9abe56b036d960ef/MotionBench/self-collected/37e1b635be3544d5a45106ea71c3b97c.mp4",
+          "video_source": "作者HF固定提交的正式单文件；引用源站播放，不重新上传。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 8.4,
+          "preview_duration_seconds": 8.4,
+          "has_audio": false,
+          "preview_has_audio": false,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "6f5b3e54a090e4ebebe4fd86d3fa3ddc4daf9db5de5a64b1000269becfdc7175",
+          "preview_file_sha256": "6f5b3e54a090e4ebebe4fd86d3fa3ddc4daf9db5de5a64b1000269becfdc7175",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "public_author_link",
+          "review_status": "人工初筛已填写",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；三例文件均无音轨，成员已看正式画面。",
+            "是否需要字幕": "不需要独立字幕；本轮画面判断，画面文字可使用。",
+            "适合的JEV输出": "Choice（原生3选一；保留原选项及官方答案）",
+            "视频是否必要": "需要连续画面判断先后，单帧只能辨认某一姿态。",
+            "答案是否清楚": "不清楚。官方C为“躺下→站立→跳跃”；成员完整观看后指出没有后续站立和跳跃。抽帧也见前段站立、后段低姿态，现有片段未支持C。",
+            "证据时间": "整段0—8.40秒",
+            "结论": "本轮排除该题，保留官方C及异常记录；数据源其他清楚题目继续采纳。",
+            "待解决问题": "可能来自作者截片、视频/标注版本错配或动作定义；未证实具体原因。作者时长8.383秒与本地8.40秒接近，文件哈希吻合下载记录，预览即原片，本轮没有二次裁剪。核对原始长片或作者标注后再考虑恢复；不改成未经核验的新答案。",
+            "查看方式": "剩余来源准备/MotionBench/本地浏览.html第1例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "请选择视频中动作的先后顺序：跳跃、躺下、站立。 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+            "实际视频时长": "原文件8.40秒；本页预览8.40秒。"
+          },
+          "previewed_frame_seconds": [
+            0.42000000000000004,
+            2.52,
+            5.04,
+            7.5600000000000005
+          ],
+          "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+          "evidence_windows": [],
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+            "是否需要字幕": "不需要独立字幕；画面文字可以使用。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "需要连续画面判断先后，单帧只能辨认某一姿态。",
+            "答案是否清楚": "官方C为“躺下→站立→跳跃”；但是没有后续站立和跳跃动作",
+            "证据时间": "整段0—8.40秒",
+            "结论": "暂缓本例，先核对动作定义及视频与标注对应关系；数据源继续保留。",
+            "待解决问题": "慢放整段，区分低姿态/躺倒及起跳/落地；若仍与C不符，记录自己的顺序并排除本题，不直接改官方答案。",
+            "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+            "核查重点": "请选择视频中动作的先后顺序：跳跃、躺下、站立。 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+            "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+            "实际视频时长": "原文件8.40秒；本页预览8.40秒。"
+          },
+          "local_video_filename": "37e1b635be3544d5a45106ea71c3b97c.mp4",
+          "video_url": "https://huggingface.co/datasets/zai-org/MotionBench/resolve/f099db892172a015c489507c9abe56b036d960ef/MotionBench/self-collected/37e1b635be3544d5a45106ea71c3b97c.mp4",
+          "local_viewing_guidance": "本地剩余来源准备/MotionBench/本地浏览.html；公开展示方式见video_source。"
+        },
+        {
+          "sample_id": "1TUkRjNi0sxhtKaU",
+          "video_group_id": "1TUkRjNi0sxhtKaU",
+          "subtask": "Repetition Count",
+          "question": "Please count the number of repeated actions in the video.",
+          "question_zh": "重复动作一共发生几次？动作单位为向右前方跑三步抬左腿，再向左前方跑三步抬右腿。",
+          "options": [
+            "1",
+            "7",
+            "8",
+            "3"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "reference_answer": "D. 3",
+          "answer_index": 3,
+          "official_answer_raw": "D",
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://huggingface.co/datasets/zai-org/MotionBench/tree/f099db892172a015c489507c9abe56b036d960ef",
+          "annotation_file": [
+            "video_info.meta.jsonl"
+          ],
+          "annotation_sha256": {
+            "video_info.meta.jsonl": "0f6cc2a3a329470d9d2e945480829b23937025a4aeb0f1fb9c63a0e91bbf6d3b"
+          },
+          "original_record": {
+            "question_type": "Repetition Count",
+            "video_type": "medical",
+            "key": "c916cd65-f568-4c75-aa3e-c210a6fb057b",
+            "qa": [
+              {
+                "uid": "1TUkRjNi0sxhtKaU",
+                "start": 0,
+                "end": 12,
+                "answer": "D",
+                "question": "Please count the number of repeated actions in the video.\nA. 1\nB. 7\nC. 8\nD. 3",
+                "repetition_name": "Run three steps to the front right and lift your left leg, then run three steps to the front left and lift your right leg"
+              }
+            ],
+            "video_path": "c916cd65-f568-4c75-aa3e-c210a6fb057b_0_12.mp4",
+            "video_info": {
+              "duration": 11.968306541442871,
+              "fps": 23.98,
+              "resolution": {
+                "width": 1280,
+                "height": 720
+              }
+            }
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/zai-org/MotionBench/blob/f099db892172a015c489507c9abe56b036d960ef/MotionBench/public-dataset/c916cd65-f568-4c75-aa3e-c210a6fb057b_0_12.mp4",
+          "video_source": "作者HF固定提交的正式单文件；引用源站播放，不重新上传。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 12.01,
+          "preview_duration_seconds": 12.01,
+          "has_audio": false,
+          "preview_has_audio": false,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "b7ed1d8d5c70dddb5ac335cac338659896d233f951a1c127a2a59da543e6faba",
+          "preview_file_sha256": "b7ed1d8d5c70dddb5ac335cac338659896d233f951a1c127a2a59da543e6faba",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "public_author_link",
+          "review_status": "人工初筛已填写",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；三例文件均无音轨，成员已看正式画面。",
+            "是否需要字幕": "不需要独立字幕；本轮画面判断，画面文字可使用。",
+            "适合的JEV输出": "Choice（原生4选一；保留原选项及官方答案）",
+            "视频是否必要": "是；需要连续观看并计完整动作循环",
+            "答案是否清楚": "成员标记答案清楚；官方D为3次。按成员初筛保留；未提供逐次动作循环计数日志，助手没有用抽帧重新证明3次。",
+            "证据时间": "整段约0—12.01秒；文件已是作者0—12秒片段，无需再次从原视频裁剪。",
+            "结论": "本轮纳入无声动作计数候选；进入正式题包前统一动作循环单位。",
+            "待解决问题": "动作计数规则需保持“右前跑三步抬左腿＋左前跑三步抬右腿”为完整单位，不把步数或单次抬腿当循环；扩大抽样核对同类标签并做仅题目对照。",
+            "查看方式": "剩余来源准备/MotionBench/本地浏览.html第2例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "重复动作一共发生几次？动作单位为向右前方跑三步抬左腿，再向左前方跑三步抬右腿。 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+            "实际视频时长": "原文件12.01秒；本页预览12.01秒。"
+          },
+          "previewed_frame_seconds": [
+            0.6005,
+            3.6029999999999998,
+            7.2059999999999995,
+            10.809
+          ],
+          "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+          "evidence_windows": [],
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+            "是否需要字幕": "预计不需要独立字幕；画面文字可以使用。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "是；需要连续观看并计完整动作循环",
+            "答案是否清楚": "是",
+            "证据时间": "整段约0—12.01秒；文件已是作者0—12秒片段，无需再次从原视频裁剪。",
+            "结论": "无声动作计数条件候选，完整循环确认为3次后再采纳。",
+            "待解决问题": "先统一循环单位，再完整计数；不能把单次抬腿、步数、左右各半个循环混作一次。",
+            "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+            "核查重点": "重复动作一共发生几次？动作单位为向右前方跑三步抬左腿，再向左前方跑三步抬右腿。 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+            "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+            "实际视频时长": "原文件12.01秒；本页预览12.01秒。"
+          },
+          "local_video_filename": "c916cd65-f568-4c75-aa3e-c210a6fb057b_0_12.mp4",
+          "video_url": "https://huggingface.co/datasets/zai-org/MotionBench/resolve/f099db892172a015c489507c9abe56b036d960ef/MotionBench/public-dataset/c916cd65-f568-4c75-aa3e-c210a6fb057b_0_12.mp4",
+          "local_viewing_guidance": "本地剩余来源准备/MotionBench/本地浏览.html；公开展示方式见video_source。"
+        },
+        {
+          "sample_id": "EQEJYaSbuzkmL1TJ_4",
+          "video_group_id": "EQEJYaSbuzkmL1TJ_4",
+          "subtask": "Camera Motion",
+          "question": "Does the camera follow or move as the women perform their yoga routine?",
+          "question_zh": "女性做瑜伽时，镜头是否跟随或移动？",
+          "options": [
+            "No, it remains focused in one spot",
+            "Yes, the camera pans left and right",
+            "Yes, the camera zooms in and out",
+            "No, it switches angles"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "reference_answer": "A. No, it remains focused in one spot",
+          "answer_index": 0,
+          "official_answer_raw": "A",
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://huggingface.co/datasets/zai-org/MotionBench/tree/f099db892172a015c489507c9abe56b036d960ef",
+          "annotation_file": [
+            "video_info.meta.jsonl"
+          ],
+          "annotation_sha256": {
+            "video_info.meta.jsonl": "0f6cc2a3a329470d9d2e945480829b23937025a4aeb0f1fb9c63a0e91bbf6d3b"
+          },
+          "original_record": {
+            "key": "EQEJYaSbuzkmL1TJ",
+            "video_info": {
+              "duration": 4.840000152587891,
+              "resolution": [
+                720,
+                1280
+              ],
+              "fps": null
+            },
+            "video_path": "EQEJYaSbuzkmL1TJ.mp4",
+            "qa": [
+              {
+                "uid": "EQEJYaSbuzkmL1TJ_4",
+                "start": null,
+                "end": null,
+                "answer": "A",
+                "question": "Does the camera follow or move as the women perform their yoga routine?\nA. No, it remains focused in one spot\nB. Yes, the camera pans left and right\nC. Yes, the camera zooms in and out\nD. No, it switches angles\n"
+              }
+            ],
+            "video_type": null,
+            "question_type": "Camera Motion"
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/zai-org/MotionBench/blob/f099db892172a015c489507c9abe56b036d960ef/MotionBench/self-collected/EQEJYaSbuzkmL1TJ.mp4",
+          "video_source": "作者HF固定提交的正式单文件；引用源站播放，不重新上传。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 4.88,
+          "preview_duration_seconds": 4.88,
+          "has_audio": false,
+          "preview_has_audio": false,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "f792446d311a1ada76a315c15461384ab51520f4111dad8fc04d39f2420a61a0",
+          "preview_file_sha256": "f792446d311a1ada76a315c15461384ab51520f4111dad8fc04d39f2420a61a0",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "public_author_link",
+          "review_status": "人工初筛已填写",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；三例文件均无音轨，成员已看正式画面。",
+            "是否需要字幕": "不需要独立字幕；本轮画面判断，画面文字可使用。",
+            "适合的JEV输出": "Choice（原生4选一；保留原选项及官方答案）",
+            "视频是否必要": "是；需要比较多个时刻的背景和视角；单帧无法确定镜头是否移动。",
+            "答案是否清楚": "成员标记答案清楚；官方A为镜头固定，既有抽帧背景稳定，与成员初筛一致。",
+            "证据时间": "整段0—4.88秒，比较人物之外的墙面、地面和边缘位置。",
+            "结论": "本轮纳入镜头运动候选；比较跨时刻背景而非仅人物姿态。",
+            "待解决问题": "本例成员无新增异常；正式评测区分人物移动和镜头移动，另做单帧/多图对照，并补查其他镜头运动题。",
+            "查看方式": "剩余来源准备/MotionBench/本地浏览.html第3例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "女性做瑜伽时，镜头是否跟随或移动？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+            "实际视频时长": "原文件4.88秒；本页预览4.88秒。"
+          },
+          "previewed_frame_seconds": [
+            0.244,
+            1.464,
+            2.928,
+            4.392
+          ],
+          "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+          "evidence_windows": [],
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+            "是否需要字幕": "预计不需要独立字幕；画面文字可以使用。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "是；需要比较多个时刻的背景和视角；单帧无法确定镜头是否移动。",
+            "答案是否清楚": "是",
+            "证据时间": "整段0—4.88秒，比较人物之外的墙面、地面和边缘位置。",
+            "结论": "优先作为短视频镜头运动Choice条件候选。",
+            "待解决问题": "区分人物移动与镜头移动；检查短暂缩放/裁切，确认A覆盖整个片段。",
+            "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+            "核查重点": "女性做瑜伽时，镜头是否跟随或移动？ 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+            "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+            "实际视频时长": "原文件4.88秒；本页预览4.88秒。"
+          },
+          "local_video_filename": "EQEJYaSbuzkmL1TJ.mp4",
+          "video_url": "https://huggingface.co/datasets/zai-org/MotionBench/resolve/f099db892172a015c489507c9abe56b036d960ef/MotionBench/self-collected/EQEJYaSbuzkmL1TJ.mp4",
+          "local_viewing_guidance": "本地剩余来源准备/MotionBench/本地浏览.html；公开展示方式见video_source。"
+        }
+      ],
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 3,
+        "item_reviews_received": 3,
+        "video_candidates": 2,
+        "image_candidates": 0,
+        "excluded_samples": 1
+      }
     },
     {
       "name": "TVBench",
       "category": "通用感知；时间顺序、动作与变化理解",
-      "version": "TVBench；数据版本／修订号待填写",
+      "version": "json/*.json；固定HF 1d933b2aced8da5d6b315bb6a37807d126e05526",
       "sources": [
         {
           "label": "官方 HF 数据",
@@ -288,16 +638,338 @@ window.BENCHMARK_DATA = {
         }
       ],
       "source_notes": "**公开，部分视频需按说明获取**。[官方 HF 数据](https://huggingface.co/datasets/FunAILab/TVBench)；[代码](https://github.com/daniel-cores/tvbench)。部分来源视频依赖 NTU RGB+D 等原数据源。",
-      "priority": "替补候选",
+      "priority": "第一版无声视频核心候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题，待核实本条选项及答案。",
-      "viewing_guidance": "先在 HF／官方代码查看标注并选视频 ID，再按官方说明去对应源数据集取片段；部分源涉及 NTU RGB+D，访问条件待填写。",
+      "final_decision": "采纳时序子集；3题初筛候选",
+      "decision_reason": "纳入第一版无声时序候选：本轮3题通过整体初筛，覆盖先后、运动计数和方向；与MotionBench能力相近，与MVBench需查重。",
+      "selected_scope": "原生Choice的动作先后、运动计数、方向；补核计数、跨源去重。",
+      "known_output": "本组三题原生Choice；计数、方向及动作顺序用原选项字母。",
+      "viewing_guidance": "三例正式片段已在本地查看；公开问答/报告，视频按作者归档取得。",
       "report_path": "数据源样例/TVBench/人工筛选报告.md",
       "samples_path": "数据源样例/TVBench/样例清单.json",
-      "samples": []
+      "samples": [
+        {
+          "sample_id": "action_sequence:6H78U.mp4",
+          "video_group_id": "action_sequence:6H78U.mp4",
+          "subtask": "action_sequence",
+          "question": "What did the person do first?",
+          "question_zh": "人物先做的是放下毯子，还是拿起毛巾？",
+          "options": [
+            "Put down the blanket.",
+            "Took the towel."
+          ],
+          "option_labels": [
+            "A",
+            "B"
+          ],
+          "reference_answer": "A. Put down the blanket.",
+          "answer_index": 0,
+          "official_answer_raw": "Put down the blanket.",
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://huggingface.co/datasets/FunAILab/TVBench/tree/1d933b2aced8da5d6b315bb6a37807d126e05526",
+          "annotation_file": [
+            "action_sequence.json"
+          ],
+          "annotation_sha256": {
+            "action_sequence.json": "1dc23960a2085a2e1f8a700999c24be4adcdbb46b212cdc0dc9798d3cc0f0929"
+          },
+          "original_record": {
+            "video": "6H78U.mp4",
+            "question": "What did the person do first?",
+            "answer": "Put down the blanket.",
+            "candidates": [
+              "Put down the blanket.",
+              "Took the towel."
+            ],
+            "question_id": "Sequence_T3_5",
+            "start": 16.6,
+            "end": 25.6
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/FunAILab/TVBench/blob/1d933b2aced8da5d6b315bb6a37807d126e05526/video/action_sequence.zip",
+          "video_source": "作者HF视频归档成员已本地核查；公开页提供原问题、选项和官方归档入口，尚不重传第三方来源视频。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 34.51,
+          "preview_duration_seconds": 9.01,
+          "has_audio": true,
+          "preview_has_audio": true,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "bb884add5656731808d85134060eff3b1f04eb37f3837ab2192fe43b8db849c9",
+          "preview_file_sha256": "5bab29187263bf9b5a3eaac898a9cca0a1f301abdcbae7c4dcd209a9accebd5d",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "local_only",
+          "review_status": "人工初筛已填写",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不是必要输入；文件有音轨，人工可听作校验，先静音检查画面能否支持答案。",
+            "是否需要字幕": "不需要独立字幕；本轮为视觉先后、计数和方向。",
+            "适合的JEV输出": "Choice（原生2选一；保留原选项及官方答案）",
+            "视频是否必要": "需要连续画面判断动作先后；必须限定正式9秒片段。",
+            "答案是否清楚": "成员标记答案清楚；官方A为先放下毯子。只按16.6—25.6秒正式片段判断，预览0—9.01秒。",
+            "证据时间": "预览0—9秒对应原文件16.6—25.6秒；不要用原片更早动作作答。",
+            "结论": "本轮纳入无声动作顺序候选。",
+            "待解决问题": "正式输入沿用作者16.6—25.6秒片段，不扩成整条34.51秒视频；保持毯子/毛巾指代，跨来源核对重复视频。",
+            "查看方式": "剩余来源准备/TVBench/本地浏览.html第1例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "人物先做的是放下毯子，还是拿起毛巾？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+            "实际视频时长": "原文件34.51秒；本页预览9.01秒。"
+          },
+          "previewed_frame_seconds": [
+            0.4505,
+            2.703,
+            5.406,
+            8.109
+          ],
+          "evaluation_setting": "只输入原片16.6—25.6秒正式片段；预览0秒对应原16.6秒。",
+          "evidence_windows": [],
+          "archive_member": "action_sequence/6H78U.mp4",
+          "preview_mapping": {
+            "original_start_seconds": 16.6,
+            "original_end_seconds": 25.6,
+            "preview_start_seconds": 0
+          },
+          "submitted_review": {
+            "是否看过正式片段": "是。",
+            "是否需要音频": "不是必要输入；文件有音轨，人工可听作校验，先静音检查画面能否支持答案。",
+            "是否需要字幕": "不需要独立字幕；画面文字可以使用。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "需要连续画面判断动作先后；必须限定正式9秒片段。",
+            "答案是否清楚": "是",
+            "证据时间": "预览0—9秒对应原文件16.6—25.6秒；不要用原片更早动作作答。",
+            "结论": "无声动作顺序条件候选；原生二选一，可输出Choice。",
+            "待解决问题": "确认毯子与毛巾的指代，完整观察片段首动作；原34.51秒视频仅用于来源核对。",
+            "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+            "核查重点": "人物先做的是放下毯子，还是拿起毛巾？ 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+            "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+            "实际视频时长": "原文件34.51秒；本页预览9.01秒。"
+          },
+          "local_video_filename": "review_6H78U.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地剩余来源准备/TVBench/本地浏览.html；公开展示方式见video_source。"
+        },
+        {
+          "sample_id": "object_count:video_11499.mp4",
+          "video_group_id": "object_count:video_11499.mp4",
+          "subtask": "object_count",
+          "question": "How many objects are moving when the video begins?",
+          "question_zh": "视频刚开始时，有几个物体正在移动？",
+          "options": [
+            "0",
+            "3",
+            "1",
+            "2"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "reference_answer": "D. 2",
+          "answer_index": 3,
+          "official_answer_raw": "2",
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://huggingface.co/datasets/FunAILab/TVBench/tree/1d933b2aced8da5d6b315bb6a37807d126e05526",
+          "annotation_file": [
+            "object_count.json"
+          ],
+          "annotation_sha256": {
+            "object_count.json": "26ea96a5a22331a391a22062c12c70207c64087fb136e5805c163dcbc8919f1f"
+          },
+          "original_record": {
+            "video": "video_11499.mp4",
+            "question": "How many objects are moving when the video begins?",
+            "answer": "2",
+            "candidates": [
+              "0",
+              "3",
+              "1",
+              "2"
+            ],
+            "is_seq": true,
+            "question_id": 1
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/FunAILab/TVBench/blob/1d933b2aced8da5d6b315bb6a37807d126e05526/video/object_count.zip",
+          "video_source": "作者HF视频归档成员已本地核查；公开页提供原问题、选项和官方归档入口，尚不重传第三方来源视频。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 5.12,
+          "preview_duration_seconds": 5.12,
+          "has_audio": false,
+          "preview_has_audio": false,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "bb64ddc899835fd2d0b3ffb646b2ce21e490c951cdabe5503a18ebd3ebcd865b",
+          "preview_file_sha256": "bb64ddc899835fd2d0b3ffb646b2ce21e490c951cdabe5503a18ebd3ebcd865b",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "local_only",
+          "review_status": "人工初筛已填写",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+            "是否需要字幕": "不需要独立字幕；本轮为视觉先后、计数和方向。",
+            "适合的JEV输出": "Choice（原生4选一；保留原选项及官方答案）",
+            "视频是否必要": "需要比较开始时连续几帧；单帧只能数全部物体，不能确定哪些在移动。",
+            "答案是否清楚": "官方D为2个运动物体；成员已标记观看并总体认可TVBench，未单独改此答案栏。助手抽帧见黄方块与蓝圆柱相对位置变化；不写成成员独立逐个计数已经确认。",
+            "证据时间": "整段0—5.12秒，重点开头0—1秒。",
+            "结论": "本轮纳入运动计数候选，正式题包前补核开始时两物体的独立计数。",
+            "待解决问题": "题目只数视频开始时正在移动的物体，不数全部物体；参照物相对位置可帮助排除镜头变化。正式题包补核独立计数，并与MVBench同类合成视频去重。",
+            "查看方式": "剩余来源准备/TVBench/本地浏览.html第2例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "视频刚开始时，有几个物体正在移动？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+            "实际视频时长": "原文件5.12秒；本页预览5.12秒。"
+          },
+          "previewed_frame_seconds": [
+            0.256,
+            1.536,
+            3.072,
+            4.6080000000000005
+          ],
+          "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+          "evidence_windows": [],
+          "archive_member": "object_count/video_11499.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+            "是否需要字幕": "预计不需要独立字幕；画面文字可以使用。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "需要比较开始时连续几帧；单帧只能数全部物体，不能确定哪些在移动。",
+            "答案是否清楚": "官方D为2；抽帧见黄色方块、蓝色圆柱位置改变，其他物体较固定，支持2个运动物体；还需检查最初几帧。",
+            "证据时间": "整段0—5.12秒，重点开头0—1秒。",
+            "结论": "短视频运动计数条件候选，计数仍用Choice，不改成连续评分Score。",
+            "待解决问题": "只数开始运动的物体，排除静止物体；与MVBench合成视频核查重复视频和重复问题。",
+            "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+            "核查重点": "视频刚开始时，有几个物体正在移动？ 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+            "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+            "实际视频时长": "原文件5.12秒；本页预览5.12秒。"
+          },
+          "local_video_filename": "video_11499.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地剩余来源准备/TVBench/本地浏览.html；公开展示方式见video_source。"
+        },
+        {
+          "sample_id": "moving_direction:video_14393.mp4",
+          "video_group_id": "moving_direction:video_14393.mp4",
+          "subtask": "moving_direction",
+          "question": "Which direction does the purple sphere move in the video?",
+          "question_zh": "紫色球在画面中向哪个方向移动？",
+          "options": [
+            "Up and to the right.",
+            "Up and to the left.",
+            "Down and to the left.",
+            "Down and to the right."
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "reference_answer": "D. Down and to the right.",
+          "answer_index": 3,
+          "official_answer_raw": "Down and to the right.",
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://huggingface.co/datasets/FunAILab/TVBench/tree/1d933b2aced8da5d6b315bb6a37807d126e05526",
+          "annotation_file": [
+            "moving_direction.json"
+          ],
+          "annotation_sha256": {
+            "moving_direction.json": "3bc7cbe1a2f92946cf40cb4b05b860427b88a59f2011b52ef35172ff28d1d9df"
+          },
+          "original_record": {
+            "video": "video_14393.mp4",
+            "question": "Which direction does the purple sphere move in the video?",
+            "answer": "Down and to the right.",
+            "candidates": [
+              "Up and to the right.",
+              "Up and to the left.",
+              "Down and to the left.",
+              "Down and to the right."
+            ]
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/FunAILab/TVBench/blob/1d933b2aced8da5d6b315bb6a37807d126e05526/video/moving_direction.zip",
+          "video_source": "作者HF视频归档成员已本地核查；公开页提供原问题、选项和官方归档入口，尚不重传第三方来源视频。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 5.12,
+          "preview_duration_seconds": 5.12,
+          "has_audio": false,
+          "preview_has_audio": false,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "edf0e0d00fd503068ff529ff29a511c441745f040bb7b7833ba0364328a9535a",
+          "preview_file_sha256": "edf0e0d00fd503068ff529ff29a511c441745f040bb7b7833ba0364328a9535a",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "local_only",
+          "review_status": "人工初筛已填写",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+            "是否需要字幕": "不需要独立字幕；本轮为视觉先后、计数和方向。",
+            "适合的JEV输出": "Choice（原生4选一；保留原选项及官方答案）",
+            "视频是否必要": "需比较球在多个时刻的位置；单帧不直接包含方向。",
+            "答案是否清楚": "官方D为向右下；成员已看并总体认可TVBench，既有抽帧显示紫球向右下位置变化，未记录答案分歧。",
+            "证据时间": "整段0—5.12秒，以画面坐标描述方向。",
+            "结论": "本轮纳入无声运动方向候选。",
+            "待解决问题": "按屏幕坐标理解向右下；本例无新增人工分歧。正式合并题包前核对视频/问题重复，并补抽其他运动方向。",
+            "查看方式": "剩余来源准备/TVBench/本地浏览.html第3例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "紫色球在画面中向哪个方向移动？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+            "实际视频时长": "原文件5.12秒；本页预览5.12秒。"
+          },
+          "previewed_frame_seconds": [
+            0.256,
+            1.536,
+            3.072,
+            4.6080000000000005
+          ],
+          "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+          "evidence_windows": [],
+          "archive_member": "moving_direction/video_14393.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+            "是否需要字幕": "不需要独立字幕；画面文字可以使用。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "需比较球在多个时刻的位置；单帧不直接包含方向。",
+            "答案是否清楚": "官方D为向右下；抽帧见球由左上向右下移动，支持D。",
+            "证据时间": "整段0—5.12秒，以画面坐标描述方向。",
+            "结论": "优先作为无声运动方向Choice条件候选。",
+            "待解决问题": "统一按屏幕上下左右理解，不按真实三维空间方向；检查与MVBench的内容重叠。",
+            "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+            "核查重点": "紫色球在画面中向哪个方向移动？ 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+            "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+            "实际视频时长": "原文件5.12秒；本页预览5.12秒。"
+          },
+          "local_video_filename": "video_14393.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地剩余来源准备/TVBench/本地浏览.html；公开展示方式见video_source。"
+        }
+      ],
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 3,
+        "item_reviews_received": 3,
+        "video_candidates": 3,
+        "image_candidates": 0,
+        "excluded_samples": 0
+      }
     },
     {
       "name": "MVBench",
@@ -905,7 +1577,7 @@ window.BENCHMARK_DATA = {
     {
       "name": "PercTest",
       "category": "通用感知；感知问答、跟踪等多任务",
-      "version": "暂按 Perception Test 对应；需确认截图简称及数据版本",
+      "version": "sample_annotations.zip / sample.json；作者公开sample包valid三例；文件哈希保留",
       "sources": [
         {
           "label": "官方数据与下载说明",
@@ -913,16 +1585,347 @@ window.BENCHMARK_DATA = {
         }
       ],
       "source_notes": "**公开，名称疑为简称**。按 **Perception Test** 核对：[官方数据与下载说明](https://github.com/google-deepmind/perception_test)。截图中的 PercTest 未见独立同名基准，建议回查原表。",
-      "priority": "替补候选",
+      "priority": "第一版综合理解优先候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "待填写",
-      "known_output": "初筛：Choice：选择题子任务；跟踪／定位需坐标等额外输出。",
-      "viewing_guidance": "按 Perception Test 官方下载说明选择视频和标注子任务；先确认所需文件和下载粒度，不必先取得全部任务的数据。",
+      "final_decision": "综合理解优先候选；2条件视频＋1图片对照",
+      "decision_reason": "暂按Perception Test纳入综合理解优先候选；成员已看三例并评价质量较好。2条动作/前后比较条件候选、1条末帧图片对照；未收到逐题导出，官方答案未全部人工明确确认。",
+      "selected_scope": "暂按Perception Test选择题；动作与前后位置题优先，末帧字母题单列图片对照。",
+      "known_output": "本组三题原生三选一Choice；跟踪/定位任务不并入本轮。",
+      "viewing_guidance": "三例观看已据文字反馈记录；公开sample视频可播放；逐题答案确认未收到导出。",
       "report_path": "数据源样例/PercTest/人工筛选报告.md",
       "samples_path": "数据源样例/PercTest/样例清单.json",
-      "samples": []
+      "samples": [
+        {
+          "sample_id": "video_6860:mc:1",
+          "video_group_id": "video_6860",
+          "subtask": "semantics",
+          "question": "What action not related to making tea did the person do?",
+          "question_zh": "泡茶过程中，人物做了哪一个与泡茶无关的动作？",
+          "options": [
+            "moving a fork around",
+            "lifting a golden container and putting it back down",
+            "hitting the spoon against the fork"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C"
+          ],
+          "reference_answer": "B. lifting a golden container and putting it back down",
+          "answer_index": 1,
+          "official_answer_raw": 1,
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://github.com/google-deepmind/perception_test",
+          "annotation_file": [
+            "sample.json"
+          ],
+          "annotation_sha256": {
+            "sample.json": "8d67bceda5a21f0e32919dd4631f4142d85eabe2fc92c03df118f2ef8978a8ce"
+          },
+          "original_record": {
+            "id": 1,
+            "question": "What action not related to making tea did the person do?",
+            "options": [
+              "moving a fork around",
+              "lifting a golden container and putting it back down",
+              "hitting the spoon against the fork"
+            ],
+            "answer_id": 1,
+            "area": "semantics",
+            "reasoning": "counterfactual",
+            "tag": [
+              "action recognition",
+              "distractor action"
+            ]
+          },
+          "video_path": "数据源样例/PercTest/videos/video_6860.mp4",
+          "source_video_url": "https://storage.googleapis.com/dm-perception-test/zip_data/sample_videos.zip",
+          "video_source": "Perception Test作者sample包，CC BY 4.0；署名和来源见videos/README.md，原MP4和音轨未改。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 34.92,
+          "preview_duration_seconds": 34.92,
+          "has_audio": true,
+          "preview_has_audio": true,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "97224e8f3990e173c47fd7c82ab1094d3cfd27b9726985c2cc26fe2022ee60ee",
+          "preview_file_sha256": "97224e8f3990e173c47fd7c82ab1094d3cfd27b9726985c2cc26fe2022ee60ee",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "public_cc_by_sample",
+          "review_status": "成员整体观看反馈已记录；逐题答案未明确确认",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "预计非必要；文件有音轨，成员未逐题明确音频依赖。按视觉题候选保留，正式接入前做静音对照。",
+            "是否需要字幕": "预计不需要独立字幕；字母卡片是画面文字。成员未逐题明确字幕依赖。",
+            "适合的JEV输出": "Choice（原生3选一；保留原选项及官方答案）",
+            "视频是否必要": "需要识别一次提起再放回的动作；静态画面可看到容器，但难确认完整动作。",
+            "答案是否清楚": "官方B为提起金色容器并放回；成员总体认为这组质量较高，但未明确给出本题独立答案。抽帧支持提起动作，放回仍需连续核对。",
+            "证据时间": "整段0—34.92秒；约20.95秒可见金色容器动作附近。",
+            "结论": "综合日常事件/干扰动作理解条件候选。",
+            "待解决问题": "正式题包确认B完整提起后放回，并排除两个干扰选项；“与泡茶无关”含语义判断。原表PercTest名称仍需确认。",
+            "查看方式": "剩余来源准备/PercTest/本地浏览.html第1例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "泡茶过程中，人物做了哪一个与泡茶无关的动作？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV可用问题、三选一原选项及视频画面；动作/前后关系优先，末帧文字另列图片对照。音频/字幕是否非必要仍是助手拟判断，未冒充成员确认。",
+            "实际视频时长": "原文件34.92秒；本页预览34.92秒。"
+          },
+          "previewed_frame_seconds": [
+            1.7460000000000002,
+            10.476,
+            20.952,
+            31.428
+          ],
+          "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+          "evidence_windows": [],
+          "archive_member": "videos/video_6860.mp4",
+          "original_video_metadata": {
+            "split": "valid",
+            "video_id": "video_6860",
+            "frame_rate": 30.011980056762695,
+            "num_frames": 1048,
+            "resolution": [
+              1080,
+              1920
+            ],
+            "audio_samples": 1680384,
+            "audio_sample_rate": 48000.0,
+            "is_cup_game": 0,
+            "is_camera_moving": 0
+          },
+          "submitted_review": null,
+          "submitted_review_note": "本次没有找到逐题导出，submitted_review为null；source_feedback保留成员原话，review是据文字反馈补充的整理判断。",
+          "local_video_filename": "video_6860.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地剩余来源准备/PercTest/本地浏览.html；公开展示方式见video_source。",
+          "license": "CC-BY-4.0",
+          "attribution": "Copyright 2022 DeepMind Technologies Limited; Perception Test authors; https://github.com/google-deepmind/perception_test"
+        },
+        {
+          "sample_id": "video_9253:mc:1",
+          "video_group_id": "video_9253",
+          "subtask": "physics",
+          "question": "What is the order of the letters at the end?",
+          "question_zh": "视频结束时，字母从左到右是什么顺序？",
+          "options": [
+            "maor",
+            "amor",
+            "ramo"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C"
+          ],
+          "reference_answer": "B. amor",
+          "answer_index": 1,
+          "official_answer_raw": 1,
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://github.com/google-deepmind/perception_test",
+          "annotation_file": [
+            "sample.json"
+          ],
+          "annotation_sha256": {
+            "sample.json": "8d67bceda5a21f0e32919dd4631f4142d85eabe2fc92c03df118f2ef8978a8ce"
+          },
+          "original_record": {
+            "id": 1,
+            "question": "What is the order of the letters at the end?",
+            "options": [
+              "maor",
+              "amor",
+              "ramo"
+            ],
+            "answer_id": 1,
+            "area": "physics",
+            "reasoning": "descriptive",
+            "tag": [
+              "spatial relations",
+              "sequencing",
+              "object recognition"
+            ]
+          },
+          "video_path": "数据源样例/PercTest/videos/video_9253.mp4",
+          "source_video_url": "https://storage.googleapis.com/dm-perception-test/zip_data/sample_videos.zip",
+          "video_source": "Perception Test作者sample包，CC BY 4.0；署名和来源见videos/README.md，原MP4和音轨未改。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 25.58,
+          "preview_duration_seconds": 25.58,
+          "has_audio": true,
+          "preview_has_audio": true,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "6dbe9e42d0351220c1e81ade592ad85f8d40f5112fb2744a8205012c41699270",
+          "preview_file_sha256": "6dbe9e42d0351220c1e81ade592ad85f8d40f5112fb2744a8205012c41699270",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "public_cc_by_sample",
+          "review_status": "成员整体观看反馈已记录；逐题答案未明确确认",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "预计非必要；文件有音轨，成员未逐题明确音频依赖。按视觉题候选保留，正式接入前做静音对照。",
+            "是否需要字幕": "预计不需要独立字幕；字母卡片是画面文字。成员未逐题明确字幕依赖。",
+            "适合的JEV输出": "Choice（原生3选一；保留原选项及官方答案）",
+            "视频是否必要": "要看画面，但最后一帧通常已足够，不需要整个视频的时间信息。",
+            "答案是否清楚": "官方B为amor；末段抽帧可读AMOR，助手画面核对支持B；未收到成员逐题答案确认。",
+            "证据时间": "约15.35—25.58秒的最后字母排列，先看结尾。",
+            "结论": "保留末帧图片文字识别对照，不计核心时序题。",
+            "待解决问题": "末帧AMOR有画面依据；正式接入做单帧对照，此题不用于证明长时序。逐题人工答案与静音依赖尚未收到。",
+            "查看方式": "剩余来源准备/PercTest/本地浏览.html第2例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "视频结束时，字母从左到右是什么顺序？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV可用问题、三选一原选项及视频画面；动作/前后关系优先，末帧文字另列图片对照。音频/字幕是否非必要仍是助手拟判断，未冒充成员确认。",
+            "实际视频时长": "原文件25.58秒；本页预览25.58秒。"
+          },
+          "previewed_frame_seconds": [
+            1.279,
+            7.6739999999999995,
+            15.347999999999999,
+            23.022
+          ],
+          "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+          "evidence_windows": [],
+          "archive_member": "videos/video_9253.mp4",
+          "original_video_metadata": {
+            "split": "valid",
+            "video_id": "video_9253",
+            "frame_rate": 29.915206909179688,
+            "num_frames": 765,
+            "resolution": [
+              1080,
+              1920
+            ],
+            "audio_samples": 1222656,
+            "audio_sample_rate": 48000.0,
+            "is_cup_game": 0,
+            "is_camera_moving": 0
+          },
+          "submitted_review": null,
+          "submitted_review_note": "本次没有找到逐题导出，submitted_review为null；source_feedback保留成员原话，review是据文字反馈补充的整理判断。",
+          "local_video_filename": "video_9253.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地剩余来源准备/PercTest/本地浏览.html；公开展示方式见video_source。",
+          "license": "CC-BY-4.0",
+          "attribution": "Copyright 2022 DeepMind Technologies Limited; Perception Test authors; https://github.com/google-deepmind/perception_test"
+        },
+        {
+          "sample_id": "video_1580:mc:0",
+          "video_group_id": "video_1580",
+          "subtask": "abstraction",
+          "question": "How many letters changed position in the word after shuffling?",
+          "question_zh": "打乱后，有几个字母改变了在单词中的位置？",
+          "options": [
+            "3",
+            "2",
+            "0"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C"
+          ],
+          "reference_answer": "A. 3",
+          "answer_index": 0,
+          "official_answer_raw": 0,
+          "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+          "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+          "annotation_source": "https://github.com/google-deepmind/perception_test",
+          "annotation_file": [
+            "sample.json"
+          ],
+          "annotation_sha256": {
+            "sample.json": "8d67bceda5a21f0e32919dd4631f4142d85eabe2fc92c03df118f2ef8978a8ce"
+          },
+          "original_record": {
+            "id": 0,
+            "question": "How many letters changed position in the word after shuffling?",
+            "options": [
+              "3",
+              "2",
+              "0"
+            ],
+            "answer_id": 0,
+            "area": "abstraction",
+            "reasoning": "descriptive",
+            "tag": [
+              "object counting",
+              "spatial relations"
+            ]
+          },
+          "video_path": "数据源样例/PercTest/videos/video_1580.mp4",
+          "source_video_url": "https://storage.googleapis.com/dm-perception-test/zip_data/sample_videos.zip",
+          "video_source": "Perception Test作者sample包，CC BY 4.0；署名和来源见videos/README.md，原MP4和音轨未改。",
+          "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+          "video_duration_seconds": 34.24,
+          "preview_duration_seconds": 34.24,
+          "has_audio": true,
+          "preview_has_audio": true,
+          "video_codec": "h264",
+          "preview_video_codec": "h264",
+          "original_file_sha256": "3650937f112216580776780a6b3bf8e11587bfe2bc526c5348128383eaec5cd1",
+          "preview_file_sha256": "3650937f112216580776780a6b3bf8e11587bfe2bc526c5348128383eaec5cd1",
+          "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+          "content_access": "public_cc_by_sample",
+          "review_status": "成员整体观看反馈已记录；逐题答案未明确确认",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "预计非必要；文件有音轨，成员未逐题明确音频依赖。按视觉题候选保留，正式接入前做静音对照。",
+            "是否需要字幕": "预计不需要独立字幕；字母卡片是画面文字。成员未逐题明确字幕依赖。",
+            "适合的JEV输出": "Choice（原生3选一；保留原选项及官方答案）",
+            "视频是否必要": "至少需要前后两组画面比较，单帧不足；多图对照也可能替代连续视频。",
+            "答案是否清楚": "官方A为3个；初末抽帧可比较MEN与ENM，三字母位置均改变，支持3。成员未给出独立逐字计数，区分助手核对与人工确认。",
+            "证据时间": "整段0—34.24秒；比较开头约1.7秒与结尾约30.8秒。",
+            "结论": "前后位置比较条件候选；至少两组画面，多图可能足够。",
+            "待解决问题": "正式题包确认初末字母位置变化而非中途移动次数，并做两帧对照；逐题人工计数和静音依赖尚未收到。",
+            "查看方式": "剩余来源准备/PercTest/本地浏览.html第3例；公开页观看方式见video_source。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "打乱后，有几个字母改变了在单词中的位置？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+            "与项目输入设置的关系": "JEV可用问题、三选一原选项及视频画面；动作/前后关系优先，末帧文字另列图片对照。音频/字幕是否非必要仍是助手拟判断，未冒充成员确认。",
+            "实际视频时长": "原文件34.24秒；本页预览34.24秒。"
+          },
+          "previewed_frame_seconds": [
+            1.7120000000000002,
+            10.272,
+            20.544,
+            30.816000000000003
+          ],
+          "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+          "evidence_windows": [],
+          "archive_member": "videos/video_1580.mp4",
+          "original_video_metadata": {
+            "split": "valid",
+            "video_id": "video_1580",
+            "frame_rate": 30.00895118713379,
+            "num_frames": 1027,
+            "resolution": [
+              1080,
+              1920
+            ],
+            "audio_samples": 1644544,
+            "audio_sample_rate": 48000.0,
+            "is_cup_game": 0,
+            "is_camera_moving": 0
+          },
+          "submitted_review": null,
+          "submitted_review_note": "本次没有找到逐题导出，submitted_review为null；source_feedback保留成员原话，review是据文字反馈补充的整理判断。",
+          "local_video_filename": "video_1580.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地剩余来源准备/PercTest/本地浏览.html；公开展示方式见video_source。",
+          "license": "CC-BY-4.0",
+          "attribution": "Copyright 2022 DeepMind Technologies Limited; Perception Test authors; https://github.com/google-deepmind/perception_test"
+        }
+      ],
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_viewed_samples": 3,
+        "item_reviews_received": 0,
+        "video_candidates": 2,
+        "image_candidates": 1,
+        "excluded_samples": 0
+      }
     },
     {
       "name": "VideoMME",

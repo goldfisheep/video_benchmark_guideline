@@ -1,33 +1,390 @@
 {
   "benchmark": "MotionBench",
-  "samples": [],
-  "sample_template": {
-    "sample_id": "待填写",
-    "video_id": "待填写",
-    "subtask": "待填写",
-    "question": "待填写",
-    "question_zh": "待填写",
-    "options": [],
-    "reference_answer": "待填写",
-    "answer_index": null,
-    "annotation_source": "待填写",
-    "video_path": "",
-    "video_url": "",
-    "video_source": "待填写",
-    "video_status": "待填写",
-    "review": {
-      "是否看过正式片段": "待填写",
-      "是否需要音频": "待填写",
-      "是否需要字幕": "待填写",
-      "适合的JEV输出": "待填写",
-      "视频是否必要": "待填写",
-      "答案是否清楚": "待填写",
-      "证据时刻": "待填写",
-      "结论": "待填写",
-      "待解决问题": "待填写",
-      "查看方式": "待填写",
-      "核查人": "待填写",
-      "核查日期": "待填写"
+  "version": {
+    "official_project": "https://github.com/zai-org/MotionBench",
+    "annotation": "MotionBench/video_info.meta.jsonl",
+    "readme_provenance": {
+      "repo": "zai-org/MotionBench",
+      "sha": "45f3feb13acdf25f7935b8a6ac1fe4514dfada21",
+      "html_url": "https://github.com/zai-org/MotionBench/blob/main/README.md"
+    },
+    "hf_repo": "zai-org/MotionBench",
+    "hf_revision": "f099db892172a015c489507c9abe56b036d960ef"
+  },
+  "updated": "2026-10-03",
+  "status": "人工初筛已填写（导出＋本轮文字反馈）",
+  "sampling_note": "每源选3段便于获取的视频并兼顾题型，目的性抽样，不是随机抽样；不据3段推断全源质量。VideoMME v2保留每段完整4题组。",
+  "summary_draft": "纳入第一版无声运动理解候选：本轮2题通过初筛；第1题问答与画面不符，排除该题。裁剪只是可能原因，未证实；保留数据源。",
+  "content_access": "local_only",
+  "samples": [
+    {
+      "sample_id": "ggqGrLl5uBMMNzW2",
+      "video_group_id": "ggqGrLl5uBMMNzW2",
+      "subtask": "Action Order",
+      "question": "Please describe the detailed breakdown of the action in the video.",
+      "question_zh": "请选择视频中动作的先后顺序：跳跃、躺下、站立。",
+      "options": [
+        "Jump, Lay down, Stand",
+        "Jump, Stand, Lay down",
+        "Lay down, Stand, Jump"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C"
+      ],
+      "reference_answer": "C. Lay down, Stand, Jump",
+      "answer_index": 2,
+      "official_answer_raw": "C",
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://huggingface.co/datasets/zai-org/MotionBench/tree/f099db892172a015c489507c9abe56b036d960ef",
+      "annotation_file": [
+        "video_info.meta.jsonl"
+      ],
+      "annotation_sha256": {
+        "video_info.meta.jsonl": "0f6cc2a3a329470d9d2e945480829b23937025a4aeb0f1fb9c63a0e91bbf6d3b"
+      },
+      "original_record": {
+        "question_type": "Action Order",
+        "video_type": "Gaming",
+        "key": "37e1b635be3544d5a45106ea71c3b97c",
+        "qa": [
+          {
+            "uid": "ggqGrLl5uBMMNzW2",
+            "start": null,
+            "end": null,
+            "answer": "C",
+            "question": "Please describe the detailed breakdown of the action in the video.\nA. Jump, Lay down, Stand\nB. Jump, Stand, Lay down\nC. Lay down, Stand, Jump"
+          }
+        ],
+        "video_path": "37e1b635be3544d5a45106ea71c3b97c.mp4",
+        "video_info": {
+          "duration": 8.383333206176758,
+          "fps": 60,
+          "resolution": {
+            "width": 1280,
+            "height": 1280
+          }
+        }
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/zai-org/MotionBench/blob/f099db892172a015c489507c9abe56b036d960ef/MotionBench/self-collected/37e1b635be3544d5a45106ea71c3b97c.mp4",
+      "video_source": "作者HF固定提交的正式单文件；引用源站播放，不重新上传。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 8.4,
+      "preview_duration_seconds": 8.4,
+      "has_audio": false,
+      "preview_has_audio": false,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "6f5b3e54a090e4ebebe4fd86d3fa3ddc4daf9db5de5a64b1000269becfdc7175",
+      "preview_file_sha256": "6f5b3e54a090e4ebebe4fd86d3fa3ddc4daf9db5de5a64b1000269becfdc7175",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "public_author_link",
+      "review_status": "人工初筛已填写",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；三例文件均无音轨，成员已看正式画面。",
+        "是否需要字幕": "不需要独立字幕；本轮画面判断，画面文字可使用。",
+        "适合的JEV输出": "Choice（原生3选一；保留原选项及官方答案）",
+        "视频是否必要": "需要连续画面判断先后，单帧只能辨认某一姿态。",
+        "答案是否清楚": "不清楚。官方C为“躺下→站立→跳跃”；成员完整观看后指出没有后续站立和跳跃。抽帧也见前段站立、后段低姿态，现有片段未支持C。",
+        "证据时间": "整段0—8.40秒",
+        "结论": "本轮排除该题，保留官方C及异常记录；数据源其他清楚题目继续采纳。",
+        "待解决问题": "可能来自作者截片、视频/标注版本错配或动作定义；未证实具体原因。作者时长8.383秒与本地8.40秒接近，文件哈希吻合下载记录，预览即原片，本轮没有二次裁剪。核对原始长片或作者标注后再考虑恢复；不改成未经核验的新答案。",
+        "查看方式": "剩余来源准备/MotionBench/本地浏览.html第1例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "请选择视频中动作的先后顺序：跳跃、躺下、站立。 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+        "实际视频时长": "原文件8.40秒；本页预览8.40秒。"
+      },
+      "previewed_frame_seconds": [
+        0.42000000000000004,
+        2.52,
+        5.04,
+        7.5600000000000005
+      ],
+      "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+      "evidence_windows": [],
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+        "是否需要字幕": "不需要独立字幕；画面文字可以使用。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "需要连续画面判断先后，单帧只能辨认某一姿态。",
+        "答案是否清楚": "官方C为“躺下→站立→跳跃”；但是没有后续站立和跳跃动作",
+        "证据时间": "整段0—8.40秒",
+        "结论": "暂缓本例，先核对动作定义及视频与标注对应关系；数据源继续保留。",
+        "待解决问题": "慢放整段，区分低姿态/躺倒及起跳/落地；若仍与C不符，记录自己的顺序并排除本题，不直接改官方答案。",
+        "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+        "核查重点": "请选择视频中动作的先后顺序：跳跃、躺下、站立。 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+        "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+        "实际视频时长": "原文件8.40秒；本页预览8.40秒。"
+      },
+      "local_video_filename": "37e1b635be3544d5a45106ea71c3b97c.mp4",
+      "video_url": "https://huggingface.co/datasets/zai-org/MotionBench/resolve/f099db892172a015c489507c9abe56b036d960ef/MotionBench/self-collected/37e1b635be3544d5a45106ea71c3b97c.mp4",
+      "local_viewing_guidance": "本地剩余来源准备/MotionBench/本地浏览.html；公开展示方式见video_source。"
+    },
+    {
+      "sample_id": "1TUkRjNi0sxhtKaU",
+      "video_group_id": "1TUkRjNi0sxhtKaU",
+      "subtask": "Repetition Count",
+      "question": "Please count the number of repeated actions in the video.",
+      "question_zh": "重复动作一共发生几次？动作单位为向右前方跑三步抬左腿，再向左前方跑三步抬右腿。",
+      "options": [
+        "1",
+        "7",
+        "8",
+        "3"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reference_answer": "D. 3",
+      "answer_index": 3,
+      "official_answer_raw": "D",
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://huggingface.co/datasets/zai-org/MotionBench/tree/f099db892172a015c489507c9abe56b036d960ef",
+      "annotation_file": [
+        "video_info.meta.jsonl"
+      ],
+      "annotation_sha256": {
+        "video_info.meta.jsonl": "0f6cc2a3a329470d9d2e945480829b23937025a4aeb0f1fb9c63a0e91bbf6d3b"
+      },
+      "original_record": {
+        "question_type": "Repetition Count",
+        "video_type": "medical",
+        "key": "c916cd65-f568-4c75-aa3e-c210a6fb057b",
+        "qa": [
+          {
+            "uid": "1TUkRjNi0sxhtKaU",
+            "start": 0,
+            "end": 12,
+            "answer": "D",
+            "question": "Please count the number of repeated actions in the video.\nA. 1\nB. 7\nC. 8\nD. 3",
+            "repetition_name": "Run three steps to the front right and lift your left leg, then run three steps to the front left and lift your right leg"
+          }
+        ],
+        "video_path": "c916cd65-f568-4c75-aa3e-c210a6fb057b_0_12.mp4",
+        "video_info": {
+          "duration": 11.968306541442871,
+          "fps": 23.98,
+          "resolution": {
+            "width": 1280,
+            "height": 720
+          }
+        }
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/zai-org/MotionBench/blob/f099db892172a015c489507c9abe56b036d960ef/MotionBench/public-dataset/c916cd65-f568-4c75-aa3e-c210a6fb057b_0_12.mp4",
+      "video_source": "作者HF固定提交的正式单文件；引用源站播放，不重新上传。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 12.01,
+      "preview_duration_seconds": 12.01,
+      "has_audio": false,
+      "preview_has_audio": false,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "b7ed1d8d5c70dddb5ac335cac338659896d233f951a1c127a2a59da543e6faba",
+      "preview_file_sha256": "b7ed1d8d5c70dddb5ac335cac338659896d233f951a1c127a2a59da543e6faba",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "public_author_link",
+      "review_status": "人工初筛已填写",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；三例文件均无音轨，成员已看正式画面。",
+        "是否需要字幕": "不需要独立字幕；本轮画面判断，画面文字可使用。",
+        "适合的JEV输出": "Choice（原生4选一；保留原选项及官方答案）",
+        "视频是否必要": "是；需要连续观看并计完整动作循环",
+        "答案是否清楚": "成员标记答案清楚；官方D为3次。按成员初筛保留；未提供逐次动作循环计数日志，助手没有用抽帧重新证明3次。",
+        "证据时间": "整段约0—12.01秒；文件已是作者0—12秒片段，无需再次从原视频裁剪。",
+        "结论": "本轮纳入无声动作计数候选；进入正式题包前统一动作循环单位。",
+        "待解决问题": "动作计数规则需保持“右前跑三步抬左腿＋左前跑三步抬右腿”为完整单位，不把步数或单次抬腿当循环；扩大抽样核对同类标签并做仅题目对照。",
+        "查看方式": "剩余来源准备/MotionBench/本地浏览.html第2例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "重复动作一共发生几次？动作单位为向右前方跑三步抬左腿，再向左前方跑三步抬右腿。 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+        "实际视频时长": "原文件12.01秒；本页预览12.01秒。"
+      },
+      "previewed_frame_seconds": [
+        0.6005,
+        3.6029999999999998,
+        7.2059999999999995,
+        10.809
+      ],
+      "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+      "evidence_windows": [],
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+        "是否需要字幕": "预计不需要独立字幕；画面文字可以使用。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "是；需要连续观看并计完整动作循环",
+        "答案是否清楚": "是",
+        "证据时间": "整段约0—12.01秒；文件已是作者0—12秒片段，无需再次从原视频裁剪。",
+        "结论": "无声动作计数条件候选，完整循环确认为3次后再采纳。",
+        "待解决问题": "先统一循环单位，再完整计数；不能把单次抬腿、步数、左右各半个循环混作一次。",
+        "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+        "核查重点": "重复动作一共发生几次？动作单位为向右前方跑三步抬左腿，再向左前方跑三步抬右腿。 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+        "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+        "实际视频时长": "原文件12.01秒；本页预览12.01秒。"
+      },
+      "local_video_filename": "c916cd65-f568-4c75-aa3e-c210a6fb057b_0_12.mp4",
+      "video_url": "https://huggingface.co/datasets/zai-org/MotionBench/resolve/f099db892172a015c489507c9abe56b036d960ef/MotionBench/public-dataset/c916cd65-f568-4c75-aa3e-c210a6fb057b_0_12.mp4",
+      "local_viewing_guidance": "本地剩余来源准备/MotionBench/本地浏览.html；公开展示方式见video_source。"
+    },
+    {
+      "sample_id": "EQEJYaSbuzkmL1TJ_4",
+      "video_group_id": "EQEJYaSbuzkmL1TJ_4",
+      "subtask": "Camera Motion",
+      "question": "Does the camera follow or move as the women perform their yoga routine?",
+      "question_zh": "女性做瑜伽时，镜头是否跟随或移动？",
+      "options": [
+        "No, it remains focused in one spot",
+        "Yes, the camera pans left and right",
+        "Yes, the camera zooms in and out",
+        "No, it switches angles"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reference_answer": "A. No, it remains focused in one spot",
+      "answer_index": 0,
+      "official_answer_raw": "A",
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://huggingface.co/datasets/zai-org/MotionBench/tree/f099db892172a015c489507c9abe56b036d960ef",
+      "annotation_file": [
+        "video_info.meta.jsonl"
+      ],
+      "annotation_sha256": {
+        "video_info.meta.jsonl": "0f6cc2a3a329470d9d2e945480829b23937025a4aeb0f1fb9c63a0e91bbf6d3b"
+      },
+      "original_record": {
+        "key": "EQEJYaSbuzkmL1TJ",
+        "video_info": {
+          "duration": 4.840000152587891,
+          "resolution": [
+            720,
+            1280
+          ],
+          "fps": null
+        },
+        "video_path": "EQEJYaSbuzkmL1TJ.mp4",
+        "qa": [
+          {
+            "uid": "EQEJYaSbuzkmL1TJ_4",
+            "start": null,
+            "end": null,
+            "answer": "A",
+            "question": "Does the camera follow or move as the women perform their yoga routine?\nA. No, it remains focused in one spot\nB. Yes, the camera pans left and right\nC. Yes, the camera zooms in and out\nD. No, it switches angles\n"
+          }
+        ],
+        "video_type": null,
+        "question_type": "Camera Motion"
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/zai-org/MotionBench/blob/f099db892172a015c489507c9abe56b036d960ef/MotionBench/self-collected/EQEJYaSbuzkmL1TJ.mp4",
+      "video_source": "作者HF固定提交的正式单文件；引用源站播放，不重新上传。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 4.88,
+      "preview_duration_seconds": 4.88,
+      "has_audio": false,
+      "preview_has_audio": false,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "f792446d311a1ada76a315c15461384ab51520f4111dad8fc04d39f2420a61a0",
+      "preview_file_sha256": "f792446d311a1ada76a315c15461384ab51520f4111dad8fc04d39f2420a61a0",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "public_author_link",
+      "review_status": "人工初筛已填写",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；三例文件均无音轨，成员已看正式画面。",
+        "是否需要字幕": "不需要独立字幕；本轮画面判断，画面文字可使用。",
+        "适合的JEV输出": "Choice（原生4选一；保留原选项及官方答案）",
+        "视频是否必要": "是；需要比较多个时刻的背景和视角；单帧无法确定镜头是否移动。",
+        "答案是否清楚": "成员标记答案清楚；官方A为镜头固定，既有抽帧背景稳定，与成员初筛一致。",
+        "证据时间": "整段0—4.88秒，比较人物之外的墙面、地面和边缘位置。",
+        "结论": "本轮纳入镜头运动候选；比较跨时刻背景而非仅人物姿态。",
+        "待解决问题": "本例成员无新增异常；正式评测区分人物移动和镜头移动，另做单帧/多图对照，并补查其他镜头运动题。",
+        "查看方式": "剩余来源准备/MotionBench/本地浏览.html第3例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "女性做瑜伽时，镜头是否跟随或移动？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+        "实际视频时长": "原文件4.88秒；本页预览4.88秒。"
+      },
+      "previewed_frame_seconds": [
+        0.244,
+        1.464,
+        2.928,
+        4.392
+      ],
+      "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+      "evidence_windows": [],
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+        "是否需要字幕": "预计不需要独立字幕；画面文字可以使用。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "是；需要比较多个时刻的背景和视角；单帧无法确定镜头是否移动。",
+        "答案是否清楚": "是",
+        "证据时间": "整段0—4.88秒，比较人物之外的墙面、地面和边缘位置。",
+        "结论": "优先作为短视频镜头运动Choice条件候选。",
+        "待解决问题": "区分人物移动与镜头移动；检查短暂缩放/裁切，确认A覆盖整个片段。",
+        "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+        "核查重点": "女性做瑜伽时，镜头是否跟随或移动？ 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+        "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+        "实际视频时长": "原文件4.88秒；本页预览4.88秒。"
+      },
+      "local_video_filename": "EQEJYaSbuzkmL1TJ.mp4",
+      "video_url": "https://huggingface.co/datasets/zai-org/MotionBench/resolve/f099db892172a015c489507c9abe56b036d960ef/MotionBench/self-collected/EQEJYaSbuzkmL1TJ.mp4",
+      "local_viewing_guidance": "本地剩余来源准备/MotionBench/本地浏览.html；公开展示方式见video_source。"
     }
+  ],
+  "video_count": 3,
+  "question_count": 3,
+  "format_screening": {
+    "scope": "所选样例的Choice适配预审；不代表全源所有任务均可直接接入。",
+    "whole_source_removed": false,
+    "native_output_exception": "当前仅选原生选择题任务，其他任务另审。",
+    "formal_adopted_questions": 0,
+    "reason": "全部拟判断等待成员确认。"
+  },
+  "submission_source": "MotionBench_样例清单.json",
+  "source_feedback": {
+    "reviewer": "余金洋",
+    "date": "2026-10-03",
+    "text": "MotionBench已审核完成，这是关于动作视频，但是第一题答案有问题，和视频对不上，可能是视频被裁减，感觉这个数据源适合采纳。",
+    "逐题来源": "导出的样例清单＋本轮文字反馈"
+  },
+  "source_screening": {
+    "依据": "导出文件＋本轮成员文字反馈＋助手原标注/抽帧/时长核对",
+    "本轮结论": "纳入第一版无声运动理解候选：本轮2题通过初筛；第1题问答与画面不符，排除该题。裁剪只是可能原因，未证实；保留数据源。",
+    "human_viewed_samples": 3,
+    "human_item_reviews_received": 3,
+    "初筛视频候选": 2,
+    "图片对照": 0,
+    "本轮排除": 1,
+    "全源最终采纳题数": "未锁定；本轮判断用于候选选择，正式题包需扩大抽样和跨源去重。",
+    "全源质量判断限制": "每源3例目的性抽样；“PercTest本组质量较高”是成员观感，不是全源错误率或三源质量排名。",
+    "实际核查时长": "4.88—12.01秒"
   }
 }

@@ -1,33 +1,372 @@
 {
   "benchmark": "PercTest",
-  "samples": [],
-  "sample_template": {
-    "sample_id": "待填写",
-    "video_id": "待填写",
-    "subtask": "待填写",
-    "question": "待填写",
-    "question_zh": "待填写",
-    "options": [],
-    "reference_answer": "待填写",
-    "answer_index": null,
-    "annotation_source": "待填写",
-    "video_path": "",
-    "video_url": "",
-    "video_source": "待填写",
-    "video_status": "待填写",
-    "review": {
-      "是否看过正式片段": "待填写",
-      "是否需要音频": "待填写",
-      "是否需要字幕": "待填写",
-      "适合的JEV输出": "待填写",
-      "视频是否必要": "待填写",
-      "答案是否清楚": "待填写",
-      "证据时刻": "待填写",
-      "结论": "待填写",
-      "待解决问题": "待填写",
-      "查看方式": "待填写",
-      "核查人": "待填写",
-      "核查日期": "待填写"
+  "version": {
+    "official_project": "https://github.com/google-deepmind/perception_test",
+    "annotation": "sample_annotations.zip / sample.json",
+    "readme_provenance": {
+      "repo": "google-deepmind/perception_test",
+      "sha": "505cd675d6759962202747c2fd4970074a027df4",
+      "html_url": "https://github.com/google-deepmind/perception_test/blob/main/README.md"
+    },
+    "scope": "作者sample包中的valid多选一任务，非全量验证集",
+    "source_identity": "暂按Perception Test解释PercTest，原表名称仍需确认",
+    "sample_package": "https://storage.googleapis.com/dm-perception-test/zip_data/sample_annotations.zip"
+  },
+  "updated": "2026-10-03",
+  "status": "人工整体观看反馈已记录；逐题仍含助手拟判断",
+  "sampling_note": "每源选3段便于获取的视频并兼顾题型，目的性抽样，不是随机抽样；不据3段推断全源质量。VideoMME v2保留每段完整4题组。",
+  "summary_draft": "暂按Perception Test纳入综合理解优先候选；成员已看三例并评价质量较好。2条动作/前后比较条件候选、1条末帧图片对照；未收到逐题导出，官方答案未全部人工明确确认。",
+  "content_access": "local_only",
+  "samples": [
+    {
+      "sample_id": "video_6860:mc:1",
+      "video_group_id": "video_6860",
+      "subtask": "semantics",
+      "question": "What action not related to making tea did the person do?",
+      "question_zh": "泡茶过程中，人物做了哪一个与泡茶无关的动作？",
+      "options": [
+        "moving a fork around",
+        "lifting a golden container and putting it back down",
+        "hitting the spoon against the fork"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C"
+      ],
+      "reference_answer": "B. lifting a golden container and putting it back down",
+      "answer_index": 1,
+      "official_answer_raw": 1,
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://github.com/google-deepmind/perception_test",
+      "annotation_file": [
+        "sample.json"
+      ],
+      "annotation_sha256": {
+        "sample.json": "8d67bceda5a21f0e32919dd4631f4142d85eabe2fc92c03df118f2ef8978a8ce"
+      },
+      "original_record": {
+        "id": 1,
+        "question": "What action not related to making tea did the person do?",
+        "options": [
+          "moving a fork around",
+          "lifting a golden container and putting it back down",
+          "hitting the spoon against the fork"
+        ],
+        "answer_id": 1,
+        "area": "semantics",
+        "reasoning": "counterfactual",
+        "tag": [
+          "action recognition",
+          "distractor action"
+        ]
+      },
+      "video_path": "数据源样例/PercTest/videos/video_6860.mp4",
+      "source_video_url": "https://storage.googleapis.com/dm-perception-test/zip_data/sample_videos.zip",
+      "video_source": "Perception Test作者sample包，CC BY 4.0；署名和来源见videos/README.md，原MP4和音轨未改。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 34.92,
+      "preview_duration_seconds": 34.92,
+      "has_audio": true,
+      "preview_has_audio": true,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "97224e8f3990e173c47fd7c82ab1094d3cfd27b9726985c2cc26fe2022ee60ee",
+      "preview_file_sha256": "97224e8f3990e173c47fd7c82ab1094d3cfd27b9726985c2cc26fe2022ee60ee",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "public_cc_by_sample",
+      "review_status": "成员整体观看反馈已记录；逐题答案未明确确认",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "预计非必要；文件有音轨，成员未逐题明确音频依赖。按视觉题候选保留，正式接入前做静音对照。",
+        "是否需要字幕": "预计不需要独立字幕；字母卡片是画面文字。成员未逐题明确字幕依赖。",
+        "适合的JEV输出": "Choice（原生3选一；保留原选项及官方答案）",
+        "视频是否必要": "需要识别一次提起再放回的动作；静态画面可看到容器，但难确认完整动作。",
+        "答案是否清楚": "官方B为提起金色容器并放回；成员总体认为这组质量较高，但未明确给出本题独立答案。抽帧支持提起动作，放回仍需连续核对。",
+        "证据时间": "整段0—34.92秒；约20.95秒可见金色容器动作附近。",
+        "结论": "综合日常事件/干扰动作理解条件候选。",
+        "待解决问题": "正式题包确认B完整提起后放回，并排除两个干扰选项；“与泡茶无关”含语义判断。原表PercTest名称仍需确认。",
+        "查看方式": "剩余来源准备/PercTest/本地浏览.html第1例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "泡茶过程中，人物做了哪一个与泡茶无关的动作？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV可用问题、三选一原选项及视频画面；动作/前后关系优先，末帧文字另列图片对照。音频/字幕是否非必要仍是助手拟判断，未冒充成员确认。",
+        "实际视频时长": "原文件34.92秒；本页预览34.92秒。"
+      },
+      "previewed_frame_seconds": [
+        1.7460000000000002,
+        10.476,
+        20.952,
+        31.428
+      ],
+      "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+      "evidence_windows": [],
+      "archive_member": "videos/video_6860.mp4",
+      "original_video_metadata": {
+        "split": "valid",
+        "video_id": "video_6860",
+        "frame_rate": 30.011980056762695,
+        "num_frames": 1048,
+        "resolution": [
+          1080,
+          1920
+        ],
+        "audio_samples": 1680384,
+        "audio_sample_rate": 48000.0,
+        "is_cup_game": 0,
+        "is_camera_moving": 0
+      },
+      "submitted_review": null,
+      "submitted_review_note": "本次没有找到逐题导出，submitted_review为null；source_feedback保留成员原话，review是据文字反馈补充的整理判断。",
+      "local_video_filename": "video_6860.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地剩余来源准备/PercTest/本地浏览.html；公开展示方式见video_source。",
+      "license": "CC-BY-4.0",
+      "attribution": "Copyright 2022 DeepMind Technologies Limited; Perception Test authors; https://github.com/google-deepmind/perception_test"
+    },
+    {
+      "sample_id": "video_9253:mc:1",
+      "video_group_id": "video_9253",
+      "subtask": "physics",
+      "question": "What is the order of the letters at the end?",
+      "question_zh": "视频结束时，字母从左到右是什么顺序？",
+      "options": [
+        "maor",
+        "amor",
+        "ramo"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C"
+      ],
+      "reference_answer": "B. amor",
+      "answer_index": 1,
+      "official_answer_raw": 1,
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://github.com/google-deepmind/perception_test",
+      "annotation_file": [
+        "sample.json"
+      ],
+      "annotation_sha256": {
+        "sample.json": "8d67bceda5a21f0e32919dd4631f4142d85eabe2fc92c03df118f2ef8978a8ce"
+      },
+      "original_record": {
+        "id": 1,
+        "question": "What is the order of the letters at the end?",
+        "options": [
+          "maor",
+          "amor",
+          "ramo"
+        ],
+        "answer_id": 1,
+        "area": "physics",
+        "reasoning": "descriptive",
+        "tag": [
+          "spatial relations",
+          "sequencing",
+          "object recognition"
+        ]
+      },
+      "video_path": "数据源样例/PercTest/videos/video_9253.mp4",
+      "source_video_url": "https://storage.googleapis.com/dm-perception-test/zip_data/sample_videos.zip",
+      "video_source": "Perception Test作者sample包，CC BY 4.0；署名和来源见videos/README.md，原MP4和音轨未改。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 25.58,
+      "preview_duration_seconds": 25.58,
+      "has_audio": true,
+      "preview_has_audio": true,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "6dbe9e42d0351220c1e81ade592ad85f8d40f5112fb2744a8205012c41699270",
+      "preview_file_sha256": "6dbe9e42d0351220c1e81ade592ad85f8d40f5112fb2744a8205012c41699270",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "public_cc_by_sample",
+      "review_status": "成员整体观看反馈已记录；逐题答案未明确确认",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "预计非必要；文件有音轨，成员未逐题明确音频依赖。按视觉题候选保留，正式接入前做静音对照。",
+        "是否需要字幕": "预计不需要独立字幕；字母卡片是画面文字。成员未逐题明确字幕依赖。",
+        "适合的JEV输出": "Choice（原生3选一；保留原选项及官方答案）",
+        "视频是否必要": "要看画面，但最后一帧通常已足够，不需要整个视频的时间信息。",
+        "答案是否清楚": "官方B为amor；末段抽帧可读AMOR，助手画面核对支持B；未收到成员逐题答案确认。",
+        "证据时间": "约15.35—25.58秒的最后字母排列，先看结尾。",
+        "结论": "保留末帧图片文字识别对照，不计核心时序题。",
+        "待解决问题": "末帧AMOR有画面依据；正式接入做单帧对照，此题不用于证明长时序。逐题人工答案与静音依赖尚未收到。",
+        "查看方式": "剩余来源准备/PercTest/本地浏览.html第2例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "视频结束时，字母从左到右是什么顺序？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV可用问题、三选一原选项及视频画面；动作/前后关系优先，末帧文字另列图片对照。音频/字幕是否非必要仍是助手拟判断，未冒充成员确认。",
+        "实际视频时长": "原文件25.58秒；本页预览25.58秒。"
+      },
+      "previewed_frame_seconds": [
+        1.279,
+        7.6739999999999995,
+        15.347999999999999,
+        23.022
+      ],
+      "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+      "evidence_windows": [],
+      "archive_member": "videos/video_9253.mp4",
+      "original_video_metadata": {
+        "split": "valid",
+        "video_id": "video_9253",
+        "frame_rate": 29.915206909179688,
+        "num_frames": 765,
+        "resolution": [
+          1080,
+          1920
+        ],
+        "audio_samples": 1222656,
+        "audio_sample_rate": 48000.0,
+        "is_cup_game": 0,
+        "is_camera_moving": 0
+      },
+      "submitted_review": null,
+      "submitted_review_note": "本次没有找到逐题导出，submitted_review为null；source_feedback保留成员原话，review是据文字反馈补充的整理判断。",
+      "local_video_filename": "video_9253.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地剩余来源准备/PercTest/本地浏览.html；公开展示方式见video_source。",
+      "license": "CC-BY-4.0",
+      "attribution": "Copyright 2022 DeepMind Technologies Limited; Perception Test authors; https://github.com/google-deepmind/perception_test"
+    },
+    {
+      "sample_id": "video_1580:mc:0",
+      "video_group_id": "video_1580",
+      "subtask": "abstraction",
+      "question": "How many letters changed position in the word after shuffling?",
+      "question_zh": "打乱后，有几个字母改变了在单词中的位置？",
+      "options": [
+        "3",
+        "2",
+        "0"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C"
+      ],
+      "reference_answer": "A. 3",
+      "answer_index": 0,
+      "official_answer_raw": 0,
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://github.com/google-deepmind/perception_test",
+      "annotation_file": [
+        "sample.json"
+      ],
+      "annotation_sha256": {
+        "sample.json": "8d67bceda5a21f0e32919dd4631f4142d85eabe2fc92c03df118f2ef8978a8ce"
+      },
+      "original_record": {
+        "id": 0,
+        "question": "How many letters changed position in the word after shuffling?",
+        "options": [
+          "3",
+          "2",
+          "0"
+        ],
+        "answer_id": 0,
+        "area": "abstraction",
+        "reasoning": "descriptive",
+        "tag": [
+          "object counting",
+          "spatial relations"
+        ]
+      },
+      "video_path": "数据源样例/PercTest/videos/video_1580.mp4",
+      "source_video_url": "https://storage.googleapis.com/dm-perception-test/zip_data/sample_videos.zip",
+      "video_source": "Perception Test作者sample包，CC BY 4.0；署名和来源见videos/README.md，原MP4和音轨未改。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 34.24,
+      "preview_duration_seconds": 34.24,
+      "has_audio": true,
+      "preview_has_audio": true,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "3650937f112216580776780a6b3bf8e11587bfe2bc526c5348128383eaec5cd1",
+      "preview_file_sha256": "3650937f112216580776780a6b3bf8e11587bfe2bc526c5348128383eaec5cd1",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "public_cc_by_sample",
+      "review_status": "成员整体观看反馈已记录；逐题答案未明确确认",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "预计非必要；文件有音轨，成员未逐题明确音频依赖。按视觉题候选保留，正式接入前做静音对照。",
+        "是否需要字幕": "预计不需要独立字幕；字母卡片是画面文字。成员未逐题明确字幕依赖。",
+        "适合的JEV输出": "Choice（原生3选一；保留原选项及官方答案）",
+        "视频是否必要": "至少需要前后两组画面比较，单帧不足；多图对照也可能替代连续视频。",
+        "答案是否清楚": "官方A为3个；初末抽帧可比较MEN与ENM，三字母位置均改变，支持3。成员未给出独立逐字计数，区分助手核对与人工确认。",
+        "证据时间": "整段0—34.24秒；比较开头约1.7秒与结尾约30.8秒。",
+        "结论": "前后位置比较条件候选；至少两组画面，多图可能足够。",
+        "待解决问题": "正式题包确认初末字母位置变化而非中途移动次数，并做两帧对照；逐题人工计数和静音依赖尚未收到。",
+        "查看方式": "剩余来源准备/PercTest/本地浏览.html第3例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "打乱后，有几个字母改变了在单词中的位置？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV可用问题、三选一原选项及视频画面；动作/前后关系优先，末帧文字另列图片对照。音频/字幕是否非必要仍是助手拟判断，未冒充成员确认。",
+        "实际视频时长": "原文件34.24秒；本页预览34.24秒。"
+      },
+      "previewed_frame_seconds": [
+        1.7120000000000002,
+        10.272,
+        20.544,
+        30.816000000000003
+      ],
+      "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+      "evidence_windows": [],
+      "archive_member": "videos/video_1580.mp4",
+      "original_video_metadata": {
+        "split": "valid",
+        "video_id": "video_1580",
+        "frame_rate": 30.00895118713379,
+        "num_frames": 1027,
+        "resolution": [
+          1080,
+          1920
+        ],
+        "audio_samples": 1644544,
+        "audio_sample_rate": 48000.0,
+        "is_cup_game": 0,
+        "is_camera_moving": 0
+      },
+      "submitted_review": null,
+      "submitted_review_note": "本次没有找到逐题导出，submitted_review为null；source_feedback保留成员原话，review是据文字反馈补充的整理判断。",
+      "local_video_filename": "video_1580.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地剩余来源准备/PercTest/本地浏览.html；公开展示方式见video_source。",
+      "license": "CC-BY-4.0",
+      "attribution": "Copyright 2022 DeepMind Technologies Limited; Perception Test authors; https://github.com/google-deepmind/perception_test"
     }
+  ],
+  "video_count": 3,
+  "question_count": 3,
+  "format_screening": {
+    "scope": "所选样例的Choice适配预审；不代表全源所有任务均可直接接入。",
+    "whole_source_removed": false,
+    "native_output_exception": "当前仅选原生选择题任务，其他任务另审。",
+    "formal_adopted_questions": 0,
+    "reason": "全部拟判断等待成员确认。"
+  },
+  "submission_source": "本轮用户文字反馈；未收到PercTest逐题导出文件",
+  "source_feedback": {
+    "reviewer": "余金洋",
+    "date": "2026-10-03",
+    "text": "PercTest检查完成，这个数据源的视频更长，不再仅仅只是识别动作即可，需要对视频内容和问题有一定理解，这一组示例质量更高。",
+    "逐题来源": "仅本轮文字反馈；不虚构具体计数或答案确认"
+  },
+  "source_screening": {
+    "依据": "本轮成员整体观看与质量评价＋助手问答/抽帧核对；没有逐题导出",
+    "本轮结论": "暂按Perception Test纳入综合理解优先候选；成员已看三例并评价质量较好。2条动作/前后比较条件候选、1条末帧图片对照；未收到逐题导出，官方答案未全部人工明确确认。",
+    "human_viewed_samples": 3,
+    "human_item_reviews_received": 0,
+    "初筛视频候选": 2,
+    "图片对照": 1,
+    "本轮排除": 0,
+    "全源最终采纳题数": "未锁定；本轮判断用于候选选择，正式题包需扩大抽样和跨源去重。",
+    "全源质量判断限制": "每源3例目的性抽样；“PercTest本组质量较高”是成员观感，不是全源错误率或三源质量排名。",
+    "实际核查时长": "25.58—34.92秒"
   }
 }

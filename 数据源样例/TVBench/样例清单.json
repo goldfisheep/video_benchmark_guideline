@@ -1,33 +1,362 @@
 {
   "benchmark": "TVBench",
-  "samples": [],
-  "sample_template": {
-    "sample_id": "待填写",
-    "video_id": "待填写",
-    "subtask": "待填写",
-    "question": "待填写",
-    "question_zh": "待填写",
-    "options": [],
-    "reference_answer": "待填写",
-    "answer_index": null,
-    "annotation_source": "待填写",
-    "video_path": "",
-    "video_url": "",
-    "video_source": "待填写",
-    "video_status": "待填写",
-    "review": {
-      "是否看过正式片段": "待填写",
-      "是否需要音频": "待填写",
-      "是否需要字幕": "待填写",
-      "适合的JEV输出": "待填写",
-      "视频是否必要": "待填写",
-      "答案是否清楚": "待填写",
-      "证据时刻": "待填写",
-      "结论": "待填写",
-      "待解决问题": "待填写",
-      "查看方式": "待填写",
-      "核查人": "待填写",
-      "核查日期": "待填写"
+  "version": {
+    "official_project": "https://github.com/daniel-cores/tvbench",
+    "annotation": "json/*.json",
+    "readme_provenance": {
+      "repo": "daniel-cores/tvbench",
+      "sha": "2780581120a4941dbcca38580a31cb61be225cec",
+      "html_url": "https://github.com/daniel-cores/tvbench/blob/main/README.md"
+    },
+    "hf_repo": "FunAILab/TVBench",
+    "hf_revision": "1d933b2aced8da5d6b315bb6a37807d126e05526"
+  },
+  "updated": "2026-10-03",
+  "status": "人工初筛已填写（导出＋本轮文字反馈）",
+  "sampling_note": "每源选3段便于获取的视频并兼顾题型，目的性抽样，不是随机抽样；不据3段推断全源质量。VideoMME v2保留每段完整4题组。",
+  "summary_draft": "纳入第一版无声时序候选：本轮3题通过整体初筛，覆盖先后、运动计数和方向；与MotionBench能力相近，与MVBench需查重。",
+  "content_access": "local_only",
+  "samples": [
+    {
+      "sample_id": "action_sequence:6H78U.mp4",
+      "video_group_id": "action_sequence:6H78U.mp4",
+      "subtask": "action_sequence",
+      "question": "What did the person do first?",
+      "question_zh": "人物先做的是放下毯子，还是拿起毛巾？",
+      "options": [
+        "Put down the blanket.",
+        "Took the towel."
+      ],
+      "option_labels": [
+        "A",
+        "B"
+      ],
+      "reference_answer": "A. Put down the blanket.",
+      "answer_index": 0,
+      "official_answer_raw": "Put down the blanket.",
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://huggingface.co/datasets/FunAILab/TVBench/tree/1d933b2aced8da5d6b315bb6a37807d126e05526",
+      "annotation_file": [
+        "action_sequence.json"
+      ],
+      "annotation_sha256": {
+        "action_sequence.json": "1dc23960a2085a2e1f8a700999c24be4adcdbb46b212cdc0dc9798d3cc0f0929"
+      },
+      "original_record": {
+        "video": "6H78U.mp4",
+        "question": "What did the person do first?",
+        "answer": "Put down the blanket.",
+        "candidates": [
+          "Put down the blanket.",
+          "Took the towel."
+        ],
+        "question_id": "Sequence_T3_5",
+        "start": 16.6,
+        "end": 25.6
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/FunAILab/TVBench/blob/1d933b2aced8da5d6b315bb6a37807d126e05526/video/action_sequence.zip",
+      "video_source": "作者HF视频归档成员已本地核查；公开页提供原问题、选项和官方归档入口，尚不重传第三方来源视频。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 34.51,
+      "preview_duration_seconds": 9.01,
+      "has_audio": true,
+      "preview_has_audio": true,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "bb884add5656731808d85134060eff3b1f04eb37f3837ab2192fe43b8db849c9",
+      "preview_file_sha256": "5bab29187263bf9b5a3eaac898a9cca0a1f301abdcbae7c4dcd209a9accebd5d",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "local_only",
+      "review_status": "人工初筛已填写",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不是必要输入；文件有音轨，人工可听作校验，先静音检查画面能否支持答案。",
+        "是否需要字幕": "不需要独立字幕；本轮为视觉先后、计数和方向。",
+        "适合的JEV输出": "Choice（原生2选一；保留原选项及官方答案）",
+        "视频是否必要": "需要连续画面判断动作先后；必须限定正式9秒片段。",
+        "答案是否清楚": "成员标记答案清楚；官方A为先放下毯子。只按16.6—25.6秒正式片段判断，预览0—9.01秒。",
+        "证据时间": "预览0—9秒对应原文件16.6—25.6秒；不要用原片更早动作作答。",
+        "结论": "本轮纳入无声动作顺序候选。",
+        "待解决问题": "正式输入沿用作者16.6—25.6秒片段，不扩成整条34.51秒视频；保持毯子/毛巾指代，跨来源核对重复视频。",
+        "查看方式": "剩余来源准备/TVBench/本地浏览.html第1例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "人物先做的是放下毯子，还是拿起毛巾？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+        "实际视频时长": "原文件34.51秒；本页预览9.01秒。"
+      },
+      "previewed_frame_seconds": [
+        0.4505,
+        2.703,
+        5.406,
+        8.109
+      ],
+      "evaluation_setting": "只输入原片16.6—25.6秒正式片段；预览0秒对应原16.6秒。",
+      "evidence_windows": [],
+      "archive_member": "action_sequence/6H78U.mp4",
+      "preview_mapping": {
+        "original_start_seconds": 16.6,
+        "original_end_seconds": 25.6,
+        "preview_start_seconds": 0
+      },
+      "submitted_review": {
+        "是否看过正式片段": "是。",
+        "是否需要音频": "不是必要输入；文件有音轨，人工可听作校验，先静音检查画面能否支持答案。",
+        "是否需要字幕": "不需要独立字幕；画面文字可以使用。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "需要连续画面判断动作先后；必须限定正式9秒片段。",
+        "答案是否清楚": "是",
+        "证据时间": "预览0—9秒对应原文件16.6—25.6秒；不要用原片更早动作作答。",
+        "结论": "无声动作顺序条件候选；原生二选一，可输出Choice。",
+        "待解决问题": "确认毯子与毛巾的指代，完整观察片段首动作；原34.51秒视频仅用于来源核对。",
+        "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+        "核查重点": "人物先做的是放下毯子，还是拿起毛巾？ 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+        "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+        "实际视频时长": "原文件34.51秒；本页预览9.01秒。"
+      },
+      "local_video_filename": "review_6H78U.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地剩余来源准备/TVBench/本地浏览.html；公开展示方式见video_source。"
+    },
+    {
+      "sample_id": "object_count:video_11499.mp4",
+      "video_group_id": "object_count:video_11499.mp4",
+      "subtask": "object_count",
+      "question": "How many objects are moving when the video begins?",
+      "question_zh": "视频刚开始时，有几个物体正在移动？",
+      "options": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reference_answer": "D. 2",
+      "answer_index": 3,
+      "official_answer_raw": "2",
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://huggingface.co/datasets/FunAILab/TVBench/tree/1d933b2aced8da5d6b315bb6a37807d126e05526",
+      "annotation_file": [
+        "object_count.json"
+      ],
+      "annotation_sha256": {
+        "object_count.json": "26ea96a5a22331a391a22062c12c70207c64087fb136e5805c163dcbc8919f1f"
+      },
+      "original_record": {
+        "video": "video_11499.mp4",
+        "question": "How many objects are moving when the video begins?",
+        "answer": "2",
+        "candidates": [
+          "0",
+          "3",
+          "1",
+          "2"
+        ],
+        "is_seq": true,
+        "question_id": 1
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/FunAILab/TVBench/blob/1d933b2aced8da5d6b315bb6a37807d126e05526/video/object_count.zip",
+      "video_source": "作者HF视频归档成员已本地核查；公开页提供原问题、选项和官方归档入口，尚不重传第三方来源视频。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 5.12,
+      "preview_duration_seconds": 5.12,
+      "has_audio": false,
+      "preview_has_audio": false,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "bb64ddc899835fd2d0b3ffb646b2ce21e490c951cdabe5503a18ebd3ebcd865b",
+      "preview_file_sha256": "bb64ddc899835fd2d0b3ffb646b2ce21e490c951cdabe5503a18ebd3ebcd865b",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "local_only",
+      "review_status": "人工初筛已填写",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+        "是否需要字幕": "不需要独立字幕；本轮为视觉先后、计数和方向。",
+        "适合的JEV输出": "Choice（原生4选一；保留原选项及官方答案）",
+        "视频是否必要": "需要比较开始时连续几帧；单帧只能数全部物体，不能确定哪些在移动。",
+        "答案是否清楚": "官方D为2个运动物体；成员已标记观看并总体认可TVBench，未单独改此答案栏。助手抽帧见黄方块与蓝圆柱相对位置变化；不写成成员独立逐个计数已经确认。",
+        "证据时间": "整段0—5.12秒，重点开头0—1秒。",
+        "结论": "本轮纳入运动计数候选，正式题包前补核开始时两物体的独立计数。",
+        "待解决问题": "题目只数视频开始时正在移动的物体，不数全部物体；参照物相对位置可帮助排除镜头变化。正式题包补核独立计数，并与MVBench同类合成视频去重。",
+        "查看方式": "剩余来源准备/TVBench/本地浏览.html第2例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "视频刚开始时，有几个物体正在移动？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+        "实际视频时长": "原文件5.12秒；本页预览5.12秒。"
+      },
+      "previewed_frame_seconds": [
+        0.256,
+        1.536,
+        3.072,
+        4.6080000000000005
+      ],
+      "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+      "evidence_windows": [],
+      "archive_member": "object_count/video_11499.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+        "是否需要字幕": "预计不需要独立字幕；画面文字可以使用。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "需要比较开始时连续几帧；单帧只能数全部物体，不能确定哪些在移动。",
+        "答案是否清楚": "官方D为2；抽帧见黄色方块、蓝色圆柱位置改变，其他物体较固定，支持2个运动物体；还需检查最初几帧。",
+        "证据时间": "整段0—5.12秒，重点开头0—1秒。",
+        "结论": "短视频运动计数条件候选，计数仍用Choice，不改成连续评分Score。",
+        "待解决问题": "只数开始运动的物体，排除静止物体；与MVBench合成视频核查重复视频和重复问题。",
+        "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+        "核查重点": "视频刚开始时，有几个物体正在移动？ 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+        "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+        "实际视频时长": "原文件5.12秒；本页预览5.12秒。"
+      },
+      "local_video_filename": "video_11499.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地剩余来源准备/TVBench/本地浏览.html；公开展示方式见video_source。"
+    },
+    {
+      "sample_id": "moving_direction:video_14393.mp4",
+      "video_group_id": "moving_direction:video_14393.mp4",
+      "subtask": "moving_direction",
+      "question": "Which direction does the purple sphere move in the video?",
+      "question_zh": "紫色球在画面中向哪个方向移动？",
+      "options": [
+        "Up and to the right.",
+        "Up and to the left.",
+        "Down and to the left.",
+        "Down and to the right."
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reference_answer": "D. Down and to the right.",
+      "answer_index": 3,
+      "official_answer_raw": "Down and to the right.",
+      "option_provenance": "原始标注顺序保留；字母按顺序展示。",
+      "official_reasoning": "本条作者标注未提供完整推理；review中的判断为助手拟稿，不是官方解释。",
+      "annotation_source": "https://huggingface.co/datasets/FunAILab/TVBench/tree/1d933b2aced8da5d6b315bb6a37807d126e05526",
+      "annotation_file": [
+        "moving_direction.json"
+      ],
+      "annotation_sha256": {
+        "moving_direction.json": "3bc7cbe1a2f92946cf40cb4b05b860427b88a59f2011b52ef35172ff28d1d9df"
+      },
+      "original_record": {
+        "video": "video_14393.mp4",
+        "question": "Which direction does the purple sphere move in the video?",
+        "answer": "Down and to the right.",
+        "candidates": [
+          "Up and to the right.",
+          "Up and to the left.",
+          "Down and to the left.",
+          "Down and to the right."
+        ]
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/FunAILab/TVBench/blob/1d933b2aced8da5d6b315bb6a37807d126e05526/video/moving_direction.zip",
+      "video_source": "作者HF视频归档成员已本地核查；公开页提供原问题、选项和官方归档入口，尚不重传第三方来源视频。",
+      "video_status": "成员已标记观看；助手核对作者原标注、既有抽帧和文件信息，没有重新连续观看。",
+      "video_duration_seconds": 5.12,
+      "preview_duration_seconds": 5.12,
+      "has_audio": false,
+      "preview_has_audio": false,
+      "video_codec": "h264",
+      "preview_video_codec": "h264",
+      "original_file_sha256": "edf0e0d00fd503068ff529ff29a511c441745f040bb7b7833ba0364328a9535a",
+      "preview_file_sha256": "edf0e0d00fd503068ff529ff29a511c441745f040bb7b7833ba0364328a9535a",
+      "subtitle_status": "本例未取得独立字幕；不代表原站无字幕。画面内嵌文字仍属于视频画面。",
+      "content_access": "local_only",
+      "review_status": "人工初筛已填写",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+        "是否需要字幕": "不需要独立字幕；本轮为视觉先后、计数和方向。",
+        "适合的JEV输出": "Choice（原生4选一；保留原选项及官方答案）",
+        "视频是否必要": "需比较球在多个时刻的位置；单帧不直接包含方向。",
+        "答案是否清楚": "官方D为向右下；成员已看并总体认可TVBench，既有抽帧显示紫球向右下位置变化，未记录答案分歧。",
+        "证据时间": "整段0—5.12秒，以画面坐标描述方向。",
+        "结论": "本轮纳入无声运动方向候选。",
+        "待解决问题": "按屏幕坐标理解向右下；本例无新增人工分歧。正式合并题包前核对视频/问题重复，并补抽其他运动方向。",
+        "查看方式": "剩余来源准备/TVBench/本地浏览.html第3例；公开页观看方式见video_source。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "紫色球在画面中向哪个方向移动？ 检查只看题目、单帧/多图与连续画面的可答性；扩大抽样时核对同类题。",
+        "与项目输入设置的关系": "JEV使用文本问题＋原选项＋无声视频画面；单帧/多图对照分别报告。独立字幕不是画面内文字，音轨存在不等于音频必需。",
+        "实际视频时长": "原文件5.12秒；本页预览5.12秒。"
+      },
+      "previewed_frame_seconds": [
+        0.256,
+        1.536,
+        3.072,
+        4.6080000000000005
+      ],
+      "evaluation_setting": "视频画面＋问题＋原选项，输出原选项字母Choice；答案/解释/证据只供作答后核对。",
+      "evidence_windows": [],
+      "archive_member": "moving_direction/video_14393.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；本文件无音轨，题目要求动作或画面判断。",
+        "是否需要字幕": "不需要独立字幕；画面文字可以使用。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "需比较球在多个时刻的位置；单帧不直接包含方向。",
+        "答案是否清楚": "官方D为向右下；抽帧见球由左上向右下移动，支持D。",
+        "证据时间": "整段0—5.12秒，以画面坐标描述方向。",
+        "结论": "优先作为无声运动方向Choice条件候选。",
+        "待解决问题": "统一按屏幕上下左右理解，不按真实三维空间方向；检查与MVBench的内容重叠。",
+        "查看方式": "打开本数据源本地浏览.html，先看题目、选项与视频，再展开官方答案和拟判断；修改后导出JSON。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期；人工日期按实际修改）",
+        "核查重点": "紫色球在画面中向哪个方向移动？ 请分别判断只看题目、单帧/多图、静音视频、字幕辅助是否能答。",
+        "与项目输入设置的关系": "JEV当前支持文本、图片、视频；未确认原生音频输入。若必须理解发言，以字幕文本接入并单列，不能称无声视觉可答。",
+        "实际视频时长": "原文件5.12秒；本页预览5.12秒。"
+      },
+      "local_video_filename": "video_14393.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地剩余来源准备/TVBench/本地浏览.html；公开展示方式见video_source。"
     }
+  ],
+  "video_count": 3,
+  "question_count": 3,
+  "format_screening": {
+    "scope": "所选样例的Choice适配预审；不代表全源所有任务均可直接接入。",
+    "whole_source_removed": false,
+    "native_output_exception": "当前仅选原生选择题任务，其他任务另审。",
+    "formal_adopted_questions": 0,
+    "reason": "全部拟判断等待成员确认。"
+  },
+  "submission_source": "TVBench_样例清单.json",
+  "source_feedback": {
+    "reviewer": "余金洋",
+    "date": "2026-10-03",
+    "text": "TVBench检查完成，它和MotionBench问题关注比较相像，同样适合采纳。",
+    "逐题来源": "导出的样例清单＋本轮文字反馈"
+  },
+  "source_screening": {
+    "依据": "导出文件＋本轮成员文字反馈＋助手原标注/抽帧/时长核对",
+    "本轮结论": "纳入第一版无声时序候选：本轮3题通过整体初筛，覆盖先后、运动计数和方向；与MotionBench能力相近，与MVBench需查重。",
+    "human_viewed_samples": 3,
+    "human_item_reviews_received": 3,
+    "初筛视频候选": 3,
+    "图片对照": 0,
+    "本轮排除": 0,
+    "全源最终采纳题数": "未锁定；本轮判断用于候选选择，正式题包需扩大抽样和跨源去重。",
+    "全源质量判断限制": "每源3例目的性抽样；“PercTest本组质量较高”是成员观感，不是全源错误率或三源质量排名。",
+    "实际核查时长": "正式预览5.12—9.01秒；首题原片34.51秒"
   }
 }
