@@ -521,7 +521,7 @@
     {
       "name": "MMVU-all",
       "category": "视频知识；专业知识，多种问答形式",
-      "version": "MMVU；优先公开验证集，all 为全任务配置的暂定理解",
+      "version": "MMVU validation原生选择题子集；固定HF版本 b937f414a87e9012acba49d95669020b24fa9ee9",
       "sources": [
         {
           "label": "官方 HF 验证集",
@@ -535,11 +535,11 @@
       "source_notes": "**部分公开**。按 **MMVU** 全任务理解：[官方 HF 验证集](https://huggingface.co/datasets/yale-nlp/MMVU)；[官方代码](https://github.com/yale-nlp/MMVU)。官方测试集隐藏；`all` 更像评测配置名。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "仅保留625条multiple-choice候选；375条open-ended本轮排除。不是完整MMVU-all评测，不报all总分。",
-      "known_output": "本轮仅原生multiple-choice映射Choice；open-ended排除；不计算MMVU-all总分。",
-      "viewing_guidance": "先选官方公开验证集记录，再按视频标识和数据说明取得对应片段；隐藏测试集不作为本地有答案样例。",
+      "final_decision": "3例人工初筛：2条件候选、1不采用；非all完整评测",
+      "decision_reason": "3例人工初筛均为11—14秒无声专业知识短片：天文学题为科学短片条件候选，算法左旋题为知识＋时序计数候选、五次仍需明确确认，词义卡片题按本轮选择不采用。仅用验证集625条原生五选一子集，不代表MMVU-all完整评测。",
+      "selected_scope": "625条原生五选一候选范围；专业知识＋科学动画/算法时序专项，排除375条开放题。950、276须完成逐题复核，620本轮不采用。",
+      "known_output": "验证集1000题含625条原生五选一Choice及375条开放题；本轮仅选择题，不报告all总分。",
+      "viewing_guidance": "本组三例均11—14秒，已有人工正式片段观看记录；公开网页可用时直接引用作者HF正式片段，本地保留文件。",
       "report_path": "数据源样例/MMVU-all/人工筛选报告.md",
       "samples_path": "数据源样例/MMVU-all/样例清单.json",
       "format_prescreen": {
@@ -555,7 +555,14 @@
           "multiple-choice": 625
         },
         "scope": "仅保留625条multiple-choice候选；375条open-ended本轮排除。不是完整MMVU-all评测，不报all总分。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "验证集625条原生五选一范围已核对；本轮3例人工记录：2候选、1不采用。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "conditional_candidates": 2,
+        "not_selected_samples": 1,
+        "officially_adopted": 0
       }
     },
     {

@@ -4022,7 +4022,7 @@ window.BENCHMARK_DATA = {
     {
       "name": "MMVU-all",
       "category": "视频知识；专业知识，多种问答形式",
-      "version": "MMVU；优先公开验证集，all 为全任务配置的暂定理解",
+      "version": "MMVU validation原生选择题子集；固定HF版本 b937f414a87e9012acba49d95669020b24fa9ee9",
       "sources": [
         {
           "label": "官方 HF 验证集",
@@ -4036,14 +4036,356 @@ window.BENCHMARK_DATA = {
       "source_notes": "**部分公开**。按 **MMVU** 全任务理解：[官方 HF 验证集](https://huggingface.co/datasets/yale-nlp/MMVU)；[官方代码](https://github.com/yale-nlp/MMVU)。官方测试集隐藏；`all` 更像评测配置名。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "仅保留625条multiple-choice候选；375条open-ended本轮排除。不是完整MMVU-all评测，不报all总分。",
-      "known_output": "本轮仅原生multiple-choice映射Choice；open-ended排除；不计算MMVU-all总分。",
-      "viewing_guidance": "先选官方公开验证集记录，再按视频标识和数据说明取得对应片段；隐藏测试集不作为本地有答案样例。",
+      "final_decision": "3例人工初筛：2条件候选、1不采用；非all完整评测",
+      "decision_reason": "3例人工初筛均为11—14秒无声专业知识短片：天文学题为科学短片条件候选，算法左旋题为知识＋时序计数候选、五次仍需明确确认，词义卡片题按本轮选择不采用。仅用验证集625条原生五选一子集，不代表MMVU-all完整评测。",
+      "selected_scope": "625条原生五选一候选范围；专业知识＋科学动画/算法时序专项，排除375条开放题。950、276须完成逐题复核，620本轮不采用。",
+      "known_output": "验证集1000题含625条原生五选一Choice及375条开放题；本轮仅选择题，不报告all总分。",
+      "viewing_guidance": "本组三例均11—14秒，已有人工正式片段观看记录；公开网页可用时直接引用作者HF正式片段，本地保留文件。",
       "report_path": "数据源样例/MMVU-all/人工筛选报告.md",
       "samples_path": "数据源样例/MMVU-all/样例清单.json",
-      "samples": [],
+      "samples": [
+        {
+          "sample_id": "validation_950",
+          "subtask": "Astronomy / multiple-choice",
+          "question": "Which of the following methods is utilized in the video?",
+          "question_zh": "动画展示了哪一种系外行星检测方法？",
+          "options": [
+            "Gravitational microlensing",
+            "Transit photometry",
+            "Radial velocity method",
+            "Pulsar timing",
+            "Relativistic beaming"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "reference_answer": "B. Transit photometry",
+          "answer_index": 1,
+          "official_reasoning": "The shown method detects exoplanets by observing the slight dimming of a star's light when the planet passes between the star and the observer. This method is known as transit photometry, which can be used to determine the planet's size and orbit.",
+          "annotation_source": "https://huggingface.co/datasets/yale-nlp/MMVU/tree/b937f414a87e9012acba49d95669020b24fa9ee9",
+          "annotation_file": "validation.json",
+          "original_record": {
+            "id": "validation_950",
+            "video": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/main/videos/Astronomy/8.mp4",
+            "youtube_url": "https://www.youtube.com/watch?v=4ebAkmxH_p8",
+            "question_type": "multiple-choice",
+            "metadata": {
+              "subject": "Astronomy",
+              "textbook": "Fundations of Astrophysics (Barbara Ryden, Bradley W. Peterson)",
+              "knowledge": [
+                "https://en.wikipedia.org/wiki/Gravitational_microlensing",
+                "https://en.wikipedia.org/wiki/Doppler_spectroscopy",
+                "https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets"
+              ],
+              "rationale": "The shown method detects exoplanets by observing the slight dimming of a star's light when the planet passes between the star and the observer. This method is known as transit photometry, which can be used to determine the planet's size and orbit."
+            },
+            "question": "Which of the following methods is utilized in the video?",
+            "choices": {
+              "A": "Gravitational microlensing",
+              "B": "Transit photometry",
+              "C": "Radial velocity method",
+              "D": "Pulsar timing",
+              "E": "Relativistic beaming"
+            },
+            "answer": "B"
+          },
+          "video_path": "",
+          "source_video_url": "https://www.youtube.com/watch?v=4ebAkmxH_p8",
+          "video_source": "作者HF独立正式片段，固定版本见official_video_url；原站YouTube为来源追溯。",
+          "video_status": "余金洋已标记看过正式片段；题目采用状态与具体未决项见review。",
+          "video_duration_seconds": 11.01,
+          "has_audio": false,
+          "video_codec": "h264",
+          "original_file_sha256": "9b8e49dea511180e329fa452bea3d54c47c2942801ab404a780fa5d62f14ad85",
+          "content_access": "official_remote_video",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；按逐题结论采用",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式短片无音轨。",
+            "是否需要字幕": "不需要独立字幕；观察恒星亮度曲线和行星运动。",
+            "适合的JEV输出": "Choice（本例原生5选一A—E；数字计数题仍选择原选项，不改为Score）",
+            "视频是否必要": "动态过程有用，但凌星亮度曲线的一张关键图也可能足够。",
+            "答案是否清楚": "人工以右下角亮度变化曲线推断，与官方B“凌星测光法”方向一致；原提交仍保留连续看清行星经过恒星前方的核验事项。",
+            "证据时间": "全片0—11.01秒，重点为右下角亮度随时间变化图（核查人所指证据）；未声称已逐秒标记行星过境。",
+            "结论": "无声科学短片条件候选；补做单帧对照后，再确定是否计入连续视频专项。",
+            "待解决问题": "核对亮度下降与行星经过恒星前方是否对应；比较含完整曲线的单帧与连续动画。只有领域知识而没有画面证据不能计为视频能力，只有单帧即可则转图片对照。",
+            "查看方式": "批量预审/MMVU-all/本地浏览.html第1例；正式HF短片链接见official_video_url，原站全视频不等于该裁剪片段。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "动画展示了哪一种系外行星检测方法？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "本例正式短片无音轨，核查人认为无需独立字幕；JEV用画面＋问题＋原选项，知识是模型能力的一部分，答案解释不作为输入。",
+            "实际视频时长": "11.01秒"
+          },
+          "previewed_frame_seconds": [
+            0.8808,
+            3.303,
+            6.606,
+            9.909
+          ],
+          "evaluation_setting": "专业知识＋无声科学动画Choice；保留原完整11.01秒片段，另做单帧对照。",
+          "official_video_url": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/b937f414a87e9012acba49d95669020b24fa9ee9/videos/Astronomy/8.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式短片无音轨。",
+            "是否需要字幕": "不需要独立字幕；观察恒星亮度曲线和行星运动。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "动态过程有用，但凌星亮度曲线的一张关键图也可能足够。",
+            "答案是否清楚": "已见亮度降低曲线与天体示意，方向与B“凌星测光法”一致；还需连续看清行星从恒星前方经过。",
+            "证据时间": "右下角亮度随时间变换图可以推断",
+            "结论": "拟采纳为无声科学视频候选，同时记录单帧可答性。",
+            "待解决问题": "判断主要测动画过程还是已有天文学知识；字幕/教材解释仅作作答后核对，不把metadata.rationale和knowledge文档输入模型。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "动画展示了哪一种系外行星检测方法？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "11.01秒",
+          "official_video_access_check": {
+            "public_access": true,
+            "http_status": 200,
+            "content_type": "video/mp4",
+            "content_length": "24509"
+          },
+          "local_video_filename": "8.mp4",
+          "video_url": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/b937f414a87e9012acba49d95669020b24fa9ee9/videos/Astronomy/8.mp4",
+          "local_viewing_guidance": "本地批量预审/MMVU-all/本地浏览.html；公开网页可用时直接引用作者固定版本正式片段。"
+        },
+        {
+          "sample_id": "validation_276",
+          "subtask": "Computer Science / multiple-choice",
+          "question": "How many left-rotations are there in the video?",
+          "question_zh": "红黑树动画中一共发生多少次左旋？",
+          "options": [
+            "6",
+            "4",
+            "5",
+            "3",
+            "7"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "reference_answer": "C. 5",
+          "answer_index": 2,
+          "official_reasoning": "A left rotation is performed around a node x (which we'll call the pivot node) when its right child y is too tall. The goal is to make y the new root of the subtree, pushing x to the left, thus rebalancing the heights of the subtrees. So there is 5 times of left rotation.",
+          "annotation_source": "https://huggingface.co/datasets/yale-nlp/MMVU/tree/b937f414a87e9012acba49d95669020b24fa9ee9",
+          "annotation_file": "validation.json",
+          "original_record": {
+            "id": "validation_276",
+            "video": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/main/videos/Computer_Science/14.mp4",
+            "youtube_url": "https://www.youtube.com/watch?v=_VbTnLV8plU",
+            "question_type": "multiple-choice",
+            "metadata": {
+              "subject": "Computer Science",
+              "textbook": "Introduction to Algorithms, 4th Edition (Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein)",
+              "knowledge": [
+                "https://en.wikipedia.org/wiki/Red%E2%80%93black_tree",
+                "https://en.wikipedia.org/wiki/Binary_search_tree",
+                "https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree",
+                "https://en.wikipedia.org/wiki/AVL_tree",
+                "https://en.wikipedia.org/wiki/Tree_rotation"
+              ],
+              "rationale": "A left rotation is performed around a node x (which we'll call the pivot node) when its right child y is too tall. The goal is to make y the new root of the subtree, pushing x to the left, thus rebalancing the heights of the subtrees. So there is 5 times of left rotation."
+            },
+            "question": "How many left-rotations are there in the video?",
+            "choices": {
+              "A": "6",
+              "B": "4",
+              "C": "5",
+              "D": "3",
+              "E": "7"
+            },
+            "answer": "C"
+          },
+          "video_path": "",
+          "source_video_url": "https://www.youtube.com/watch?v=_VbTnLV8plU",
+          "video_source": "作者HF独立正式片段，固定版本见official_video_url；原站YouTube为来源追溯。",
+          "video_status": "余金洋已标记看过正式片段；题目采用状态与具体未决项见review。",
+          "video_duration_seconds": 14,
+          "has_audio": false,
+          "video_codec": "h264",
+          "original_file_sha256": "8b2fe250391bd33b2334478209a07d009f46fceb76bda974920355bd12adf207",
+          "content_access": "official_remote_video",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；按逐题结论采用",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式片段无音轨。",
+            "是否需要字幕": "不需要；画面节点/边变化是主要证据。",
+            "适合的JEV输出": "Choice（本例原生5选一A—E；数字计数题仍选择原选项，不改为Score）",
+            "视频是否必要": "需要连续视频计数，单帧不能确定历史左旋次数；需要先理解“左旋”操作。",
+            "答案是否清楚": "官方C为5次；人工原记录仍写“须逐次播放计数”，未给出独立计数结果。因此保持候选，不把五次标为已人工确认。",
+            "证据时间": "整段0—14秒须连续检查（原提交证据栏为空）；尚未提供逐次左旋记录或确认实数。",
+            "结论": "专业知识＋时序计数条件候选；原人工写“采纳”，现注明五次左旋确认后正式采纳。",
+            "待解决问题": "连续观看全部14秒，确认左旋恰为5次并区分右旋、插入和节点移动。左旋指右子节点上移为子树根、原节点移到其左侧；逐次结果尚未填写，不能从四张抽帧确认五次。",
+            "查看方式": "批量预审/MMVU-all/本地浏览.html第2例；正式HF短片链接见official_video_url，原站全视频不等于该裁剪片段。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "红黑树动画中一共发生多少次左旋？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "本例正式短片无音轨，核查人认为无需独立字幕；JEV用画面＋问题＋原选项，知识是模型能力的一部分，答案解释不作为输入。",
+            "实际视频时长": "14.00秒"
+          },
+          "previewed_frame_seconds": [
+            1.12,
+            4.2,
+            8.4,
+            12.6
+          ],
+          "evaluation_setting": "知识＋连续动作计数Choice；保留全14秒，不用最终树形单帧替代历史操作。",
+          "official_video_url": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/b937f414a87e9012acba49d95669020b24fa9ee9/videos/Computer_Science/14.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式片段无音轨。",
+            "是否需要字幕": "不需要；画面节点/边变化是主要证据。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "需要连续视频计数，单帧不能确定历史左旋次数；需要先理解“左旋”操作。",
+            "答案是否清楚": "官方C为5次；抽帧只能确认树形动画，不能独立确认五次，须逐次播放计数。",
+            "证据时间": "",
+            "结论": "采纳为专业知识加时序计数候选。",
+            "待解决问题": "连续计数左旋并与右旋区分；标记算法前置知识。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "红黑树动画中一共发生多少次左旋？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "14.00秒",
+          "official_video_access_check": {
+            "public_access": true,
+            "http_status": 200,
+            "content_type": "video/mp4",
+            "content_length": "31834"
+          },
+          "local_video_filename": "14.mp4",
+          "video_url": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/b937f414a87e9012acba49d95669020b24fa9ee9/videos/Computer_Science/14.mp4",
+          "local_viewing_guidance": "本地批量预审/MMVU-all/本地浏览.html；公开网页可用时直接引用作者固定版本正式片段。"
+        },
+        {
+          "sample_id": "validation_620",
+          "subtask": "Literature / multiple-choice",
+          "question": "Based on the two flashcards shown in the video, which literary device is exemplified by the words and images presented?",
+          "question_zh": "两张词语卡片体现了哪一种词义关系？",
+          "options": [
+            "Polysemy",
+            "Synonymy",
+            "Antonymy",
+            "Metonymy",
+            "Homophones"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "reference_answer": "A. Polysemy",
+          "answer_index": 0,
+          "official_reasoning": "The words 'table' and 'hours' in the flashcards demonstrate polysemy, as each word has multiple related meanings. 'Table' is both a piece of furniture and a way to organize data, while 'hours' refers to a time unit and the concept of time. Thus, the literary device exemplified is polysemy, making option A correct.",
+          "annotation_source": "https://huggingface.co/datasets/yale-nlp/MMVU/tree/b937f414a87e9012acba49d95669020b24fa9ee9",
+          "annotation_file": "validation.json",
+          "original_record": {
+            "id": "validation_620",
+            "video": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/main/videos/Literature/6.mp4",
+            "youtube_url": "https://www.youtube.com/watch?v=ROiLVF6ty-0&t=640s",
+            "question_type": "multiple-choice",
+            "metadata": {
+              "subject": "Literature",
+              "textbook": "An Introduction to Language, 11th Edition (Victoria Fromkin, Robert Rodman, Nina Hyams)",
+              "knowledge": [
+                "https://en.wikipedia.org/wiki/Metonymy",
+                "https://en.wikipedia.org/wiki/Synonym",
+                "https://en.wikipedia.org/wiki/Homonym",
+                "https://en.wikipedia.org/wiki/Word_sense",
+                "https://en.wikipedia.org/wiki/Homophone",
+                "https://en.wikipedia.org/wiki/Polysemy"
+              ],
+              "rationale": "The words 'table' and 'hours' in the flashcards demonstrate polysemy, as each word has multiple related meanings. 'Table' is both a piece of furniture and a way to organize data, while 'hours' refers to a time unit and the concept of time. Thus, the literary device exemplified is polysemy, making option A correct."
+            },
+            "question": "Based on the two flashcards shown in the video, which literary device is exemplified by the words and images presented?",
+            "choices": {
+              "A": "Polysemy",
+              "B": "Synonymy",
+              "C": "Antonymy",
+              "D": "Metonymy",
+              "E": "Homophones"
+            },
+            "answer": "A"
+          },
+          "video_path": "",
+          "source_video_url": "https://www.youtube.com/watch?v=ROiLVF6ty-0&t=640s",
+          "video_source": "作者HF独立正式片段，固定版本见official_video_url；原站YouTube为来源追溯。",
+          "video_status": "余金洋已标记看过正式片段；题目采用状态与具体未决项见review。",
+          "video_duration_seconds": 11,
+          "has_audio": false,
+          "video_codec": "h264",
+          "original_file_sha256": "d214c28189bbc07749aa69d40bd5295d56733083ae7dda7ff0470ca9a32506d7",
+          "content_access": "official_remote_video",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；按逐题结论采用",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式片段无音轨。",
+            "是否需要字幕": "不需要；卡片文字属于画面文字。",
+            "适合的JEV输出": "Choice（本例原生5选一A—E；数字计数题仍选择原选项，不改为Score）",
+            "视频是否必要": "至少要看到两张卡片，但几张截图/转录即可替代视频；主要测试语言学知识。",
+            "答案是否清楚": "官方A并非完全没有依据：table卡片餐桌图片与数据表释义提供两种相关含义；hours卡片只展示time及钟表，官方把两个词都解释为多义的理由支撑较弱。人工原“不清楚”的判断保留在submitted_review。",
+            "证据时间": "0s和8s的两张图片",
+            "结论": "按本轮人工选择不采用：图片文字＋词义知识题，连续视频必要性弱，hours例证与官方理由仍需校对；不写成完全没有多义性证据。",
+            "待解决问题": "table卡片两个义项线索已核对，原“每个词只显示一种意思”应修正；hours是否足以支持官方多义性理由仍有疑点。本轮不恢复采用，原题和官方A均保留作异常追溯。",
+            "查看方式": "批量预审/MMVU-all/本地浏览.html第3例；正式HF短片链接见official_video_url，原站全视频不等于该裁剪片段。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "两张词语卡片体现了哪一种词义关系？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "本例正式短片无音轨，核查人认为无需独立字幕；JEV用画面＋问题＋原选项，知识是模型能力的一部分，答案解释不作为输入。",
+            "实际视频时长": "11.00秒"
+          },
+          "previewed_frame_seconds": [
+            0.88,
+            3.3,
+            6.6,
+            9.9
+          ],
+          "evaluation_setting": "本轮不采用；保留词义知识/图片对照和标注争议证据，不计视频核心。",
+          "official_video_url": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/b937f414a87e9012acba49d95669020b24fa9ee9/videos/Literature/6.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式片段无音轨。",
+            "是否需要字幕": "不需要；卡片文字属于画面文字。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "至少要看到两张卡片，但几张截图/转录即可替代视频；主要测试语言学知识。",
+            "答案是否清楚": "不清楚，视频只显示了每个单词的一种意思，不能据此推断一词多义",
+            "证据时间": "0s和8s的两张图片",
+            "结论": "不建议作为图片文字加知识补充或对照",
+            "待解决问题": "核对table/hours各自的图与文字是否支持多义性且排除同音/转喻；保持原卡片范围，不引用官方解释外的未显示义项。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "两张词语卡片体现了哪一种词义关系？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "11.00秒",
+          "official_video_access_check": {
+            "public_access": true,
+            "http_status": 200,
+            "content_type": "video/mp4",
+            "content_length": "39395"
+          },
+          "local_video_filename": "6.mp4",
+          "video_url": "https://huggingface.co/datasets/yale-nlp/MMVU/resolve/b937f414a87e9012acba49d95669020b24fa9ee9/videos/Literature/6.mp4",
+          "local_viewing_guidance": "本地批量预审/MMVU-all/本地浏览.html；公开网页可用时直接引用作者固定版本正式片段。"
+        }
+      ],
       "format_prescreen": {
         "hf_repo": "yale-nlp/MMVU",
         "hf_revision": "b937f414a87e9012acba49d95669020b24fa9ee9",
@@ -4057,7 +4399,14 @@ window.BENCHMARK_DATA = {
           "multiple-choice": 625
         },
         "scope": "仅保留625条multiple-choice候选；375条open-ended本轮排除。不是完整MMVU-all评测，不报all总分。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "验证集625条原生五选一范围已核对；本轮3例人工记录：2候选、1不采用。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "conditional_candidates": 2,
+        "not_selected_samples": 1,
+        "officially_adopted": 0
       }
     },
     {
