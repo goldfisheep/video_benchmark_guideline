@@ -674,7 +674,7 @@
     {
       "name": "OVBench",
       "category": "流式视频；随时间到达的视频问答",
-      "version": "OVBench；数据版本／修订号待填写",
+      "version": "ovbench_event.json；固定HF版本 4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
       "sources": [
         {
           "label": "官方 HF 数据与视频包",
@@ -688,11 +688,11 @@
       "source_notes": "**公开**。[官方 HF 数据与视频包](https://huggingface.co/datasets/MCG-NJU/OVBench)；[官方项目与评测代码](https://github.com/MCG-NJU/VideoChat-Online)。视频包含序列帧和片段，下载时需按官方数据准备说明组织。",
       "priority": "扩展备用",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "三类文件共7090道原生选择题。保留格式可用方向；动作标注/时轴问题逐题核对。截到提问时刻并保持历史，不能看后续视频再答。",
-      "known_output": "初筛：待填写每个在线问答子任务的答案类型；不能只凭流式类别判定 Choice。",
-      "viewing_guidance": "按官方数据准备说明读取序列帧或片段；对照问题时刻检查已见历史。在线视频入口与最小下载单位待填写。",
+      "final_decision": "3例均暂缓；第一版核心0题",
+      "decision_reason": "3例COIN/event均暂缓，第一版核心0题：步骤正确性标准未明、绕绳前缀静态、灭火教学页与持续时长标签存疑；保留原生Choice扩展，不由三例否定全7090题。",
+      "selected_scope": "格式可用的历史动作/时序Choice；本轮COIN/event三例不采用，其他题型另核查。",
+      "known_output": "原生7090题Choice；本组三例步骤/时轴待核。",
+      "viewing_guidance": "本地批量预审/OVBench三例已有人工记录；公开问答与报告已同步，媒体留本地。",
       "report_path": "数据源样例/OVBench/人工筛选报告.md",
       "samples_path": "数据源样例/OVBench/样例清单.json",
       "format_prescreen": {
@@ -710,13 +710,20 @@
           "object": 1947
         },
         "scope": "三类文件共7090道原生选择题。保留格式可用方向；动作标注/时轴问题逐题核对。截到提问时刻并保持历史，不能看后续视频再答。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "原生Choice预筛保留；人工质量初筛与坐标解释见报告。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "deferred_samples": 3,
+        "image_candidates": 0,
+        "continuous_video_core_adopted": 0
       }
     },
     {
       "name": "ODVBench",
       "category": "流式视频；流式驾驶场景理解",
-      "version": "ODV-Bench；数据修订号待填写",
+      "version": "ODVbench.json；固定HF版本 5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
       "sources": [
         {
           "label": "作者 HF 数据（视频、标注）",
@@ -730,11 +737,11 @@
       "source_notes": "**公开**。对应 **ODV-Bench**：[作者 HF 数据（视频、标注）](https://huggingface.co/datasets/MCG-NJU/ODV-Bench)；[项目代码](https://github.com/MCG-NJU/StreamForest)。",
       "priority": "扩展备用",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "6348条有原生candidates且答案在候选中；坐标题选择预置坐标选项，不要求生成框。Choice可用，未来预测仍需核对时间窗和标注规则。",
-      "known_output": "初筛：待填写具体驾驶问答题型；有选项可接 Choice，开放答案另处理。",
-      "viewing_guidance": "从官方 HF／StreamForest 的数据说明定位驾驶视频与时间标注；以问题发生时刻为界观看，不能将后续画面用于回答。",
+      "final_decision": "1图片候选、2预测暂缓；第一版视频核心0题",
+      "decision_reason": "3例交通人工初筛：946的C框与限速60标志位置一致，保留图片定位候选；1973目标小且预测窗未明、5268风险标准与个人判断分歧，2例暂缓；第一版视频核心0题。",
+      "selected_scope": "946交通图片定位候选；目标运动及风险预测暂缓，规则明确后考虑。",
+      "known_output": "固定6348条原生Choice；坐标为预置选项，无须生成自由框。",
+      "viewing_guidance": "本地批量预审/ODVBench三例已有人工记录；公开问答与报告已同步，媒体留本地。",
       "report_path": "数据源样例/ODVBench/人工筛选报告.md",
       "samples_path": "数据源样例/ODVBench/样例清单.json",
       "format_prescreen": {
@@ -746,7 +753,14 @@
         ],
         "records": 6348,
         "scope": "6348条有原生candidates且答案在候选中；坐标题选择预置坐标选项，不要求生成框。Choice可用，未来预测仍需核对时间窗和标注规则。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "原生Choice预筛保留；人工质量初筛与坐标解释见报告。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "deferred_samples": 2,
+        "image_candidates": 1,
+        "continuous_video_core_adopted": 0
       }
     }
   ]

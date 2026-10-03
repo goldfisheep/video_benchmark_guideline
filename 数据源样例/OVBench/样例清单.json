@@ -1,33 +1,324 @@
 {
   "benchmark": "OVBench",
-  "samples": [],
-  "sample_template": {
-    "sample_id": "待填写",
-    "video_id": "待填写",
-    "subtask": "待填写",
-    "question": "待填写",
-    "question_zh": "待填写",
-    "options": [],
-    "reference_answer": "待填写",
-    "answer_index": null,
-    "annotation_source": "待填写",
-    "video_path": "",
-    "video_url": "",
-    "video_source": "待填写",
-    "video_status": "待填写",
-    "review": {
-      "是否看过正式片段": "待填写",
-      "是否需要音频": "待填写",
-      "是否需要字幕": "待填写",
-      "适合的JEV输出": "待填写",
-      "视频是否必要": "待填写",
-      "答案是否清楚": "待填写",
-      "证据时刻": "待填写",
-      "结论": "待填写",
-      "待解决问题": "待填写",
-      "查看方式": "待填写",
-      "核查人": "待填写",
-      "核查日期": "待填写"
+  "version": {
+    "hf_repo": "MCG-NJU/OVBench",
+    "hf_revision": "4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+    "official_project": "https://github.com/MCG-NJU/VideoChat-Online",
+    "annotation": "ovbench_event.json"
+  },
+  "updated": "2026-10-03",
+  "status": "人工初筛已填写；助手补核时刻、坐标与未决项",
+  "sampling_note": "方便获取的目的性抽样，每源3例，优先可取得文件并覆盖不同场景/题型；不是随机抽样，不能用3例推断全量质量。",
+  "summary_draft": "3例COIN/event均暂缓，第一版核心0题：步骤正确性标准未明、绕绳前缀静态、灭火教学页与持续时长标签存疑；保留原生Choice扩展，不由三例否定全7090题。",
+  "samples": [
+    {
+      "sample_id": "COIN/xkzrBzOhtHw.mp4:event:0",
+      "subtask": "Past Memory / Procedure Recall",
+      "question": "Did the person follow the correct procedure to achieve the 'install wood flooring'?",
+      "question_zh": "截至第28秒，是否遵循了安装木地板的正确步骤？",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "option_labels": [
+        "A",
+        "B"
+      ],
+      "reference_answer": "A. Yes",
+      "answer_index": 0,
+      "official_reasoning": "作者未提供本题独立解题推理",
+      "annotation_source": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+      "annotation_file": "ovbench_event.json",
+      "original_record": {
+        "question": "Did the person follow the correct procedure to achieve the 'install wood flooring'?",
+        "middle_frame_timestamp": 28,
+        "answer": "A",
+        "answer_type": "Past Memory",
+        "options": [
+          "A. Yes",
+          "B. No"
+        ],
+        "sub_answer_type": "Procedure Recall"
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+      "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+      "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+      "video_duration_seconds": 35.64,
+      "has_audio": true,
+      "video_codec": "h264",
+      "original_file_sha256": "3541a1c21e0aad87c33775c6241afd92648af28a241944a9d810042d88200713",
+      "content_access": "local_only",
+      "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+      "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "画面可见操作，但“正确步骤”的标准未明确，未证实音轨必需或足以解除歧义。",
+        "是否需要字幕": "未取得独立字幕；画面内有产品/材质文字，步骤判定仍缺明确规则。",
+        "适合的JEV输出": "Choice（本例原生2选一；保持原选项和答案）；可派生Noul：输出P(Yes)，Yes标签1、No标签0，另列设置。",
+        "视频是否必要": "程序是否正确通常需历史动作。",
+        "答案是否清楚": "官方A=Yes保持。人工认为先铺板后涂胶，助手见约9—16秒拼装/敲紧、约22—27秒向板边施胶；可能为不同板材/连接步骤，不能据此断言顺序错误。",
+        "证据时间": "允许0—28秒；人工未单独填时间。助手每秒抽查见9—16秒拼装、22—27秒施胶，仅作补核。",
+        "结论": "本例暂缓，第一版核心不采用；保留质量与时轴核对记录。",
+        "待解决问题": "核对correct procedure所依据的步骤规则、镜头是否跨不同板材/安装方法、当前COIN视频与标签时轴是否一致；规则不明时不能把个人工序直觉当官方答案错误。",
+        "查看方式": "批量预审/OVBench/本地浏览.html第1例；只看0—28秒。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "截至第28秒，是否遵循了安装木地板的正确步骤？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+        "实际视频时长": "原文件35.64秒；允许历史0—28秒。"
+      },
+      "previewed_frame_seconds": [
+        2.24,
+        8.4,
+        16.8,
+        25.2
+      ],
+      "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至28.0秒的内容",
+      "visible_until_seconds": 28,
+      "official_clip": [
+        0,
+        30
+      ],
+      "archive": "COIN.zip",
+      "archive_member": "coin/xkzrBzOhtHw.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "主要用画面。",
+        "是否需要字幕": "尚未准备字幕；画面内英文字幕/标牌可作为可见文字，独立转写可另做设置。",
+        "适合的JEV输出": "Choice（可以用Noul）",
+        "视频是否必要": "程序是否正确通常需历史动作。",
+        "答案是否清楚": "官方A为是；但是视频先安装木板后将粘合剂涂在木板上，不清楚题意",
+        "证据时间": "",
+        "结论": "条件候选；先核实历史片段真的展示评测步骤，再决定采纳。",
+        "待解决问题": "只看0—28秒；确认COIN归档是否与标注版本一致、clip=[0,30]语义；如果只有成品介绍而无完整操作，则剔除本例。",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "截至第28秒，是否遵循了安装木地板的正确步骤？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "video_duration_display": "原文件35.64秒；允许历史0—28秒。",
+      "local_video_filename": "review_xkzrBzOhtHw.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地批量预审/OVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
+    },
+    {
+      "sample_id": "COIN/2CLt4BEBMRk.mp4:event:0",
+      "subtask": "Temporal Hallucination Verification / Step Verification",
+      "question": "Is the person in the current frame still performing the 'circle the rope under the bolt'?",
+      "question_zh": "第3秒当前是否仍在做把绳子绕到螺栓下方这一步？",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "option_labels": [
+        "A",
+        "B"
+      ],
+      "reference_answer": "A. Yes",
+      "answer_index": 0,
+      "official_reasoning": "作者未提供本题独立解题推理",
+      "annotation_source": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+      "annotation_file": "ovbench_event.json",
+      "original_record": {
+        "question": "Is the person in the current frame still performing the 'circle the rope under the bolt'?",
+        "middle_frame_timestamp": 3,
+        "answer": "A",
+        "answer_type": "Temporal Hallucination Verification",
+        "options": [
+          "A. Yes",
+          "B. No"
+        ],
+        "sub_answer_type": "Step Verification"
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+      "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+      "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+      "video_duration_seconds": 17.41,
+      "has_audio": true,
+      "video_codec": "h264",
+      "original_file_sha256": "7ffbf87ddb451e6d23dde97e0d99cbd6ab8161fbbb21f4f305a256146d399666",
+      "content_access": "local_only",
+      "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+      "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；绳结与手部操作是视觉证据。",
+        "是否需要字幕": "不需要；未准备字幕。",
+        "适合的JEV输出": "Choice（本例原生2选一；保持原选项和答案）；可派生Noul：输出P(Yes)，Yes标签1、No标签0，另列设置。",
+        "视频是否必要": "成员称仅一个画面；助手0/1/2秒抽帧同为绳子绕在固定件附近的静态展示，未见人正在操作，不能据已完成状态确认“仍在做”。",
+        "答案是否清楚": "个人判断No；官方A=Yes。允许0—3秒的静态状态与“person still performing”动作措辞不一致，答案分歧保留，未改官方标签。",
+        "证据时间": "允许0—3秒整体；助手补核0/1/2秒。结论仅针对此前缀，未说整个17.41秒原片都静态。",
+        "结论": "本例暂缓，第一版核心不采用；保留质量与时轴核对记录。",
+        "待解决问题": "确认作者把“步骤进行中”还是“步骤示意/完成状态”作为Yes依据，并核对视频版本、帧时基与提问时刻；解决前排除本例于正式评测。",
+        "查看方式": "批量预审/OVBench/本地浏览.html第2例；只看0—3秒。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "第3秒当前是否仍在做把绳子绕到螺栓下方这一步？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+        "实际视频时长": "原文件17.41秒；允许历史0—3秒。"
+      },
+      "previewed_frame_seconds": [
+        0.24,
+        0.8999999999999999,
+        1.7999999999999998,
+        2.7
+      ],
+      "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至3.0秒的内容",
+      "visible_until_seconds": 3,
+      "official_clip": [
+        0,
+        17
+      ],
+      "archive": "COIN.zip",
+      "archive_member": "coin/2CLt4BEBMRk.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；绳结与手部操作是视觉证据。",
+        "是否需要字幕": "不需要；未准备字幕。",
+        "适合的JEV输出": "Choice（可以改为noul）",
+        "视频是否必要": "视频只有一个画面",
+        "答案是否清楚": "否；官方认为A，但视频仅有一个画面，没有动作改变。",
+        "证据时间": "",
+        "结论": "暂缓本例，核实动作标签/时轴。",
+        "待解决问题": "只用0—3秒，逐帧查看是否真实绕绳；若静态已完成状态而无操作，记录官方标签不适合当前视觉动作判断。",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "第3秒当前是否仍在做把绳子绕到螺栓下方这一步？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "video_duration_display": "原文件17.41秒；允许历史0—3秒。",
+      "local_video_filename": "review_2CLt4BEBMRk.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地批量预审/OVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
+    },
+    {
+      "sample_id": "COIN/CLIDFxPQUBk.mp4:event:1",
+      "subtask": "Temporal Perception / Step Localization",
+      "question": "How long has the person in the scene been performing the 'spray towards the fire'?",
+      "question_zh": "截至第20秒，向火焰喷射的动作已经持续了多久？",
+      "options": [
+        "23-24s",
+        "16-17s",
+        "13-14s",
+        "11-12s"
+      ],
+      "option_labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reference_answer": "D. 11-12s",
+      "answer_index": 3,
+      "official_reasoning": "作者未提供本题独立解题推理",
+      "annotation_source": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+      "annotation_file": "ovbench_event.json",
+      "original_record": {
+        "question": "How long has the person in the scene been performing the 'spray towards the fire'?",
+        "middle_frame_timestamp": 20,
+        "answer": "D",
+        "answer_type": "Temporal Perception",
+        "options": [
+          "A. 23-24s",
+          "B. 16-17s",
+          "C. 13-14s",
+          "D. 11-12s"
+        ],
+        "sub_answer_type": "Step Localization"
+      },
+      "video_path": "",
+      "source_video_url": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+      "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+      "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+      "video_duration_seconds": 30.07,
+      "has_audio": true,
+      "video_codec": "h264",
+      "original_file_sha256": "56f350639adcc36224c0d953fd2f6bec4652251a5c103e1ff7c0cf66e871318c",
+      "content_access": "local_only",
+      "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+      "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+      "review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；计时依据是可见喷射开始与当前时刻。",
+        "是否需要字幕": "不需要；页面/画面内操作标题不是独立字幕。",
+        "适合的JEV输出": "Choice（本例原生4选一；保持原选项和答案）",
+        "视频是否必要": "若是实际持续计时则需要动作起点和提问时刻；当前片段主要是教学静态页，不能把一页展示时间等同真实喷射动作持续时间。",
+        "答案是否清楚": "官方D=11—12秒保持。人工“15—20秒”整理为喷射示意画面的出现区间，不是持续15—20秒。约15秒出现喷射图片，截止20秒展示约5秒，也不等于真实动作持续5秒；当前画面不能充分支持D。",
+        "证据时间": "允许0—20秒；助手每秒补核及14.25/14.5/14.75秒精查仍是瞄准教学页，15—19秒为含喷射照片的Squeeze the Handle页。约15秒是示意画面切换，不是已定位真实动作起点。",
+        "结论": "本例暂缓，第一版核心不采用；保留质量与时轴核对记录。",
+        "待解决问题": "核对Step Localization持续时长来自COIN步骤标注还是可见实际动作，以及视频版本/时轴；11—12秒在20秒提问意味着约8—9秒起算，现有教学页证据不支持该起点。未擅自把答案改成5秒。",
+        "查看方式": "批量预审/OVBench/本地浏览.html第3例；只看0—20秒。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03",
+        "核查重点": "截至第20秒，向火焰喷射的动作已经持续了多久？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+        "实际视频时长": "原文件30.07秒；允许历史0—20秒。"
+      },
+      "previewed_frame_seconds": [
+        1.6,
+        6,
+        12,
+        18
+      ],
+      "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至20.0秒的内容",
+      "visible_until_seconds": 20,
+      "official_clip": [
+        0,
+        24
+      ],
+      "archive": "COIN.zip",
+      "archive_member": "coin/CLIDFxPQUBk.mp4",
+      "submitted_review": {
+        "是否看过正式片段": "是",
+        "是否需要音频": "不需要；计时依据是可见喷射开始与当前时刻。",
+        "是否需要字幕": "不需要；页面/画面内操作标题不是独立字幕。",
+        "适合的JEV输出": "Choice",
+        "视频是否必要": "是",
+        "答案是否清楚": "官方D为11—12秒；但真实时间在15s-20s",
+        "证据时间": "助手实际抽查画面：1.60s, 6.00s, 12.00s, 18.00s；这些截图不是成员连续观看的证据。",
+        "结论": "暂缓本例，复核喷射起点后决定。",
+        "待解决问题": "仅0—20秒，区分aim、squeeze与真实spray；检查作者视频/帧时基是否一致，不能把“持灭火器”当“喷射”。",
+        "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+        "核查人": "余金洋",
+        "核查日期": "2026-10-03（助手准备日期）",
+        "核查重点": "截至第20秒，向火焰喷射的动作已经持续了多久？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+        "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+      },
+      "video_duration_display": "原文件30.07秒；允许历史0—20秒。",
+      "local_video_filename": "review_CLIDFxPQUBk.mp4",
+      "video_url": "",
+      "local_viewing_guidance": "本地批量预审/OVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
     }
+  ],
+  "format_screening": {
+    "hf_repo": "MCG-NJU/OVBench",
+    "hf_revision": "4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+    "whole_source_removed": false,
+    "files": [
+      "ovbench_action.json",
+      "ovbench_event.json",
+      "ovbench_object.json"
+    ],
+    "questions_by_file": {
+      "action": 1396,
+      "event": 3747,
+      "object": 1947
+    },
+    "scope": "三类文件共7090道原生选择题。保留格式可用方向；动作标注/时轴问题逐题核对。截到提问时刻并保持历史，不能看后续视频再答。"
+  },
+  "submission_source": "余金洋导出的样例清单9.json；原题选项答案保持，原填写保存在submitted_review。",
+  "source_screening": {
+    "依据": "余金洋每源3条观看记录；助手原标注、截止前抽帧、坐标叠框与官方评测代码补核。",
+    "本轮结论": "3例COIN/event均暂缓，第一版核心0题：步骤正确性标准未明、绕绳前缀静态、灭火教学页与持续时长标签存疑；保留原生Choice扩展，不由三例否定全7090题。",
+    "human_reviewed_samples": 3,
+    "deferred_samples": 3,
+    "image_candidates": 0,
+    "continuous_video_core_adopted": 0,
+    "范围限制": "每源三条目的性抽样，不能估计全源错误率，也不能宣布整源不可用。",
+    "标注规模": 7090
   }
 }

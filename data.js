@@ -5124,7 +5124,7 @@ window.BENCHMARK_DATA = {
     {
       "name": "OVBench",
       "category": "流式视频；随时间到达的视频问答",
-      "version": "OVBench；数据版本／修订号待填写",
+      "version": "ovbench_event.json；固定HF版本 4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
       "sources": [
         {
           "label": "官方 HF 数据与视频包",
@@ -5138,14 +5138,297 @@ window.BENCHMARK_DATA = {
       "source_notes": "**公开**。[官方 HF 数据与视频包](https://huggingface.co/datasets/MCG-NJU/OVBench)；[官方项目与评测代码](https://github.com/MCG-NJU/VideoChat-Online)。视频包含序列帧和片段，下载时需按官方数据准备说明组织。",
       "priority": "扩展备用",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "三类文件共7090道原生选择题。保留格式可用方向；动作标注/时轴问题逐题核对。截到提问时刻并保持历史，不能看后续视频再答。",
-      "known_output": "初筛：待填写每个在线问答子任务的答案类型；不能只凭流式类别判定 Choice。",
-      "viewing_guidance": "按官方数据准备说明读取序列帧或片段；对照问题时刻检查已见历史。在线视频入口与最小下载单位待填写。",
+      "final_decision": "3例均暂缓；第一版核心0题",
+      "decision_reason": "3例COIN/event均暂缓，第一版核心0题：步骤正确性标准未明、绕绳前缀静态、灭火教学页与持续时长标签存疑；保留原生Choice扩展，不由三例否定全7090题。",
+      "selected_scope": "格式可用的历史动作/时序Choice；本轮COIN/event三例不采用，其他题型另核查。",
+      "known_output": "原生7090题Choice；本组三例步骤/时轴待核。",
+      "viewing_guidance": "本地批量预审/OVBench三例已有人工记录；公开问答与报告已同步，媒体留本地。",
       "report_path": "数据源样例/OVBench/人工筛选报告.md",
       "samples_path": "数据源样例/OVBench/样例清单.json",
-      "samples": [],
+      "samples": [
+        {
+          "sample_id": "COIN/xkzrBzOhtHw.mp4:event:0",
+          "subtask": "Past Memory / Procedure Recall",
+          "question": "Did the person follow the correct procedure to achieve the 'install wood flooring'?",
+          "question_zh": "截至第28秒，是否遵循了安装木地板的正确步骤？",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "option_labels": [
+            "A",
+            "B"
+          ],
+          "reference_answer": "A. Yes",
+          "answer_index": 0,
+          "official_reasoning": "作者未提供本题独立解题推理",
+          "annotation_source": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+          "annotation_file": "ovbench_event.json",
+          "original_record": {
+            "question": "Did the person follow the correct procedure to achieve the 'install wood flooring'?",
+            "middle_frame_timestamp": 28,
+            "answer": "A",
+            "answer_type": "Past Memory",
+            "options": [
+              "A. Yes",
+              "B. No"
+            ],
+            "sub_answer_type": "Procedure Recall"
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+          "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+          "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+          "video_duration_seconds": 35.64,
+          "has_audio": true,
+          "video_codec": "h264",
+          "original_file_sha256": "3541a1c21e0aad87c33775c6241afd92648af28a241944a9d810042d88200713",
+          "content_access": "local_only",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "画面可见操作，但“正确步骤”的标准未明确，未证实音轨必需或足以解除歧义。",
+            "是否需要字幕": "未取得独立字幕；画面内有产品/材质文字，步骤判定仍缺明确规则。",
+            "适合的JEV输出": "Choice（本例原生2选一；保持原选项和答案）；可派生Noul：输出P(Yes)，Yes标签1、No标签0，另列设置。",
+            "视频是否必要": "程序是否正确通常需历史动作。",
+            "答案是否清楚": "官方A=Yes保持。人工认为先铺板后涂胶，助手见约9—16秒拼装/敲紧、约22—27秒向板边施胶；可能为不同板材/连接步骤，不能据此断言顺序错误。",
+            "证据时间": "允许0—28秒；人工未单独填时间。助手每秒抽查见9—16秒拼装、22—27秒施胶，仅作补核。",
+            "结论": "本例暂缓，第一版核心不采用；保留质量与时轴核对记录。",
+            "待解决问题": "核对correct procedure所依据的步骤规则、镜头是否跨不同板材/安装方法、当前COIN视频与标签时轴是否一致；规则不明时不能把个人工序直觉当官方答案错误。",
+            "查看方式": "批量预审/OVBench/本地浏览.html第1例；只看0—28秒。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "截至第28秒，是否遵循了安装木地板的正确步骤？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+            "实际视频时长": "原文件35.64秒；允许历史0—28秒。"
+          },
+          "previewed_frame_seconds": [
+            2.24,
+            8.4,
+            16.8,
+            25.2
+          ],
+          "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至28.0秒的内容",
+          "visible_until_seconds": 28,
+          "official_clip": [
+            0,
+            30
+          ],
+          "archive": "COIN.zip",
+          "archive_member": "coin/xkzrBzOhtHw.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "主要用画面。",
+            "是否需要字幕": "尚未准备字幕；画面内英文字幕/标牌可作为可见文字，独立转写可另做设置。",
+            "适合的JEV输出": "Choice（可以用Noul）",
+            "视频是否必要": "程序是否正确通常需历史动作。",
+            "答案是否清楚": "官方A为是；但是视频先安装木板后将粘合剂涂在木板上，不清楚题意",
+            "证据时间": "",
+            "结论": "条件候选；先核实历史片段真的展示评测步骤，再决定采纳。",
+            "待解决问题": "只看0—28秒；确认COIN归档是否与标注版本一致、clip=[0,30]语义；如果只有成品介绍而无完整操作，则剔除本例。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "截至第28秒，是否遵循了安装木地板的正确步骤？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "原文件35.64秒；允许历史0—28秒。",
+          "local_video_filename": "review_xkzrBzOhtHw.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地批量预审/OVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
+        },
+        {
+          "sample_id": "COIN/2CLt4BEBMRk.mp4:event:0",
+          "subtask": "Temporal Hallucination Verification / Step Verification",
+          "question": "Is the person in the current frame still performing the 'circle the rope under the bolt'?",
+          "question_zh": "第3秒当前是否仍在做把绳子绕到螺栓下方这一步？",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "option_labels": [
+            "A",
+            "B"
+          ],
+          "reference_answer": "A. Yes",
+          "answer_index": 0,
+          "official_reasoning": "作者未提供本题独立解题推理",
+          "annotation_source": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+          "annotation_file": "ovbench_event.json",
+          "original_record": {
+            "question": "Is the person in the current frame still performing the 'circle the rope under the bolt'?",
+            "middle_frame_timestamp": 3,
+            "answer": "A",
+            "answer_type": "Temporal Hallucination Verification",
+            "options": [
+              "A. Yes",
+              "B. No"
+            ],
+            "sub_answer_type": "Step Verification"
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+          "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+          "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+          "video_duration_seconds": 17.41,
+          "has_audio": true,
+          "video_codec": "h264",
+          "original_file_sha256": "7ffbf87ddb451e6d23dde97e0d99cbd6ab8161fbbb21f4f305a256146d399666",
+          "content_access": "local_only",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；绳结与手部操作是视觉证据。",
+            "是否需要字幕": "不需要；未准备字幕。",
+            "适合的JEV输出": "Choice（本例原生2选一；保持原选项和答案）；可派生Noul：输出P(Yes)，Yes标签1、No标签0，另列设置。",
+            "视频是否必要": "成员称仅一个画面；助手0/1/2秒抽帧同为绳子绕在固定件附近的静态展示，未见人正在操作，不能据已完成状态确认“仍在做”。",
+            "答案是否清楚": "个人判断No；官方A=Yes。允许0—3秒的静态状态与“person still performing”动作措辞不一致，答案分歧保留，未改官方标签。",
+            "证据时间": "允许0—3秒整体；助手补核0/1/2秒。结论仅针对此前缀，未说整个17.41秒原片都静态。",
+            "结论": "本例暂缓，第一版核心不采用；保留质量与时轴核对记录。",
+            "待解决问题": "确认作者把“步骤进行中”还是“步骤示意/完成状态”作为Yes依据，并核对视频版本、帧时基与提问时刻；解决前排除本例于正式评测。",
+            "查看方式": "批量预审/OVBench/本地浏览.html第2例；只看0—3秒。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "第3秒当前是否仍在做把绳子绕到螺栓下方这一步？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+            "实际视频时长": "原文件17.41秒；允许历史0—3秒。"
+          },
+          "previewed_frame_seconds": [
+            0.24,
+            0.8999999999999999,
+            1.7999999999999998,
+            2.7
+          ],
+          "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至3.0秒的内容",
+          "visible_until_seconds": 3,
+          "official_clip": [
+            0,
+            17
+          ],
+          "archive": "COIN.zip",
+          "archive_member": "coin/2CLt4BEBMRk.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；绳结与手部操作是视觉证据。",
+            "是否需要字幕": "不需要；未准备字幕。",
+            "适合的JEV输出": "Choice（可以改为noul）",
+            "视频是否必要": "视频只有一个画面",
+            "答案是否清楚": "否；官方认为A，但视频仅有一个画面，没有动作改变。",
+            "证据时间": "",
+            "结论": "暂缓本例，核实动作标签/时轴。",
+            "待解决问题": "只用0—3秒，逐帧查看是否真实绕绳；若静态已完成状态而无操作，记录官方标签不适合当前视觉动作判断。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "第3秒当前是否仍在做把绳子绕到螺栓下方这一步？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "原文件17.41秒；允许历史0—3秒。",
+          "local_video_filename": "review_2CLt4BEBMRk.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地批量预审/OVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
+        },
+        {
+          "sample_id": "COIN/CLIDFxPQUBk.mp4:event:1",
+          "subtask": "Temporal Perception / Step Localization",
+          "question": "How long has the person in the scene been performing the 'spray towards the fire'?",
+          "question_zh": "截至第20秒，向火焰喷射的动作已经持续了多久？",
+          "options": [
+            "23-24s",
+            "16-17s",
+            "13-14s",
+            "11-12s"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "reference_answer": "D. 11-12s",
+          "answer_index": 3,
+          "official_reasoning": "作者未提供本题独立解题推理",
+          "annotation_source": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+          "annotation_file": "ovbench_event.json",
+          "original_record": {
+            "question": "How long has the person in the scene been performing the 'spray towards the fire'?",
+            "middle_frame_timestamp": 20,
+            "answer": "D",
+            "answer_type": "Temporal Perception",
+            "options": [
+              "A. 23-24s",
+              "B. 16-17s",
+              "C. 13-14s",
+              "D. 11-12s"
+            ],
+            "sub_answer_type": "Step Localization"
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/MCG-NJU/OVBench/tree/4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
+          "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+          "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+          "video_duration_seconds": 30.07,
+          "has_audio": true,
+          "video_codec": "h264",
+          "original_file_sha256": "56f350639adcc36224c0d953fd2f6bec4652251a5c103e1ff7c0cf66e871318c",
+          "content_access": "local_only",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；计时依据是可见喷射开始与当前时刻。",
+            "是否需要字幕": "不需要；页面/画面内操作标题不是独立字幕。",
+            "适合的JEV输出": "Choice（本例原生4选一；保持原选项和答案）",
+            "视频是否必要": "若是实际持续计时则需要动作起点和提问时刻；当前片段主要是教学静态页，不能把一页展示时间等同真实喷射动作持续时间。",
+            "答案是否清楚": "官方D=11—12秒保持。人工“15—20秒”整理为喷射示意画面的出现区间，不是持续15—20秒。约15秒出现喷射图片，截止20秒展示约5秒，也不等于真实动作持续5秒；当前画面不能充分支持D。",
+            "证据时间": "允许0—20秒；助手每秒补核及14.25/14.5/14.75秒精查仍是瞄准教学页，15—19秒为含喷射照片的Squeeze the Handle页。约15秒是示意画面切换，不是已定位真实动作起点。",
+            "结论": "本例暂缓，第一版核心不采用；保留质量与时轴核对记录。",
+            "待解决问题": "核对Step Localization持续时长来自COIN步骤标注还是可见实际动作，以及视频版本/时轴；11—12秒在20秒提问意味着约8—9秒起算，现有教学页证据不支持该起点。未擅自把答案改成5秒。",
+            "查看方式": "批量预审/OVBench/本地浏览.html第3例；只看0—20秒。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "截至第20秒，向火焰喷射的动作已经持续了多久？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+            "实际视频时长": "原文件30.07秒；允许历史0—20秒。"
+          },
+          "previewed_frame_seconds": [
+            1.6,
+            6,
+            12,
+            18
+          ],
+          "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至20.0秒的内容",
+          "visible_until_seconds": 20,
+          "official_clip": [
+            0,
+            24
+          ],
+          "archive": "COIN.zip",
+          "archive_member": "coin/CLIDFxPQUBk.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；计时依据是可见喷射开始与当前时刻。",
+            "是否需要字幕": "不需要；页面/画面内操作标题不是独立字幕。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "是",
+            "答案是否清楚": "官方D为11—12秒；但真实时间在15s-20s",
+            "证据时间": "助手实际抽查画面：1.60s, 6.00s, 12.00s, 18.00s；这些截图不是成员连续观看的证据。",
+            "结论": "暂缓本例，复核喷射起点后决定。",
+            "待解决问题": "仅0—20秒，区分aim、squeeze与真实spray；检查作者视频/帧时基是否一致，不能把“持灭火器”当“喷射”。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "截至第20秒，向火焰喷射的动作已经持续了多久？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "原文件30.07秒；允许历史0—20秒。",
+          "local_video_filename": "review_CLIDFxPQUBk.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地批量预审/OVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
+        }
+      ],
       "format_prescreen": {
         "hf_repo": "MCG-NJU/OVBench",
         "hf_revision": "4d9ddfa3ba1464997d504ecdd4a6db2af801df01",
@@ -5161,13 +5444,20 @@ window.BENCHMARK_DATA = {
           "object": 1947
         },
         "scope": "三类文件共7090道原生选择题。保留格式可用方向；动作标注/时轴问题逐题核对。截到提问时刻并保持历史，不能看后续视频再答。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "原生Choice预筛保留；人工质量初筛与坐标解释见报告。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "deferred_samples": 3,
+        "image_candidates": 0,
+        "continuous_video_core_adopted": 0
       }
     },
     {
       "name": "ODVBench",
       "category": "流式视频；流式驾驶场景理解",
-      "version": "ODV-Bench；数据修订号待填写",
+      "version": "ODVbench.json；固定HF版本 5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
       "sources": [
         {
           "label": "作者 HF 数据（视频、标注）",
@@ -5181,14 +5471,301 @@ window.BENCHMARK_DATA = {
       "source_notes": "**公开**。对应 **ODV-Bench**：[作者 HF 数据（视频、标注）](https://huggingface.co/datasets/MCG-NJU/ODV-Bench)；[项目代码](https://github.com/MCG-NJU/StreamForest)。",
       "priority": "扩展备用",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "6348条有原生candidates且答案在候选中；坐标题选择预置坐标选项，不要求生成框。Choice可用，未来预测仍需核对时间窗和标注规则。",
-      "known_output": "初筛：待填写具体驾驶问答题型；有选项可接 Choice，开放答案另处理。",
-      "viewing_guidance": "从官方 HF／StreamForest 的数据说明定位驾驶视频与时间标注；以问题发生时刻为界观看，不能将后续画面用于回答。",
+      "final_decision": "1图片候选、2预测暂缓；第一版视频核心0题",
+      "decision_reason": "3例交通人工初筛：946的C框与限速60标志位置一致，保留图片定位候选；1973目标小且预测窗未明、5268风险标准与个人判断分歧，2例暂缓；第一版视频核心0题。",
+      "selected_scope": "946交通图片定位候选；目标运动及风险预测暂缓，规则明确后考虑。",
+      "known_output": "固定6348条原生Choice；坐标为预置选项，无须生成自由框。",
+      "viewing_guidance": "本地批量预审/ODVBench三例已有人工记录；公开问答与报告已同步，媒体留本地。",
       "report_path": "数据源样例/ODVBench/人工筛选报告.md",
       "samples_path": "数据源样例/ODVBench/样例清单.json",
-      "samples": [],
+      "samples": [
+        {
+          "sample_id": "official_row_946",
+          "subtask": "Targeting single static objects / Real-time Traffic Perception",
+          "question": "What are the position coordinates of the traffic sign indicating \"Zone Speed Limit 60\" in the current picture?",
+          "question_zh": "在第9.65秒画面中，标着限速60的交通标志位于哪个框？",
+          "options": [
+            "[0.53,0.28,0.66,0.37].",
+            "[0.9,0.04,0.98,0.58].",
+            "[0.75,0.34,0.77,0.38].",
+            "[0.21,0.54,0.73,0.85]."
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "reference_answer": "C. [0.75,0.34,0.77,0.38].",
+          "answer_index": 2,
+          "official_reasoning": "作者未提供本题独立解题推理",
+          "annotation_source": "https://huggingface.co/datasets/MCG-NJU/ODV-Bench/tree/5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
+          "annotation_file": "ODVbench.json",
+          "original_record": {
+            "task": "Targeting single static objects",
+            "subtask": "Real-time Traffic Perception",
+            "question": "What are the position coordinates of the traffic sign indicating \"Zone Speed Limit 60\" in the current picture?",
+            "answer": "[0.75,0.34,0.77,0.38].",
+            "video": "TS_Retrieval/test_video/IrnGbtsakFcGM9.mp4",
+            "candidates": [
+              "[0.53,0.28,0.66,0.37].",
+              "[0.9,0.04,0.98,0.58].",
+              "[0.75,0.34,0.77,0.38].",
+              "[0.21,0.54,0.73,0.85]."
+            ],
+            "start": 0,
+            "end": 9.65
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/MCG-NJU/ODV-Bench/tree/5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
+          "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+          "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+          "video_duration_seconds": 10.07,
+          "has_audio": true,
+          "video_codec": "hevc",
+          "original_file_sha256": "0c62dcd3022c86f037fb6ab00830337bfb43ec3182849e70fde2201b4e940bdf",
+          "content_access": "local_only",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；道路标牌位置由图像判断。",
+            "是否需要字幕": "不需要；要读的是交通标志自身文字。",
+            "适合的JEV输出": "Choice（本例原生4选一；保持原选项和答案）",
+            "视频是否必要": "目标定位为主；视频不是必要，单帧原则上可答，但目标小且有运动模糊。",
+            "答案是否清楚": "坐标含义已补清。原片9.62069秒（不超过9.65秒）的C框落在限速60标志上，四项中C的位置匹配；原先“不理解坐标”不能作为错标证据。框较粗、并非严丝合缝的精细标注。",
+            "证据时间": "助手补核原HEVC帧9.62069秒，1920×1080；C约为左上(1440,367)、右下(1478,410)，覆盖60标志主要区域。人工原时间字段为空。",
+            "结论": "保留交通图片/文字识别定位候选1条；不计连续视频核心。",
+            "待解决问题": "选C的粗位置有画面依据；正式接入前固定原始分辨率/等比缩放及作者采帧设置，避免裁剪后坐标失效。坐标解释已有画面匹配，仍需作者明文确认；未做模型单帧/视频对照。",
+            "查看方式": "批量预审/ODVBench/本地浏览.html第1例；只看0—9.65秒。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "在第9.65秒画面中，标着限速60的交通标志位于哪个框？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+            "实际视频时长": "原文件10.07秒；允许历史0—9.65秒。"
+          },
+          "previewed_frame_seconds": [
+            0.772,
+            2.895,
+            5.79,
+            8.685
+          ],
+          "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至9.65秒的内容",
+          "visible_until_seconds": 9.65,
+          "archive": "TS_Retrieval.zip",
+          "archive_member": "test_video/IrnGbtsakFcGM9.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；道路标牌位置由图像判断。",
+            "是否需要字幕": "不需要；要读的是交通标志自身文字。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "目标定位为主；视频不是必要，单帧原则上可答，但目标小且有运动模糊。",
+            "答案是否清楚": "没有理解选项坐标含义",
+            "证据时间": "",
+            "结论": "作为交通图片/OCR定位补充，视觉证据清楚后再采纳。",
+            "待解决问题": "坐标为归一化框，核对框在第9.65秒而非抽帧8.69秒；压缩和转码会影响小字，必要时看原HEVC。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "在第9.65秒画面中，标着限速60的交通标志位于哪个框？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "原文件10.07秒；允许历史0—9.65秒。",
+          "coordinate_note": "归一化角点框按[x左,y上,x右,y下]解释，乘原图宽高换像素；此解释与946画面匹配。已查看的官方评测utils未另定义坐标顺序，属于画面核对推断。",
+          "local_video_filename": "review_IrnGbtsakFcGM9.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地批量预审/ODVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
+        },
+        {
+          "sample_id": "official_row_1973",
+          "subtask": "Targeting single dynamic objects / Action Prediction",
+          "question": "What will be the subsequent motion state of the car currently in the [0.198, 0.528, 0.216, 0.543] location? ",
+          "question_zh": "截至第17.6秒，指定位置的汽车随后会处于什么运动状态？",
+          "options": [
+            "Turning right",
+            "Overtaking",
+            "Stopped",
+            "Turning left"
+          ],
+          "option_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "reference_answer": "C. Stopped",
+          "answer_index": 2,
+          "official_reasoning": "作者未提供本题独立解题推理",
+          "annotation_source": "https://huggingface.co/datasets/MCG-NJU/ODV-Bench/tree/5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
+          "annotation_file": "ODVbench.json",
+          "original_record": {
+            "task": "Targeting single dynamic objects",
+            "subtask": "Action Prediction",
+            "question": "What will be the subsequent motion state of the car currently in the [0.198, 0.528, 0.216, 0.543] location? ",
+            "answer": "Stopped",
+            "video": "TOI_Recognition/videos/train_00401.mp4",
+            "candidates": [
+              "Turning right",
+              "Overtaking",
+              "Stopped",
+              "Turning left"
+            ],
+            "start": 0,
+            "end": 17.6
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/MCG-NJU/ODV-Bench/tree/5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
+          "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+          "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+          "video_duration_seconds": 19.7,
+          "has_audio": false,
+          "video_codec": "h264",
+          "original_file_sha256": "6b92041e1334bc2debc322127445e1a1dbb6b0825fee43bda5b9b797f4f2ecc9",
+          "content_access": "local_only",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式文件无音轨。",
+            "是否需要字幕": "不需要；位置、移动及路口关系在画面中。",
+            "适合的JEV输出": "Choice（本例原生4选一；保持原选项和答案）",
+            "视频是否必要": "是；预测应使用过去运动，不能偷看17.6秒之后",
+            "答案是否清楚": "官方C=Stopped保持。坐标是目标小框，不是汽车运动方向；按原图1920×1280换算约(380,676)—(415,695)，在左侧远处车辆区域，目标小且部分遮挡。尚未独立确认唯一车辆及未来Stopped标签，不能强改个人判断为已验证正确。",
+            "证据时间": "助手补核截止帧17.6秒及15/16/17秒历史。目标框宽约35像素、高19像素；本轮未用17.6秒后的画面作模型输入或证实未来标签。",
+            "结论": "暂缓运动预测例；坐标解释已补，目标身份和预测时间窗尚未解决。",
+            "待解决问题": "确认小框是否精确对应远处同一辆车、框依据哪一帧、subsequent的预测时间范围及Stopped标签规则。媒体名train_00401不能单独证明问题属于训练集。",
+            "查看方式": "批量预审/ODVBench/本地浏览.html第2例；只看0—17.6秒。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "截至第17.6秒，指定位置的汽车随后会处于什么运动状态？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+            "实际视频时长": "原文件19.70秒；允许历史0—17.6秒。"
+          },
+          "previewed_frame_seconds": [
+            1.4080000000000001,
+            5.28,
+            10.56,
+            15.840000000000002
+          ],
+          "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至17.6秒的内容",
+          "visible_until_seconds": 17.6,
+          "archive": "TOI_Recognition.zip",
+          "archive_member": "videos/train_00401.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式文件无音轨。",
+            "是否需要字幕": "不需要；位置、移动及路口关系在画面中。",
+            "适合的JEV输出": "Choice",
+            "视频是否必要": "是；预测应使用过去运动，不能偷看17.6秒之后",
+            "答案是否清楚": "还是不太理解坐标含义；官方答案Stopped，对应C；位置指定目标很小，需确认提问时刻同一辆车，不能根据其他汽车的停止判断。",
+            "证据时间": "",
+            "结论": "拟作为交通运动预测扩展，需支持提问时刻与目标框。",
+            "待解决问题": "官方路径含train_00401是媒体文件名，不是本轮问题被划入训练集的证据；确认原始拆分、目标框和预测时间范围。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "截至第17.6秒，指定位置的汽车随后会处于什么运动状态？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "原文件19.70秒；允许历史0—17.6秒。",
+          "coordinate_note": "归一化角点框按[x左,y上,x右,y下]解释，乘原图宽高换像素；此解释与946画面匹配。已查看的官方评测utils未另定义坐标顺序，属于画面核对推断。",
+          "local_video_filename": "review_train_00401.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地批量预审/ODVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
+        },
+        {
+          "sample_id": "official_row_5268",
+          "subtask": "Targeting multi-object interaction scenarios or events / Risk Prediction",
+          "question": "Is there a high probability of traffic accidents occurring within a certain period in the future?",
+          "question_zh": "截至第2秒的历史，未来一段时间交通事故的概率是否很高？",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "option_labels": [
+            "A",
+            "B"
+          ],
+          "reference_answer": "B. No",
+          "answer_index": 1,
+          "official_reasoning": "作者未提供本题独立解题推理",
+          "annotation_source": "https://huggingface.co/datasets/MCG-NJU/ODV-Bench/tree/5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
+          "annotation_file": "ODVbench.json",
+          "original_record": {
+            "task": "Targeting multi-object interaction scenarios or events",
+            "subtask": "Risk Prediction",
+            "question": "Is there a high probability of traffic accidents occurring within a certain period in the future?",
+            "answer": "No",
+            "video": "TR_Analysis/CAP-DATA/11/014328.mp4",
+            "start": 0,
+            "end": 2,
+            "fps": 10,
+            "candidates": [
+              "Yes",
+              "No"
+            ]
+          },
+          "video_path": "",
+          "source_video_url": "https://huggingface.co/datasets/MCG-NJU/ODV-Bench/tree/5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
+          "video_source": "作者HF归档中的正式文件；archive_member、固定版本与SHA256保留。本地review_文件仅含提问前历史。",
+          "video_status": "余金洋已标记看过正式允许片段；助手补核原视频截止前画面，非重新连续观看。",
+          "video_duration_seconds": 5,
+          "has_audio": false,
+          "video_codec": "mpeg4",
+          "original_file_sha256": "1750b4c5cd6e6c1a8986c7304ca2068c56cac41043feec3577f2bff93c1a6409",
+          "content_access": "local_only",
+          "subtitle_status": "本例未取得独立字幕，不代表原片无字幕。",
+          "review_status": "人工初筛已填写；候选和暂缓见逐题结论",
+          "review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式文件无音轨。",
+            "是否需要字幕": "不需要；交通情境和交互可见。",
+            "适合的JEV输出": "Choice（本例原生2选一；保持原选项和答案）；可派生Noul：输出P(Yes)，Yes标签1、No标签0，另列设置。",
+            "视频是否必要": "需要短历史判断运动/风险，但“未来一段时间”和“很高”缺具体阈值；不能看2秒后验证结果再当模型输入。",
+            "答案是否清楚": "官方B=No，人工记录与官方不符，但未写明替代选项和依据。题目未给具体未来时间窗与“high probability”阈值；截至2秒没发生碰撞不能证明未来风险低，也不能凭直觉判为官方错标。",
+            "证据时间": "允许0—2秒整体；助手补核原帧1.9秒夜间路口、车辆和摩托车交互。该帧是当前情境证据，不是未来风险真值。",
+            "结论": "暂缓风险预测例；保留个人与官方分歧，待判定规则可解释后再评。",
+            "待解决问题": "核对未来时间窗、高风险标签标准及事故/非事故与高/低概率的对应；个人记录未明确替代答案，不补造。官方No不改，仅标注评测依据不充分。",
+            "查看方式": "批量预审/ODVBench/本地浏览.html第3例；只看0—2秒。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03",
+            "核查重点": "截至第2秒的历史，未来一段时间交通事故的概率是否很高？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "可先用JEV视频历史前缀＋问题＋原选项做离线Choice；图片题单列图片对照，正式在线评测另接提问时刻控制。",
+            "实际视频时长": "原文件5.00秒；允许历史0—2秒。"
+          },
+          "previewed_frame_seconds": [
+            0.16,
+            0.6,
+            1.2,
+            1.8
+          ],
+          "evaluation_setting": "视频历史前缀＋问题＋选项；只允许截至2.0秒的内容",
+          "visible_until_seconds": 2,
+          "archive": "TR_Analysis.zip",
+          "archive_member": "CAP-DATA/11/014328.mp4",
+          "submitted_review": {
+            "是否看过正式片段": "是",
+            "是否需要音频": "不需要；正式文件无音轨。",
+            "是否需要字幕": "不需要；交通情境和交互可见。",
+            "适合的JEV输出": "Choice（可以改成noul）",
+            "视频是否必要": "需要短历史判断运动/风险，但“未来一段时间”和“很高”缺具体阈值；不能看2秒后验证结果再当模型输入。",
+            "答案是否清楚": "个人判断与答案不符",
+            "证据时间": "助手实际抽查画面：0.16s, 0.60s, 1.20s, 1.80s；这些截图不是成员连续观看的证据。",
+            "结论": "拟暂缓此风险预测例，扩展流式预测且补足规则后考虑。",
+            "待解决问题": "查明预测时间窗、事故标签与高概率判定；该题为离线benchmark标签，不是现实驾驶安全判断。",
+            "查看方式": "本目录本地浏览.html，先看问题与片段，再展开官方答案和拟判断；可在页面修改review并导出清单。",
+            "核查人": "余金洋",
+            "核查日期": "2026-10-03（助手准备日期）",
+            "核查重点": "截至第2秒的历史，未来一段时间交通事故的概率是否很高？ 对比题目、单帧、字幕与连续视频分别提供的证据。",
+            "与项目输入设置的关系": "JEV当前支持文本/图片/视频输入；音轨可供人工核查，音频理解题需提供字幕文本后单列评测。"
+          },
+          "video_duration_display": "原文件5.00秒；允许历史0—2秒。",
+          "coordinate_note": "归一化角点框按[x左,y上,x右,y下]解释，乘原图宽高换像素；此解释与946画面匹配。已查看的官方评测utils未另定义坐标顺序，属于画面核对推断。",
+          "local_video_filename": "review_014328.mp4",
+          "video_url": "",
+          "local_viewing_guidance": "本地批量预审/ODVBench/本地浏览.html；公开页提供问答和人工依据，打包媒体仍在本地。"
+        }
+      ],
       "format_prescreen": {
         "hf_repo": "MCG-NJU/ODV-Bench",
         "hf_revision": "5dcf37ccf7c24ac978db2b8aaad471c0b1b66f21",
@@ -5198,7 +5775,14 @@ window.BENCHMARK_DATA = {
         ],
         "records": 6348,
         "scope": "6348条有原生candidates且答案在候选中；坐标题选择预置坐标选项，不要求生成框。Choice可用，未来预测仍需核对时间窗和标注规则。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "原生Choice预筛保留；人工质量初筛与坐标解释见报告。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "deferred_samples": 2,
+        "image_candidates": 1,
+        "continuous_video_core_adopted": 0
       }
     }
   ]
