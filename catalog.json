@@ -424,8 +424,8 @@
     },
     {
       "name": "LongVideoReason",
-      "category": "视频推理；长视频推理",
-      "version": "LongVideo-Reason；测试划分和版本待填写",
+      "category": "视频推理；本轮样例时长混合",
+      "version": "test.jsonl；LongVideo-Reason/longvideo-reason 固定版本 311eccbd25e9646db8492fb6e728068828ee0684",
       "sources": [
         {
           "label": "HF 数据",
@@ -439,11 +439,11 @@
       "source_notes": "**公开**。对应 **LongVideo-Reason**：[HF 数据](https://huggingface.co/datasets/LongVideo-Reason/longvideo-reason)；[项目代码](https://github.com/NVlabs/Long-RL/tree/main/longvideo-reason)。它还包含训练数据，评测时需选对应测试划分。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "原生A—D选择题可用；排除选项污染、时轴或证据异常的题，不整源删除。",
-      "known_output": "初筛：待填写测试题型；有选项测试题可接 Choice。",
-      "viewing_guidance": "先在 HF／代码确认测试划分和标注，按测试样例定位视频；不要从训练集随意选题冒充测试。按条获取方式待填写。",
+      "final_decision": "核心暂缓：1题暂缓、1题短片条件补充、1题格式剔除",
+      "decision_reason": "混合时长的视频推理来源。3例中2例有人工记录：624暂缓核实，843为短片字幕/画面时间推理补充；714选项污染已剔除、未新增人工观看确认。首批视觉核心暂缓，保留整源。",
+      "selected_scope": "原生Choice；按实际时长和视觉必要性筛选。843单列字幕/画面短片推理，不计长视频；624核实后再决定；714排除。",
+      "known_output": "Choice：原生A—D四选一，保留各题原选项字母顺序；官方1000条test记录。",
+      "viewing_guidance": "本地批量预审/LongVideoReason三例已取得，2例有人工记录、1例格式剔除；公开清单提供原站/作者视频链接。",
       "report_path": "数据源样例/LongVideoReason/人工筛选报告.md",
       "samples_path": "数据源样例/LongVideoReason/样例清单.json",
       "format_prescreen": {
@@ -455,7 +455,12 @@
         ],
         "records": 1000,
         "scope": "原生A—D选择题可用；排除选项污染、时轴或证据异常的题，不整源删除。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "原生Choice输出预筛；本轮2例人工记录、1例格式剔除。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 2,
+        "format_excluded_without_human_confirmation": 1
       }
     },
     {
