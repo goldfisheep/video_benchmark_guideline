@@ -466,7 +466,7 @@
     {
       "name": "VideoMMMU",
       "category": "视频知识；跨学科视频知识与理解",
-      "version": "VideoMMMU；数据版本／修订号待填写",
+      "version": "Perception＋Comprehension；固定HF版本 d1c35ac933123d79e877b7f1b9506afb0309cf1b",
       "sources": [
         {
           "label": "项目 HF 数据",
@@ -480,11 +480,11 @@
       "source_notes": "**需同意访问条件**。[项目 HF 数据](https://huggingface.co/datasets/lmms-lab/VideoMMMU)；[官方代码](https://github.com/EvolvingLMMs-Lab/VideoMMMU)。公开页面可见，下载需登录并接受条件。",
       "priority": "替补候选",
       "planned_questions": 0,
-      "final_decision": "待填写",
-      "decision_reason": "待填写",
-      "selected_scope": "已取得感知/理解600条均为原生选择题，选项数4—14；可用Choice，适配器须保留实际选项数。Adaptation未纳入本次格式统计。",
-      "known_output": "初筛：Choice：选择题部分；其他题型另核查。",
-      "viewing_guidance": "先接受 HF 访问条件，再从官方数据准备说明定位视频；可先看项目例子了解任务，但正式片段和 ID 对应关系需要核查。",
+      "final_decision": "3例人工初筛：2图片候选＋1字幕对照；视频核心暂缓",
+      "decision_reason": "3例人工初筛：生物标签题与薄膜计算题可用单帧图片，末尾口头提问题可用字幕；保留2条图片对照候选和1条字幕对照，不计连续视频核心。当前已核对600条感知/理解题，523条为十选一，实际选项数4—14。",
+      "selected_scope": "图片/OCR、课件推理与字幕理解对照；按每题实际选项数接Choice。连续视频必要题及Adaptation另行核查。",
+      "known_output": "已核查600条感知/理解均为Choice；523题10选一，选项数4—14。Adaptation未纳入本次统计。",
+      "viewing_guidance": "本地批量预审/VideoMMMU三例已完成人工记录；公开页提供原站/作者链接与问答。",
       "report_path": "数据源样例/VideoMMMU/人工筛选报告.md",
       "samples_path": "数据源样例/VideoMMMU/样例清单.json",
       "format_prescreen": {
@@ -508,7 +508,14 @@
           "11": 1
         },
         "scope": "已取得感知/理解600条均为原生选择题，选项数4—14；可用Choice，适配器须保留实际选项数。Adaptation未纳入本次格式统计。",
-        "status": "格式预筛；视频人工核查尚未完成"
+        "status": "600条感知/理解输出格式已核对；本轮3例有人工正式片段观看记录。"
+      },
+      "review_progress": {
+        "prepared_samples": 3,
+        "human_reviewed_samples": 3,
+        "image_control_candidates": 2,
+        "subtitle_controls": 1,
+        "continuous_video_core_adopted": 0
       }
     },
     {
