@@ -361,14 +361,14 @@
           "url": "https://github.com/TencentARC/Video-Holmes"
         }
       ],
-      "source_notes": "官方注明学术用途与原视频版权；test 1837题／270片、train 1551题／233片，视频ID交集0；当前7样例非随机。",
+      "source_notes": "本轮所看七样例偏悬疑／微恐，为核查人反馈，不代表全量分级；官方注明学术用途及原视频版权；保持正式六选一格式。",
       "priority": "第一版推荐",
       "planned_questions": 100,
-      "final_decision": "7任务各1题已准备；人工判断待填写",
-      "decision_reason": "官方test中7题／7片；文件已取得并完整解码通过。是否静音可答、是否唯一正确答案尚待人工核查。",
-      "selected_scope": "复杂视觉推理候选；音效依赖与主题／象征多解问题重点排查。",
+      "final_decision": "初筛完成：6题情节推理扩展候选，1题暂缓",
+      "decision_reason": "7题已填写；核查人反馈静音可答、音频辅助理解，需结合情节推理。910未找到骷髅事件；因果、主题和象征题需补充证据并复核唯一性。",
+      "selected_scope": "视频情节理解与推理扩展，单独报告；不自动作为一般动作感知核心题库。",
       "known_output": "初筛：待填写本条题型；有选项子集可接 Choice。",
-      "viewing_guidance": "打开仓库外Video-Holmes本地核查/本地浏览.html；先静音独立答题，再展开官方解释。",
+      "viewing_guidance": "本地浏览.html七题已填，按待解决问题补充证据和复核；音轨存在与音频必需分别记录。",
       "report_path": "数据源样例/Video-Holmes/人工筛选报告.md",
       "samples_path": "数据源样例/Video-Holmes/样例清单.json"
     },
